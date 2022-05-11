@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site_Box.master.cs" Inherits="Site_Box" %>
+
+<%@ Import Namespace="Resources" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title><%=Param_WebTitle%></title>
+
+    <asp:PlaceHolder ID="ph_MetaInfo" runat="server">
+        <meta name="author" content="Prokits Industries Co. LTD." />
+        <meta name="keywords" content="寶工, 工具, Proskit, Prokits, Tool" />
+        <meta name="description" content="超過25年的國際知名工具品牌Pro’sKit寶工，經銷網路遍及五大洲90餘國，提供全球客戶完整的工具解決方案，產品涵蓋專業手工具、電動工具、測試儀器、焊接工具和工具組等20大類4000多項，滿足市場一次購足的需求。" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Pros'Kit" />
+        <meta property="og:url" content="http://www.prokits.com.tw/" />
+        <meta property="og:title" content="Pro'sKit Professional Tool Kits" />
+        <meta property="og:description" content="行家選擇，盡在寶工。A friend that you can trust." />
+        <meta property="og:image" content="http://www.prokits.com.tw/images/logo_1200.png" />
+        <meta property="og:locale" content="zh_TW" />
+    </asp:PlaceHolder>
+
+    <asp:PlaceHolder runat="server">
+        <%: Styles.Render("~/bundles/css") %>
+        
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="CssContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off">
+        <div id="wrap">
+
+            <!-- // Body Start // -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- // Body End // -->
+        </div>
+      
+        <!-- // Scripts Start // -->
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/bundles/public") %>
+        </asp:PlaceHolder>
+        <script>
+            $(function () {
+             
+
+            });
+        </script>
+        <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- // Scripts End // -->
+    </form>
+</body>
+</html>

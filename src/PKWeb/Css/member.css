@@ -1,0 +1,247 @@
+/* Login Start
+----------------------------------*/
+
+.checkbox {
+  margin-top: 20px;
+}
+
+.Characters_Group {
+  margin-top: 14px;
+}
+
+.Characters_Images {
+  display: inline;
+}
+
+.Reflash {
+  display: inline;
+  margin-left: 10px;
+}
+
+.control-label {
+  color: #4a4f3e;
+}
+.df-submit-btn a {
+  color: white;
+}
+.df-default-btn a {
+  text-decoration: none;
+}
+.btn-login {
+  width: 100%;
+  background-color: #008c78;
+  color: #fff;
+  font-weight: bolder;
+}
+.btn-login:hover {
+  background-color: #005752;
+  color: #fff;
+}
+
+.form-group {
+  vertical-align: middle;
+}
+.field-name {
+  margin: 0;
+  vertical-align: middle;
+  line-height: 30px;
+}
+.remember {
+  float: right;
+}
+@media screen and(min-width: 768px) {
+  .login .login-area {
+    /* padding-bottom: 60px; */
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.login .line {
+  border-right: 2px solid #005752;
+}
+
+.login .other-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login .login-area .page-content {
+  margin-bottom: 20px;
+}
+.login .form-horizontal {
+  margin: 15px;
+}
+.direct_login {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.direct_login ul,
+.direct_login li {
+  list-style: none;
+}
+.direct_login ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.direct_login li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+@media (min-width: 768px) {
+  .login div.login-area:last-child {
+    border-right: none;
+  }
+  .login-bg {
+    width: 60%;
+    margin: 10% auto;
+    box-shadow: 10px 10px 10px #555;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #eee;
+  }
+}
+
+.page-title {
+  margin: 20px 0 20px;
+}
+
+.page-title .header {
+  color: #008c78;
+  border-bottom: 1px solid #ccc;
+  font-size: 26px;
+  padding-bottom: 9px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.login-area .direct_login {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.login-area .direct_login ul li {
+  list-style: none;
+  float: left;
+  margin-left: 0px !important;
+  padding-right: 10px;
+}
+
+.login-area .login-info ul li {
+  margin-left: 40px;
+}
+
+/* Login end
+----------------------------------*/
+
+/* Member Center Start
+----------------------------------*/
+.df-container-margin .logout {
+  text-align: right;
+}
+
+.df-container-margin .member_content {
+  background: #f5f5f5;
+  padding: 20px 20px;
+}
+
+.df-container-margin .title {
+  font-size: 24px;
+}
+
+.df-container-margin .account_name {
+  font-weight: bold;
+}
+
+.df-container-margin .email {
+  font-weight: bold;
+}
+
+.df-container-margin .df-fa-pass {
+  color: #389400;
+}
+
+.df-container-margin .df-fa-nopass {
+  color: #ff0000;
+}
+
+.df-container-margin .name {
+  font-weight: bold;
+}
+
+/* Member Center end
+----------------------------------*/
+
+/* Member Private Policy Start
+----------------------------------*/
+/* .df-container-margin ul li {
+  margin-left: 40px;
+} */
+
+/* Member Private Policy End
+----------------------------------*/
+
+/* Customer Data Sheet Start
+----------------------------------*/
+.distributo_sheet .distributo_sheet_area .add-box-border {
+  border: solid 1px #a94442;
+  -webkit-border-radius: 3px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius: 3px;
+  -moz-border-radius-bottomleft: 4px;
+  border-radius: 3px;
+  border-bottom-left-radius: 4px;
+  margin: 40px 0 6px;
+}
+/* Customer Data Sheet End
+----------------------------------*/
+
+/* member_data_distributor_done Start
+----------------------------------*/
+@media screen and (min-width: 768px) {
+  .notice {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.notice .info {
+  border-bottom: 1px solid #ccc;
+  margin: 10px;
+}
+.button-box {
+  display: flex;
+}
+.btn-back > a {
+  text-decoration: none;
+  color: #fff;
+}
+.btn-back {
+  display: inline-block;
+  width: 100px;
+  margin: 10px auto;
+  background-color: #008c78;
+  color: #fff;
+  font-weight: bolder;
+}
+.btn-back:hover {
+  background-color: #005752;
+  color: #fff;
+}
+.form-group label {
+  line-height: 35px;
+}
+
+/* member_data_distributor_done End
+----------------------------------*/
+#MainContent_rbl_Sex td {
+  padding: 0 5px;
+}
+.login .btn-group {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px auto;
+}

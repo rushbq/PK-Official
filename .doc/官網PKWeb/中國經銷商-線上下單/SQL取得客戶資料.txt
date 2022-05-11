@@ -1,0 +1,7 @@
+--//Get DBS, SWID
+
+ SELECT RTRIM(Cust.MA001) CustID, Cust.DBS, (Corp.DB_Name) DBName, CustDT.SWID
+ FROM PKSYS.dbo.Customer Cust WITH(NOLOCK)
+  INNER JOIN PKSYS.dbo.Customer_Data CustDT WITH(NOLOCK) ON Cust.MA001 = CustDT.Cust_ERPID
+  INNER JOIN PKSYS.dbo.Param_Corp Corp WITH(NOLOCK) ON Cust.DBS = Corp.Corp_ID
+ WHERE (Cust.MA001 = '7222703')

@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="bar_功能項目" xml:space="preserve">
+    <value>功能项目</value>
+  </data>
+  <data name="bar_包材檔案" xml:space="preserve">
+    <value>包材档案</value>
+  </data>
+  <data name="bar_形象識別" xml:space="preserve">
+    <value>形象识别</value>
+  </data>
+  <data name="bar_燈片圖庫" xml:space="preserve">
+    <value>灯片图库</value>
+  </data>
+  <data name="bar_產品圖片" xml:space="preserve">
+    <value>产品图片</value>
+  </data>
+  <data name="bar_產品規格書" xml:space="preserve">
+    <value>产品规格书</value>
+  </data>
+  <data name="bar_認證資料" xml:space="preserve">
+    <value>认证资料</value>
+  </data>
+  <data name="bar_銷售工具包" xml:space="preserve">
+    <value>销售工具包</value>
+  </data>
+  <data name="btn_No" xml:space="preserve">
+    <value>不同意</value>
+  </data>
+  <data name="btn_Yes" xml:space="preserve">
+    <value>同意</value>
+  </data>
+  <data name="btn_查詢" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="dp_區域" xml:space="preserve">
+    <value>区域</value>
+  </data>
+  <data name="dp_語系" xml:space="preserve">
+    <value>语系</value>
+  </data>
+  <data name="footer_browser" xml:space="preserve">
+    <value>建议使用: Google Chrome, IE11 或以上浏览器。</value>
+  </data>
+  <data name="footer_Contact1" xml:space="preserve">
+    <value>台湾总公司&lt;br/&gt;
+宝工实业股份有限公司&lt;br/&gt;
+电话：+886 2 2218-3233&lt;br/&gt;
+Mail：pk@mail.prokits.com.tw</value>
+  </data>
+  <data name="footer_copyright" xml:space="preserve">
+    <value>Prokits Industries Co., LTD. 保留一切权利.</value>
+  </data>
+  <data name="home_最新活動" xml:space="preserve">
+    <value>最新活动</value>
+  </data>
+  <data name="home_最新消息" xml:space="preserve">
+    <value>最新消息</value>
+  </data>
+  <data name="home_會員登入" xml:space="preserve">
+    <value>会员登入</value>
+  </data>
+  <data name="home_會員登出" xml:space="preserve">
+    <value>会员登出</value>
+  </data>
+  <data name="home_會員註冊" xml:space="preserve">
+    <value>会员注册</value>
+  </data>
+  <data name="home_會員電子報" xml:space="preserve">
+    <value>会员电子报</value>
+  </data>
+  <data name="home_產品影片" xml:space="preserve">
+    <value>产品影片</value>
+  </data>
+  <data name="home_產品類別" xml:space="preserve">
+    <value>产品类别</value>
+  </data>
+  <data name="home_社群" xml:space="preserve">
+    <value>社群</value>
+  </data>
+  <data name="home_經銷商專區" xml:space="preserve">
+    <value>经销商专区</value>
+  </data>
+  <data name="home_聯絡我們" xml:space="preserve">
+    <value>联络我们</value>
+  </data>
+  <data name="home_週年慶" xml:space="preserve">
+    <value>30週年慶</value>
+  </data>
+  <data name="home_銷售據點" xml:space="preserve">
+    <value>销售据点</value>
+  </data>
+  <data name="home_電子目錄" xml:space="preserve">
+    <value>电子目录</value>
+  </data>
+  <data name="tip_Cookie1" xml:space="preserve">
+    <value>我们将使用cookies 改善您未来在本网站的使用经验。您可以变更或撤回您的同意。关于本网站使用Cookies的详细的资讯，请参阅本网站的&lt;a href="#weburl#PrivacyCookies"&gt;隐私声明&lt;/a&gt;&lt;br /&gt;你的数据将被保存6个月。</value>
+  </data>
+  <data name="tip_Cookie2" xml:space="preserve">
+    <value>&lt;p&gt;prokits.com.tw希望收集有关您行为的数据，例如您访问的网站和这些网站上的操作，以向您展示高度相关的询问。 &lt;/p&gt;&lt;p&gt;你的数据将被保存6个月。 &lt;/p&gt;&lt;p&gt;您可以随时&lt;a href="#weburl#Privacy"&gt;在此&lt;/a&gt;观看您的隐私权政策。 &lt;/p&gt;</value>
+  </data>
+  <data name="tip_Require" xml:space="preserve">
+    <value>此为必填栏位</value>
+  </data>
+  <data name="tip_關鍵字" xml:space="preserve">
+    <value>产品快速查询</value>
+  </data>
+  <data name="title_All" xml:space="preserve">
+    <value>宝工Pro'sKit官方网站</value>
+  </data>
+  <data name="title_下載中心" xml:space="preserve">
+    <value>下载中心</value>
+  </data>
+  <data name="title_促銷活動" xml:space="preserve">
+    <value>促销活动</value>
+  </data>
+  <data name="title_品質保證" xml:space="preserve">
+    <value>品质认证</value>
+  </data>
+  <data name="title_商標註冊" xml:space="preserve">
+    <value>商标注册</value>
+  </data>
+  <data name="title_報表專區" xml:space="preserve">
+    <value>报表专区</value>
+  </data>
+  <data name="title_學生期保固註冊" xml:space="preserve">
+    <value>学生期保固注册</value>
+  </data>
+  <data name="title_展覽活動" xml:space="preserve">
+    <value>展览活动</value>
+  </data>
+  <data name="title_常見問題" xml:space="preserve">
+    <value>常见问题</value>
+  </data>
+  <data name="title_忘記密碼" xml:space="preserve">
+    <value>忘记密码</value>
+  </data>
+  <data name="title_技術諮詢" xml:space="preserve">
+    <value>技术咨询</value>
+  </data>
+  <data name="title_抽獎活動" xml:space="preserve">
+    <value>抽獎活動</value>
+  </data>
+  <data name="title_會員登入" xml:space="preserve">
+    <value>会员登入</value>
+  </data>
+  <data name="title_會員註冊" xml:space="preserve">
+    <value>加入会员</value>
+  </data>
+  <data name="title_會員資料" xml:space="preserve">
+    <value>会员资料</value>
+  </data>
+  <data name="title_會員電子報" xml:space="preserve">
+    <value>会员电子报</value>
+  </data>
+  <data name="title_消息公告" xml:space="preserve">
+    <value>新闻中心</value>
+  </data>
+  <data name="title_產品保固註冊" xml:space="preserve">
+    <value>产品保固注册</value>
+  </data>
+  <data name="title_產品影片" xml:space="preserve">
+    <value>产品影片</value>
+  </data>
+  <data name="title_產品資訊" xml:space="preserve">
+    <value>产品信息</value>
+  </data>
+  <data name="title_聯絡我們" xml:space="preserve">
+    <value>联络我们</value>
+  </data>
+  <data name="title_訊息通知" xml:space="preserve">
+    <value>讯息通知</value>
+  </data>
+  <data name="title_變更密碼" xml:space="preserve">
+    <value>变更密码</value>
+  </data>
+  <data name="title_銷售據點" xml:space="preserve">
+    <value>销售据点</value>
+  </data>
+  <data name="title_關於寶工" xml:space="preserve">
+    <value>集团简介</value>
+  </data>
+  <data name="txt_CookiePrivacy" xml:space="preserve">
+    <value>Pro'sKit 網站隱私權聲明</value>
+  </data>
+  <data name="txt_Password" xml:space="preserve">
+    <value>密码</value>
+    <comment>登入頁</comment>
+  </data>
+  <data name="txt_Slogan" xml:space="preserve">
+    <value>行家选择，尽在宝工</value>
+  </data>
+  <data name="txt_Username" xml:space="preserve">
+    <value>帐号</value>
+    <comment>登入頁</comment>
+  </data>
+  <data name="txt_使用條款" xml:space="preserve">
+    <value>使用条款</value>
+  </data>
+  <data name="txt_查無資料" xml:space="preserve">
+    <value>查无资料</value>
+  </data>
+  <data name="txt_登入" xml:space="preserve">
+    <value>登入</value>
+  </data>
+  <data name="txt_登入失敗" xml:space="preserve">
+    <value>登入失败</value>
+  </data>
+  <data name="txt_登入提示" xml:space="preserve">
+    <value>若您忘记密码，请按忘记密码。</value>
+  </data>
+  <data name="txt_發生錯誤" xml:space="preserve">
+    <value>喔喔！出现了点小故障。</value>
+  </data>
+  <data name="txt_購買聯絡" xml:space="preserve">
+    <value>如果您有大量采购需求，请与我们联络。</value>
+  </data>
+  <data name="txt_錯誤代碼" xml:space="preserve">
+    <value>错误代码</value>
+  </data>
+  <data name="txt_隱私權聲明" xml:space="preserve">
+    <value>隐私权声明</value>
+  </data>
+  <data name="txt_驗證碼" xml:space="preserve">
+    <value>验证码</value>
+  </data>
+  <data name="url_工具達人" xml:space="preserve">
+    <value>工具達人</value>
+  </data>
+  <data name="home_相關網站" xml:space="preserve">
+    <value>相關網站</value>
+  </data>
+  <data name="footer_Contact2" xml:space="preserve">
+    <value>上海分公司&lt;br/&gt;
+上海宝工工具有限公司&lt;br/&gt;
+电话：86 21-68183050&lt;br/&gt;
+Mail：sha@mail.prokits.com.tw</value>
+  </data>
+  <data name="txt_CompanyName" xml:space="preserve">
+    <value>Prokit's Industries Co. LTD.</value>
+  </data>
+  <data name="title_工具專區" xml:space="preserve">
+    <value>工具专区</value>
+  </data>
+  <data name="title_科學玩具" xml:space="preserve">
+    <value>科学玩具</value>
+  </data>
+  <data name="title_HotProd_Tool" xml:space="preserve">
+    <value>工具专区 - 热销推荐</value>
+  </data>
+  <data name="title_HotProd_Toy" xml:space="preserve">
+    <value>科学玩具 - 热销推荐</value>
+  </data>
+  <data name="title_NewProd_Tool" xml:space="preserve">
+    <value>工具专区 - 新品专区</value>
+  </data>
+  <data name="title_NewProd_Toy" xml:space="preserve">
+    <value>科学玩具 - 新品专区</value>
+  </data>
+  <data name="tip_twoWords" xml:space="preserve">
+    <value>至少输入2个字</value>
+  </data>
+  <data name="meta_description" xml:space="preserve">
+    <value>1991年成立的国际知名工具品牌Pro’sKit宝工，经销网路遍及五大洲90馀国，提供全球客户完整的工具解决方案，产品涵盖专业手工具、电动工具、测试仪器、焊接工具和工具组等20大类4000多项，满足市场一次购足的需求。</value>
+  </data>
+  <data name="meta_og_description" xml:space="preserve">
+    <value>行家选择尽在宝工</value>
+  </data>
+</root>

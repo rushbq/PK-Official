@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=Param_WebTitle %></title>
+    <asp:PlaceHolder runat="server">
+        <%: Styles.Render("~/bundles/css") %>
+        
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="CssContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off">
+        <!-- Header Start -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- Menu collapse -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Search button (screen<767px) -->
+                    <%-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-search">
+                        <i class="fa fa-search fa-inverse fa-lg"></i>
+                    </button>--%>
+                    <div class="navbar-brand">
+                        <!-- sidebar toggle button -->
+                        <a href="#menu-toggle" class="btn btn-success" id="menu-toggle" style="margin-top: -17px;"><span class="glyphicon glyphicon-th"></span></a>
+                        <!-- Logo -->
+                        <a href="<%=Application["WebUrl"] %>">
+                            <img style="max-width: 150px; margin-top: -15px;" src="<%=Application["WebUrl"] %>images/base/prokits-logo.png" alt="Proskit" /></a>
+                        (Local)
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Top 左側Menu Start -->
+                    <%--<ul class="nav navbar-nav">
+                        <li><a href="#">Menu1</a></li>
+                        <li><a href="#">Menu2</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu3 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">XX</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">oo</a></li>
+                            </ul>
+                        </li>
+                    </ul>--%>
+                    <!-- Top 左側Menu End -->
+                    <!-- Top 右側Menu Start -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Search button (screen>767px) -->
+                        <%-- <li class="hidden-xs">
+                            <a href="javascript:void(0);" data-toggle="collapse" data-target=".nav-search"><i class="fa fa-search fa-lg"></i></a>
+                        </li>--%>
+                        <!-- 其他網站連結 -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-globe fa-lg"></i>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://productcenter.prokits.com.tw" target="_blank">產品中心</a></li>
+                                <li><a href="http://pkef.prokits.com.tw" target="_blank">PKEF</a></li>
+                                <li><a href="http://pk711.prokits.com.tw" target="_blank">專案服務區</a></li>
+                                <li class="divider"></li>
+                                <li><a href="http://www.prokits.com.tw" target="_blank">寶工官網</a></li>
+                            </ul>
+                        </li>
+                        <!-- Profile & 登出 -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user fa-lg"></i>
+                                &nbsp;<%=Session["Login_UserName"] %>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <asp:LinkButton ID="lbtn_Logout" runat="server" OnClick="lbtn_Logout_Click"><i class="fa fa-sign-out"></i>&nbsp;登出</asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Top 右側Menu End -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Header End -->
+        <!-- Body Start -->
+        <div id="wrapper">
+            <!-- Sidebar Start -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <%-- <li class="sidebar-brand">
+                        <span>我是可有可無的標題</span>
+                    </li>--%>
+                    <li>
+                        <a href="<%=Application["WebUrl"] %>">
+                            <i class="fa fa-home fa-lg fa-fw"></i>
+                            <span>首頁</span>
+                        </a>
+                    </li>
+                    <asp:Literal ID="lt_Menu" runat="server"></asp:Literal>
+                    <%-- <li class="sub-menu">
+                        <a href="javascript:;"><span class="glyphicon glyphicon-cutlery"></span>&nbsp;<span>測試頁面</span><span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li class=""><a href="<%=Application["WebUrl"] %>Demo/BlockUI.aspx">BlockUI</a></li>
+                            <li class=""><a href="<%=Application["WebUrl"] %>404.aspx">404頁面</a></li>
+                            <li class=""><a href="<%=Application["WebUrl"] %>500.aspx">500面頁</a></li>
+                            <li class=""><a href="<%=Application["WebUrl"] %>Error.aspx">錯誤頁</a></li>
+                        </ul>
+                    </li>--%>
+                </ul>
+            </div>
+            <!-- Sidebar End -->
+            <!-- Page Content Start -->
+            <!-- Search Bar (screen < 767px) Start -->
+            <%--<div class="nav-search collapse">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter a keyword" autocomplete="off">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-search"></i>&nbsp;<span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#"><i class="fa fa-graduation-cap fa-fw"></i>&nbsp;Dr.Prokits</a></li>
+                            <li><a href="#"><i class="fa fa-search fa-fw"></i>&nbsp;Search</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>--%>
+            <!-- Search Bar (screen < 767px) End -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- Footer Start -->
+                <footer class="body-footer">
+                    <p>&copy; <%: DateTime.Now.Year %> Pro'skit, Inc.</p>
+                </footer>
+                <!-- Footer End -->
+            </div>
+            <!-- Page Content End -->
+        </div>
+        <!-- Body End -->
+        <!-- Scripts Start -->
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/bundles/public") %>
+            <%: Scripts.Render("~/bundles/modernizr") %>
+            <%: Scripts.Render("~/bundles/respond") %>
+        </asp:PlaceHolder>
+        <script>
+            $(document).ready(function () {
+                //Top按鈕
+                $().UItoTop();
+            });
+
+            //sidebar toggle
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+        </script>
+        <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- Scripts End -->
+    </form>
+</body>
+</html>

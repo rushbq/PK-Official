@@ -1,0 +1,1 @@
+PKShop_Service, 良興會員同步排程(windows service)

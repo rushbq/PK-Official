@@ -1,0 +1,455 @@
+﻿
+.body-footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 100px;
+    color: #777;
+    text-align: left;
+    border-top: 1px solid #e5e5e5;
+}
+
+.margin-bottom-sm {
+    margin-bottom: 5px !important;
+}
+
+/* 讓文字撞牆後會斷行 */
+.txt-wrap {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* override */
+.page-header {
+    padding-bottom: 7.5px;
+    margin: 0px 0 17px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+    color: #444;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.form-horizontal em {
+    font-style: normal;
+    color: #F00;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* Nav Search bar */
+.nav-search {
+    padding: 8px 4px;
+    width: 100%;
+}
+
+/* 解決jQuery datepicker z-index的問題 */
+.calendar {
+    z-index: 200 !important;
+}
+
+/*.table-advance thead tr th {
+    background-color: #DDD;
+    color: #666;
+}*/
+
+.table-advance tbody tr td {
+    vertical-align: middle;
+}
+/* Set widths on the form inputs since otherwise they're 100% wide */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+}
+
+/* 字型顏色 Start
+----------------------------------*/
+.styleEarth {
+    color: #CC6600;
+}
+
+.stylePurple {
+    color: #663399;
+}
+
+.styleGreen {
+    color: #008833;
+}
+
+.styleBlue {
+    color: #0033CC;
+}
+
+.styleBluelight {
+    color: #0081CC;
+}
+
+.styleDarkBlue {
+    color: #0047AB;
+}
+
+.styleRed {
+    color: #F33;
+}
+
+.styleReddark {
+    color: #670A19;
+}
+
+.styleGraylight {
+    color: #999;
+}
+
+.styleBlack {
+    color: #000;
+}
+
+.styleCafe {
+    color: #824E00;
+}
+
+.styleWhite {
+    color: #fff;
+}
+/* 字型顏色 End
+----------------------------------*/
+
+/* 字型大小 Start
+----------------------------------*/
+.Font14 {
+    font-size: 14px;
+}
+
+.Font16 {
+    font-size: 16px;
+}
+
+.Font18 {
+    font-size: 18px;
+}
+
+.Font20 {
+    font-size: 20px;
+}
+
+.Font22 {
+    font-size: 22px;
+}
+
+.Font24 {
+    font-size: 24px;
+}
+
+.Font30 {
+    font-size: 30px;
+}
+/* 字型大小 End
+----------------------------------*/
+
+/* 表單浮動按鈕 Start
+----------------------------------*/
+
+@media screen and (min-width: 768px) {
+    .FormBtn-fixPos {
+        position: fixed;
+        top: 205px;
+        z-index: 999;
+        /*width: 82px;*/
+    }
+
+    .floatSign {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        background-color: #ffffff;
+        font-weight: bold;
+        font-size: 5.5em;
+        padding:10px 10px 10px 10px;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .floatSign {
+        position: absolute;
+        top: 35%;
+        left: 15%;
+        background-color: #ffffff;
+        font-weight: bold;
+        font-size: 4em;
+        padding:10px 10px 10px 10px;
+        z-index: 1;
+    }
+}
+/* 表單浮動按鈕 End
+----------------------------------*/
+
+/* 引用區塊 Start
+    使用:bq-callout 顏色
+    顏色:green / blue / red / purple / yellow / orange
+----------------------------------*/
+.bq-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+    .bq-callout h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .bq-callout footer:before {
+        content: '\2014 \00A0';
+    }
+
+    .bq-callout footer {
+        display: block;
+        font-size: 80%;
+        line-height: 1.42857143;
+        color: #777;
+    }
+
+    .bq-callout p:last-child {
+        margin-bottom: 0;
+    }
+
+    .bq-callout code {
+        border-radius: 3px;
+    }
+
+    .bq-callout + .bq-callout {
+        margin-top: -5px;
+    }
+
+    .bq-callout.green {
+        border-left-color: #74B749;
+    }
+
+        .bq-callout.green h4 {
+            color: #74B749;
+            font-weight: bold;
+        }
+
+    .bq-callout.blue {
+        border-left-color: #4A8BC2;
+    }
+
+        .bq-callout.blue h4 {
+            color: #4A8BC2;
+            font-weight: bold;
+        }
+
+    .bq-callout.purple {
+        border-left-color: #9D4A9C;
+    }
+
+        .bq-callout.purple h4 {
+            color: #9D4A9C;
+            font-weight: bold;
+        }
+
+    .bq-callout.yellow {
+        border-left-color: #FFB400;
+    }
+
+        .bq-callout.yellow h4 {
+            color: #FFB400;
+            font-weight: bold;
+        }
+
+    .bq-callout.orange {
+        border-left-color: #F37B53;
+    }
+
+        .bq-callout.orange h4 {
+            color: #F37B53;
+            font-weight: bold;
+        }
+
+    .bq-callout.red {
+        border-left-color: #DE577B;
+    }
+
+        .bq-callout.red h4 {
+            color: #DE577B;
+            font-weight: bold;
+        }
+
+
+/* 引用區塊 End
+----------------------------------*/
+
+/* 登入頁 Start
+----------------------------------*/
+body.lock {
+    background: #393939;
+}
+
+/* 登入頁 End
+----------------------------------*/
+
+/* 自訂Block Start
+----------------------------------*/
+.show-block .hidden-block {
+    color: #999;
+    background-color: #efefef;
+    border: 1px solid #ddd;
+}
+
+.show-block .visible-block {
+    color: #468847;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+}
+
+.show-block p {
+    display: block;
+    padding: 10px 10px 5px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* 自訂Block End
+----------------------------------*/
+
+/* Override Start
+----------------------------------*/
+.alert {
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/* 自訂Label & Badge */
+.notify-row .badge {
+    position: absolute;
+    top: 1px;
+    z-index: 100;
+    right: 1px;
+}
+
+@media screen and (max-width: 767px) {
+    .notify-row .badge {
+        position: relative;
+        top: 0px;
+        right: 0px;
+    }
+}
+
+.badge {
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border-radius: 10px !important;
+    padding: 2px 6px;
+}
+
+.label {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    text-shadow: none !important;
+    padding: 6px 7px 6px 7px !important;
+}
+
+.label-default, .badge-default {
+    background-color: #abbac3;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #abbac3), color-stop(100%, #abbac3));
+    background-image: -webkit-linear-gradient(top, #abbac3, #abbac3);
+    background-image: -moz-linear-gradient(top, #abbac3, #abbac3);
+    background-image: -ms-linear-gradient(top, #abbac3, #abbac3);
+    background-image: -o-linear-gradient(top, #abbac3, #abbac3);
+    background-image: linear-gradient(top, #abbac3, #abbac3);
+}
+
+.label-success, .badge-success {
+    background-color: #82af6f;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #82af6f), color-stop(100%, #82af6f));
+    background-image: -webkit-linear-gradient(top, #82af6f, #82af6f);
+    background-image: -moz-linear-gradient(top, #82af6f, #82af6f);
+    background-image: -ms-linear-gradient(top, #82af6f, #82af6f);
+    background-image: -o-linear-gradient(top, #82af6f, #82af6f);
+    background-image: linear-gradient(top, #82af6f, #82af6f);
+}
+
+.label-danger, .badge-danger {
+    background-color: #d15b47;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d15b47), color-stop(100%, #d15b47));
+    background-image: -webkit-linear-gradient(top, #d15b47, #d15b47);
+    background-image: -moz-linear-gradient(top, #d15b47, #d15b47);
+    background-image: -ms-linear-gradient(top, #d15b47, #d15b47);
+    background-image: -o-linear-gradient(top, #d15b47, #d15b47);
+    background-image: linear-gradient(top, #d15b47, #d15b47);
+}
+
+.label-warning, .badge-warning {
+    background-color: #f89406;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f89406), color-stop(100%, #f89406));
+    background-image: -webkit-linear-gradient(top, #f89406, #f89406);
+    background-image: -moz-linear-gradient(top, #f89406, #f89406);
+    background-image: -ms-linear-gradient(top, #f89406, #f89406);
+    background-image: -o-linear-gradient(top, #f89406, #f89406);
+    background-image: linear-gradient(top, #f89406, #f89406);
+}
+
+.label-info, .badge-info {
+    background-color: #32c2cd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #32c2cd), color-stop(100%, #32c2cd));
+    background-image: -webkit-linear-gradient(top, #32c2cd, #32c2cd);
+    background-image: -moz-linear-gradient(top, #32c2cd, #32c2cd);
+    background-image: -ms-linear-gradient(top, #32c2cd, #32c2cd);
+    background-image: -o-linear-gradient(top, #32c2cd, #32c2cd);
+    background-image: linear-gradient(top, #32c2cd, #32c2cd);
+}
+
+/* Override End
+----------------------------------*/
+
+
+/* Nav tabs Start
+----------------------------------*/
+
+/* tab color */
+.nav-tabs > li > a {
+    color: #222;
+    border: 1px solid #ddd;
+    */;
+}
+
+/* active tab color */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: #f9b917;
+    color: #222;
+}
+
+/* hover tab color */
+.nav-tabs > li > a:hover {
+    /*border-color: #000000;
+  background-color: #111111;*/
+}
+
+/* Nav tabs End
+----------------------------------*/
+
+
+/* 列印時隱藏連結(複寫bootstrap) */
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}

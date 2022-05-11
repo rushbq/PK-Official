@@ -1,0 +1,105 @@
+/* ====================================================================================================================
+ * 八大類產品推廣頁 Start
+ * ====================================================================================================================*/
+.flypanels-content .promo-images {
+    margin-top: -30px;
+}
+.flypanels-content .promo-images img {
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+}
+.flypanels-content .themes-item {
+    padding: 100px 0;
+}
+.flypanels-content .themes-item:nth-child(odd) {
+    background: #f2f2f2;
+}
+.flypanels-content .themes-item .model-name a {
+    font-weight: bold;
+    font-style: italic;
+    color: #5D5D5D;
+    text-decoration: none;
+}
+.flypanels-content .themes-item .product-name a {
+    font-weight: bold;
+    font-style: italic;
+    color: #5D5D5D;
+    text-decoration: none;
+}
+.flypanels-content .themes-item .product-description p {
+    font-style: italic;
+    padding-top: 80px;
+    text-align: justify;
+}
+@media screen and (min-width: 1170px){
+    .flypanels-content .themes-item .model-name a {
+        font-size: 40px;
+    }
+    .flypanels-content .themes-item .product-name a {
+        font-size: 26px;
+    }
+    .flypanels-content .themes-item .product-description p {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1170px) and (max-width: 1199px) {
+    .flypanels-content .themes-item .model-name a {
+        font-size: 36px;
+    }
+    .flypanels-content .themes-item .product-name a {
+        font-size: 26px;
+    }
+    .flypanels-content .themes-item .product-description p {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 678px) and (max-width: 1169px) {
+    .flypanels-content .themes-item .model-name a {
+        font-size: 24px;
+        padding: 0 20px;
+    }
+    .flypanels-content .themes-item .product-name a {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+    .flypanels-content .themes-item .product-description p {
+        font-size: 14px;
+        padding: 20px 20px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 977px) {
+    .flypanels-content .themes-item .model-name a {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+    .flypanels-content .themes-item .product-name a {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    .flypanels-content .themes-item .product-description p {
+        font-size: 14px;
+        padding: 20px 20px;
+    }
+}
+@media screen and (max-width: 767px){
+    .flypanels-content .themes-item .model-name a {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+    .flypanels-content .themes-item .product-name a {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    .flypanels-content .themes-item .product-description p {
+        font-size: 14px;
+        padding: 20px 20px;
+    }
+}
+.flypanels-content .themes-item .product-description p>a{
+    color: #5D5D5D;
+    text-decoration: none;
+}
+.flypanels-content .themes-image img{
+    margin: 0 auto;
+}

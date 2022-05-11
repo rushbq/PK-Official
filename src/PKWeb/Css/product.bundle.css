@@ -1,0 +1,307 @@
+/* 產品查詢 Start
+----------------------------------*/
+.df-container-margin .search {
+    margin-bottom: 20px;
+}
+
+.df-container-margin .label-status {
+    padding: 10px 0px 10px 0px !important;
+}
+/* 產品查詢 End
+----------------------------------*/
+
+
+
+/* 產品列表資訊 Start
+----------------------------------*/
+.Products_Info .title {
+    font-weight: bold;
+    font-size: 15px;
+    color: #007719;
+}
+
+.Products_Info .name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #222;
+}
+
+.Products_Info .content {
+    height: 140px;
+    padding: 0 6px;
+}
+
+.Products_Info img {
+    margin: 15px auto;
+    display: block;
+    padding: 5px;
+    max-height: 210px;
+}
+
+
+/*@media (min-width: 1025px) {
+    .Products_Info .pic {
+        max-height: 240px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .Products_Info .pic {
+        max-height: 220px;
+    }
+}*/
+
+
+@media (max-width: 767px) {
+    .Products_Info .content {
+        height: 140px;
+        padding: 0 6px;
+    }
+
+    .Products_Info img {
+        float: left;
+        display: block;
+    }
+
+    .Products_Info .caption {
+        clear: both;
+    }
+}
+
+.Products_Info .box {
+    display: block;
+    padding: 4px 4px 10px 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    position: relative;
+}
+
+/*.Products_Info .new_label {
+    position: absolute;
+    background: url(/Css/../images/new_label.png);
+    background-repeat: no-repeat;
+    width: 76px;
+    height: 75px;
+    top: -4px;
+    left: 5px;
+}
+
+.Products_Info .stop_offer_label {
+    position: absolute;
+    background: url(/Css/../images/stop_offer_label.png);
+    background-repeat: no-repeat;
+    width: 76px;
+    height: 75px;
+    top: -4px;
+    left: 5px;
+}*/
+/* 產品列表資訊 End
+----------------------------------*/
+
+
+/* 產品明細頁 Start
+----------------------------------*/
+.df-container-margin .icons ul {
+    margin-bottom: -5px !important;
+}
+
+.df-container-margin .product_info .product_photo img {
+    border: 1px solid #cccccc;
+    margin-top: 10px;
+}
+
+.df-container-margin .product_info .product_photo {
+    position: relative;
+}
+
+.df-container-margin .product_info .new_label {
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    background: url(/Css/../images/new_label.png);
+    background-repeat: no-repeat;
+    width: 76px;
+    height: 75px;
+}
+
+.df-container-margin .product_info .stop_offer {
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    background: url(/Css/../images/stop_offer_label.png);
+    background-repeat: no-repeat;
+    width: 76px;
+    height: 75px;
+}
+
+.df-container-margin .product_info .new_label img {
+    border: none;
+}
+
+.df-container-margin .product_info .photo_plus {
+    text-align: center;
+    color: #5e5e5e;
+}
+
+
+.df-container-margin .product_info .product_data {
+    margin-top: 4px;
+}
+
+.df-container-margin .product_info .model_number {
+    color: #007640;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.df-container-margin .product_info .model_name {
+    color: #4a4f3e;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.df-container-margin .product_info .cbm_data {
+    margin-top: 10px;
+}
+
+    .df-container-margin .product_info .cbm_data ul > li {
+        list-style-type: none;
+        line-height: 30px;
+    }
+
+.df-container-margin .product_info .df-icon_products {
+    color: #a3a3a3;
+    background: #e3e3e3;
+    width: 77px;
+    text-align: center;
+    margin: 6px 1px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+    .df-container-margin .product_info .df-icon_products:hover {
+        color: #646464;
+    }
+
+    .df-container-margin .product_info .df-icon_products span {
+        font-size: 10px;
+        color: #747879;
+        margin-top: 3px;
+    }
+
+.df-container-margin .product_info .products_data_bt a:hover, a:focus, a:active {
+    text-decoration: none;
+}
+
+.df-container-margin .product_info .products_data_bt {
+    padding-top: 10px;
+    border-radius: 0 !important;
+}
+
+.df-container-margin .title_info {
+    font-size: 18px;
+    background: #e4e4e4;
+    margin-top: 20px;
+    padding-left: 15px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.df-container-margin .content_info > ul, .content_info > p, .content_info > div {
+    line-height: 2em;
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+}
+
+.df-container-margin .content img {
+    margin: 0 auto;
+}
+
+
+.product_photo .main-img{
+    max-height:500px;
+}
+/* 產品明細頁 End
+----------------------------------*/
+
+
+
+/* Video Info Start
+----------------------------------*/
+.youtube_video {
+    margin: 0 auto;
+}
+
+/* Video Info End
+----------------------------------*/
+
+
+
+/* 產品次選頁 Start
+----------------------------------*/
+@media (min-width:768px) {
+    .prod-sub-bar {
+        display: block;
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        top: -150px;
+        left: 0;
+        background: #fff;
+        z-index: 1000;
+        -webkit-transition: .15s ease all;
+        -moz-transition: .15s ease all;
+        -o-transition: .15s ease all;
+        -ms-transition: .15s ease all;
+        transition: .15s ease all;
+        border-bottom: 1px solid #c3c3c3;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .prod-sub-bar {
+        display: block;
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        top: -150px;
+        left: 0;
+        background: #fff;
+        z-index: 1000;
+        -webkit-transition: .15s ease all;
+        -moz-transition: .15s ease all;
+        -o-transition: .15s ease all;
+        -ms-transition: .15s ease all;
+        transition: .15s ease all;
+        border-bottom: 1px solid #c3c3c3;
+        padding-top: 10px;
+    }
+}
+
+.prod-sub-bar .title {
+    color: #007640;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.prod-sub-bar .name {
+    color: #4a4f3e;
+    font-size: 16px;
+}
+
+.prod-sub-bar-play {
+    top: 0px !important;
+}
+/* 產品次選頁 End
+----------------------------------*/

@@ -1,0 +1,47 @@
+﻿/*---------------------------------
+	瀑布流
+-----------------------------------*/
+.myGallery {
+    position: relative;
+}
+
+.myGallery .myItems {
+    list-style-type: none;
+    position: relative; /** Needed to ensure items are laid out relative to this container **/
+    margin: 0;
+    padding: 0;
+}
+
+
+    .myGallery .myItems li {
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        display: block;
+        padding: 4px;
+        margin-bottom: 17px;
+        line-height: 1.42857143;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        width: 200px;
+    }
+
+        .myGallery .myItems li.inactive {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .myGallery .myItems li img {
+            display: block;
+        }
+
+        .myGallery .myItems li p {
+            color: #666;
+            font-size: 13px;
+            line-height: 20px;
+            text-align: center;
+            font-weight: 200;
+            margin: 12px 0 10px 0px;
+        }

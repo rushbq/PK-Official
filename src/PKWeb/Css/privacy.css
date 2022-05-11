@@ -1,0 +1,88 @@
+.panel-default > .panel-heading {
+    padding: 0px;
+}
+
+.privacy-info .accordion-toggle {
+    display: block;
+    line-height: 1;
+    padding: 15px;
+    position: relative;
+}
+
+/*.panel-title .in-bg {
+    background-color: #eef4f9;
+    font-weight: bold;
+}*/
+
+.privacy-info .collapsed {
+    display: block;
+}
+
+.privacy-info .panel-body p {
+    text-align: justify;
+    line-height: 26px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 977px) {
+    .privacy-info .panel-body p {
+        font-size: 16px;
+        text-align: justify;
+        line-height: 26px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .privacy-info .panel-body p {
+        font-size: 16px;
+        text-align: justify;
+        line-height: 26px;
+    }
+}
+
+.privacy-info .panel-body ul li {
+    margin-left: 20px;
+    line-height: 26px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 977px) {
+    .privacy-info .panel-body ul li {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .privacy-info .panel-body ul li {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+.privacy-info .panel-body ol li {
+    margin-left: 20px;
+    line-height: 26px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 977px) {
+    .privacy-info .panel-body ol li {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .privacy-info .panel-body ol li {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+/* ====================================================================================================================
+ *Pro'sKit 網站隱私權聲明 Start
+ * ====================================================================================================================*/
+.text-title {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}

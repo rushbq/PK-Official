@@ -1,0 +1,22 @@
+ <!-- VenoBox -->
+    <link href="<%=Application["WebUrl"] %>js/venobox/venobox.css" rel="stylesheet" />
+    <script src="<%=Application["WebUrl"] %>js/venobox/venobox.min.js"></script>
+    <script>
+        $(function () {
+            /* Venobox */
+            $('.zoomPic').venobox({
+                border: '10px',
+                bgcolor: '#ffffff',
+                numeratio: true,
+                infinigall: true
+            });
+            /*
+                infinigall: 當沒有下一張時，跳至第一張 - default: false
+                numeratio: 在左上角顯示數量/總數 - default: false
+                border: 幫圖片加上框線 - default: '0px'
+                bgcolor:彈出視窗的背景色(若有設定border則顏色也跟著變更) - default: '#ffffff'
+                framewidth: 設定寬度
+                frameheight: 設定高度
+            */
+        });
+    </script>

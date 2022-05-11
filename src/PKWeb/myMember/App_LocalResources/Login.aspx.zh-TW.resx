@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="mail_郵件主旨" xml:space="preserve">
+    <value>Pro'sKit 註冊確認電子郵件</value>
+  </data>
+  <data name="mail_郵件內容" xml:space="preserve">
+    <value>&lt;div&gt;
+            親愛的會員您好：&lt;br /&gt;&lt;br /&gt;
+            請連結至以下網址，以完成註冊手續。&lt;br /&gt;
+            設定成功後即可登入會員。為了保障您帳號的安全性，該連結有效期為24小時，並且僅可以使用一次！&lt;br /&gt;&lt;br /&gt;
+            立即驗證：&lt;a href="#ValidUrl#"&gt;#ValidUrl#&lt;/a&gt; &lt;br /&gt;
+            &lt;span style="font-size: 12px; color: gray;"&gt;(如果您無法點擊這個連結，請將此連結複製到瀏覽器網址欄後前往)&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+            *此郵件為發信專用，請勿直接回覆至此電子郵件地址。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+            謝謝您對寶工實業的支持!
+        &lt;/div&gt;</value>
+  </data>
+  <data name="tip_Format" xml:space="preserve">
+    <value>輸入格式不正確</value>
+  </data>
+  <data name="tip_Require" xml:space="preserve">
+    <value>此為必填欄位</value>
+  </data>
+  <data name="tip_您的密碼" xml:space="preserve">
+    <value>您的密碼</value>
+  </data>
+  <data name="tip_您的電子郵件地址" xml:space="preserve">
+    <value>您的電子郵件地址</value>
+  </data>
+  <data name="txt_前往註冊" xml:space="preserve">
+    <value>成為新會員</value>
+  </data>
+  <data name="txt_加入會員" xml:space="preserve">
+    <value>加入會員</value>
+  </data>
+  <data name="txt_密碼" xml:space="preserve">
+    <value>密碼</value>
+  </data>
+  <data name="txt_帳號" xml:space="preserve">
+    <value>帳號</value>
+  </data>
+  <data name="txt_忘記密碼" xml:space="preserve">
+    <value>忘記密碼</value>
+  </data>
+  <data name="txt_會員登入" xml:space="preserve">
+    <value>會員登入</value>
+  </data>
+  <data name="txt_服務說明" xml:space="preserve">
+    <value>&lt;div class="page-content"&gt;
+&lt;h4&gt;您將擁有以下權限:&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;獨家優惠&lt;/li&gt;&lt;li&gt;產品交易&lt;/li&gt;&lt;li&gt;行業新聞&lt;/li&gt;&lt;li&gt;專業建議&lt;/li&gt;&lt;li&gt;和更多的驚喜&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="txt_登入" xml:space="preserve">
+    <value>登入</value>
+  </data>
+  <data name="txt_登入方式1" xml:space="preserve">
+    <value>您可以直接輸入您的會員帳號密碼登入</value>
+  </data>
+  <data name="txt_登入方式2" xml:space="preserve">
+    <value>或使用以下方式登入</value>
+  </data>
+  <data name="txt_記住我" xml:space="preserve">
+    <value>記住我 (365天)</value>
+  </data>
+</root>

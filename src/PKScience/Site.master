@@ -1,0 +1,321 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<%@ Import Namespace="Resources" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <asp:PlaceHolder ID="ph_Icons" runat="server">
+        <link rel="shortcut icon" href="<%=cdnUrl %>images/ScienceKits/web-icon/logo.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="<%=cdnUrl %>images/ScienceKits/web-icon/Icon-57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="<%=cdnUrl %>images/ScienceKits/web-icon/Icon-72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="<%=cdnUrl %>images/ScienceKits/web-icon/Icon-76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="<%=cdnUrl %>images/ScienceKits/web-icon/Icon-114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="<%=cdnUrl %>images/ScienceKits/web-icon/Icon-120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="<%=cdnUrl %>images/ScienceKits/web-icon/Icon-144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="<%=cdnUrl %>images/ScienceKits/web-icon/Icon-152.png" />
+    </asp:PlaceHolder>
+
+    <asp:PlaceHolder ID="ph_MetaInfo" runat="server">
+        <title><%=webName %></title>
+        <meta name="keywords" content="<%=resPublic.meta_keyword %>" />
+        <meta name="description" content="<%=resPublic.meta_Desc %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="<%=webName %>" />
+        <meta property="og:url" content="<%=webUrl %>" />
+        <meta property="og:title" content="<%=resPublic.meta_Title %>" />
+        <meta property="og:description" content="<%=resPublic.meta_Desc %>" />
+        <meta property="og:image" content="<%=cdnUrl %>images/ScienceKits/logo-1200.png" />
+        <meta property="og:locale" content="zh_TW" />
+    </asp:PlaceHolder>
+
+    <asp:PlaceHolder ID="ph_pubCss" runat="server">
+        <!-- [引用] Google Icon Font -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <!-- [引用] materialize.css -->
+        <link type="text/css" href="<%=cdnUrl %>plugin/Materialize/v0.98.0/css/materialize.min.css" media="screen,projection" rel="stylesheet" />
+        <!-- [自訂] CSS -->
+        <link type="text/css" href="<%=cdnUrl %>css/ScienceKits/dev/site.css?v=20170819" rel="stylesheet" />
+    </asp:PlaceHolder>
+
+    <asp:ContentPlaceHolder ID="CssContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off">
+        <div class="page-flexbox-wrapper">
+            <!-- 電腦裝置選單 -->
+            <div class="pc-nav">
+                <div class="navbar-fixed">
+                    <nav>
+                        <div class="nav-wrapper ">
+                            <a href="<%=webUrl %><%:Req_Lang %>" class="brand-logo">
+                                <img class="logo-size" src="<%=cdnUrl %>images/ScienceKits/logo.png" title="Pro'sKit" alt="Pro'sKit Logo" />
+                            </a>
+                            <a href="#!" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+                            <a href="#modal-search" class="hide-on-large-only button-collapse-search"><i class="material-icons">search</i></a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="<%=webUrl %><%:Req_Lang %>/Products"><%=resPublic.menu_100 %></a></li>
+                                <li><a href="<%=webUrl %><%:Req_Lang %>/Videos"><%=resPublic.menu_600 %></a></li>
+                                <li><a href="<%=webUrl %><%:Req_Lang %>/News"><%=resPublic.menu_500 %></a></li>
+                                <li><a href="<%=webUrl %><%:Req_Lang %>/Activities"><%=resPublic.menu_300 %></a></li>
+                                <li><a href="<%=webUrl %><%:Req_Lang %>/FAQ-Home"><%=resPublic.menu_700 %></a></li>
+                                <li><a href="<%=webUrl %><%:Req_Lang %>/Story"><%=resPublic.menu_400 %></a></li>
+                                <li><a href="https://www.prokits.com.tw/" target="_blank"><%=resPublic.menu_PKWeb %></a></li>
+                                <li><a href="#modal-search"><i class="material-icons">search</i></a></li>
+                                <li><a class="dropdown-button" href="#!" data-activates="language"><i class="material-icons">language</i></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Modal Structure 彈出搜尋對話框 -->
+                <div id="modal-search" class="modal">
+                    <div class="modal-content">
+                        <div class="search-wrapper card">
+                            <input placeholder="<%=resPublic.txt_關鍵字查詢 %>" type="search" class="doSearch" /><i class="material-icons">search</i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ↓電腦裝置選單 子選單↓ -->
+                <!-- 語系選擇 -->
+                <ul id="language" class="dropdown-content">
+                    <li><a href="<%=webUrl %>en/">English</a></li>
+                    <li><a href="<%=webUrl %>tw/">繁體中文</a></li>
+                    <li><a href="<%=webUrl %>cn/">简体中文</a></li>
+                </ul>
+            </div>
+
+            <!-- 手機裝置側邊欄選單 -->
+            <div class="mobile-nav">
+                <ul class="side-nav" id="mobile-menu">
+                    <li><a href="<%=webUrl %><%:Req_Lang %>/Products"><%=resPublic.menu_100 %></a></li>
+                    <li><a href="<%=webUrl %><%:Req_Lang %>/Videos"><%=resPublic.menu_600 %></a></li>
+                    <li><a href="<%=webUrl %><%:Req_Lang %>/News"><%=resPublic.menu_500 %></a></li>
+                    <li><a href="<%=webUrl %><%:Req_Lang %>/Activities"><%=resPublic.menu_300 %></a></li>
+                    <li><a href="<%=webUrl %><%:Req_Lang %>/FAQ-Home"><%=resPublic.menu_700 %></a></li>
+                    <li><a href="<%=webUrl %><%:Req_Lang %>/Story"><%=resPublic.menu_400 %></a></li>
+                    <li><a href="https://www.prokits.com.tw/" target="_blank"><%=resPublic.menu_PKWeb %></a></li>
+                    <li class="no-padding">
+                        <nav>
+                            <!-- search -->
+                            <div class="input-field">
+                                <input type="search" class="doSearch" />
+                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            </div>
+                        </nav>
+                    </li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header"><i style="float: left; margin-right: 6px;" class="material-icons">language</i>語系選擇<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="<%=webUrl %>en/">English</a></li>
+                                        <li><a href="<%=webUrl %>tw/">繁體中文</a></li>
+                                        <li><a href="<%=webUrl %>cn/">简体中文</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            <!-- 回到頂端 -->
+            <div id="gotop"><i class="material-icons">keyboard_arrow_up</i></div>
+
+            <!-- 頁腳 -->
+            <footer class="page-footer black">
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="navigation-footer">
+                            <div class="row">
+                                <div class="col l2 s12">
+                                    <h5 class="white-text"><%=resPublic.menu_100 %></h5>
+                                    <ul>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/Products" title="<%=resPublic.menu_103 %>"><%=resPublic.menu_103 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/Videos" title="<%=resPublic.menu_600 %>"><%=resPublic.menu_600 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/FAQ-Home" title="<%=resPublic.menu_700 %>"><%=resPublic.menu_700 %></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col l2 s12">
+                                    <h5 class="white-text"><%=resPublic.menu_新聞與活動 %></h5>
+                                    <ul>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/News" title="<%=resPublic.menu_500 %>"><%=resPublic.menu_500 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/Activities" title="<%=resPublic.menu_300 %>"><%=resPublic.menu_300 %></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col l2 s12">
+                                    <h5 class="white-text"><%=resPublic.menu_200 %></h5>
+                                    <ul>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/OnlineShop" title="<%=resPublic.menu_201 %>"><%=resPublic.menu_201 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/Shop" title="<%=resPublic.menu_202 %>"><%=resPublic.menu_202 %></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col l2 s12">
+                                    <h5 class="white-text"><%=resPublic.menu_400 %></h5>
+                                    <ul>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/Story" title="<%=resPublic.menu_401 %>"><%=resPublic.menu_401 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/Patent" title="<%=resPublic.menu_402 %>"><%=resPublic.menu_402 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/PrivacyPolicy" title="<%=resPublic.menu_403 %>"><%=resPublic.menu_403 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/UserAgreement" title="<%=resPublic.menu_404 %>"><%=resPublic.menu_404 %></a></li>
+                                        <li><a class="grey-text text-lighten-3" href="<%=webUrl %><%:Req_Lang %>/ContactUs" title="<%=resPublic.menu_405 %>"><%=resPublic.menu_405 %></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 m9 l10">
+                                <!-- 版權宣告 -->
+                                <div class="copyright-text">&copy; <%: DateTime.Now.Year %> Prokits Industries Co., LTD.</div>
+                            </div>
+                            <div class="col s12 m3 l2">
+                                <!-- 社群連結 -->
+                                <div>
+                                    <ul class="community-icons">
+                                        <li class="community-icons__icon">
+                                            <a href="https://www.facebook.com/proskitsciencekit/" title="Facebook" target="_blank">
+                                                <img src="<%=cdnUrl %>images/ScienceKits/community-icons/square-facebook.png" alt="Facebook" />
+                                            </a>
+                                        </li>
+                                        <li class="community-icons__icon">
+                                            <a href="https://www.youtube.com/channel/UCCFVuhDYEoZoxhNVjdOZS8Q" title="Youtube" target="_blank">
+                                                <img src="<%=cdnUrl %>images/ScienceKits/community-icons/square-youtube.png" alt="Youtube" />
+                                            </a>
+                                        </li>
+                                        <li class="community-icons__icon">
+                                            <a href="http://i.youku.com/i/UNDg3MjgzNDU5Mg==?spm=a2hzp.8244740.0.0" title="YouKu" target="_blank">
+                                                <img src="<%=cdnUrl %>images/ScienceKits/community-icons/square-youku.png" alt="YouKu">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <asp:PlaceHolder ID="ph_CookiePrivacy" runat="server">
+                    <!--cookie提醒 Start-->
+                    <div class="center-align cookie-box">
+                        <%=Resources.resPublic.tip_Cookie1.Replace("#weburl#", fn_Param.WebUrl+Req_Lang + "/") %>
+                        <div class="right-align">
+                            <a href="#!" id="doCloseCke" class="waves-effect grey white-text btn"><%=Resources.resPublic.btn_No %></a>
+                            <asp:LinkButton ID="lbtn_Agree" runat="server" CssClass="waves-effect waves-light white-text btn" OnClick="lbtn_Agree_Click"></asp:LinkButton>
+                        </div>
+                    </div>
+
+                </asp:PlaceHolder>
+
+            </footer>
+        </div>
+
+        <asp:PlaceHolder ID="ph_pubScript" runat="server">
+            <!-- jQuery核心 -->
+            <script type="text/javascript" src="<%=cdnUrl %>plugin/jQuery/jquery-2.1.1.min.js"></script>
+
+            <!-- Materialize JS -->
+            <script type="text/javascript" src="<%=cdnUrl %>plugin/Materialize/v0.97.8/js/materialize.min.js"></script>
+
+            <!-- Materialize 初使化 -->
+            <script>
+                $(document).ready(function () {
+                    /* close cookie privacy */
+                    $("#doCloseCke").click(function () {
+                        $(".cookie-box").hide();
+                    });
+
+                    /* Nav選單 */
+                    $(".button-collapse").sideNav();
+
+                    /* Modals 彈出搜尋 */
+                    $('#modal-search').modal();
+                    $('.modal').modal();
+
+                    /* Search */
+                    $(".doSearch").keypress(function (event) {
+                        code = (event.keyCode ? event.keyCode : event.which);
+                        if (code == 13) {
+                            //get string
+                            var searchTxt = $(this).val();
+
+                            //redirect
+                            location.href = '<%=webUrl%><%:Req_Lang%>/Search/?k=' + encodeURIComponent(searchTxt);
+
+                            //停止預設動作(ex:submit)
+                            event.preventDefault();
+                        }
+                    });
+
+
+                    /* 字數限制 */
+                    $(".JQellipsis").each(function (i) {
+                        var len = 28; // 超過30個字以"..."取代
+                        if ($(this).text().length > len) {
+                            $(this).attr("title", $(this).text());
+                            var text = $(this).text().substring(0, len - 1) + "...";
+                            $(this).text(text);
+                        }
+                    });
+
+                    $(".JQellipsis_50").each(function (i) {
+                        var len = 50; // 超過50個字以"..."取代
+                        if ($(this).text().length > len) {
+                            $(this).attr("title", $(this).text());
+                            var text = $(this).text().substring(0, len - 1) + "...";
+                            $(this).text(text);
+                        }
+                    });
+                });
+            </script>
+
+            <!-- 回到頂端 -->
+            <script type="text/javascript">
+                $(function () {
+                    $("#gotop").click(function () {
+                        jQuery("html,body").animate({
+                            scrollTop: 0
+                        }, 1000);
+                    });
+                    $(window).scroll(function () {
+                        if ($(this).scrollTop() > 300) {
+                            $('#gotop').fadeIn("fast");
+                        } else {
+                            $('#gotop').stop().fadeOut("fast");
+                        }
+                    });
+                });
+            </script>
+
+            <!-- Google 追蹤碼 -->
+            <script>
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-62354354-6', 'auto');
+                ga('send', 'pageview');
+
+            </script>
+
+        </asp:PlaceHolder>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c0bcf52203ff60"></script>
+
+        <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

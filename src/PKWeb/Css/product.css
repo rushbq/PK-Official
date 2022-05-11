@@ -1,0 +1,714 @@
+/* ====================================================================================================================
+ * 產品頁共用 Start
+ * ====================================================================================================================*/
+
+.btn-search {
+  background-color: #337ab7;
+  color: #fff;
+}
+/* .label-box {
+    height: 23px;
+} */
+.label-box .new {
+  z-index: 1;
+  display: inline-block;
+  left: -2px;
+  position: absolute;
+  background-color: red;
+  padding: 5px 10px;
+}
+.label-box .new::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 21px;
+  border-top: 5px solid #c8151d;
+  border-left: 10px solid transparent;
+}
+.label-box .new h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 10px;
+}
+
+.label-box .Discontinued {
+  z-index: 1;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  /* background-color: #0097da; */
+  border: 1px solid #0097da;
+
+  padding: 5px;
+}
+.label-box .Discontinued h4 {
+  margin: 0;
+  color: #0097da;
+  font-size: 10px;
+}
+.product-violator {
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.violator {
+  max-width: 100%;
+  border-radius: 4px;
+  padding: 4px 8px;
+  border-width: 1px;
+  font-size: 1.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.violator-new {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+.violator-stop-offer {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #08c;
+  color: #08c;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #007719;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  /* line-height: 20px; */
+  color: #222;
+}
+
+.font-24px {
+  font-size: 24px;
+}
+
+/* 銷售標籤 */
+.area-label {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 5px;
+}
+.area-label ul {
+  margin: 0;
+  height: 50px;
+}
+.area-label .area-item {
+  list-style-type: none;
+  display: inline-block;
+  border: 1px solid #ccc;
+  /* border-radius: 5px; */
+  padding: 2px 4px;
+  font-size: 10px;
+  margin: 2px;
+}
+
+.area-label .material-icons {
+  vertical-align: middle;
+  color: #555;
+}
+
+.sale-area {
+  margin-top: 6px;
+}
+
+.sale-area-item {
+  display: inline-block;
+  background-color: #ededed;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-left: 2px !important;
+}
+
+.sale-area-item:last-child {
+  margin-left: 0px;
+}
+
+.sale-area-item-active {
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+/* ====================================================================================================================
+ * 產品列表頁 Start
+ * ====================================================================================================================*/
+
+.box {
+  padding: 6px 6px 10px 6px;
+}
+.image-container img {
+  max-height: 204px;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .image-container img {
+    max-height: 157px;
+  }
+}
+
+.title a {
+  color: #007719;
+}
+
+.name a {
+  color: #222;
+}
+
+@media screen and (max-width: 768px) {
+  .title a,
+  .name a {
+    font-size: 14px;
+  }
+}
+.content > .name {
+  height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.btn-box {
+  display: flex;
+  justify-content: space-around;
+}
+.btn-bord {
+  height: 50px;
+}
+.btn-buy,
+.btn-more {
+  margin: 0 2px;
+  padding: 5px 10px;
+}
+
+.btn-buy {
+  flex: 1;
+  background-color: #ef8336;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.btn-buy:hover {
+  background-color: #ea5414;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.btn-more {
+  /* flex: 1; */
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #008c78;
+  color: #008c78;
+  font-weight: bolder;
+  word-wrap: break-word;
+  word-break: normal;
+  white-space: normal !important;
+}
+.btn-more:hover {
+  background-color: #005752;
+  border: 2px solid #005752;
+  color: #fff;
+  font-weight: bolder;
+}
+
+/* ====================================================================================================================
+ * 產品資訊 Start
+ * ====================================================================================================================*/
+@media screen and (min-width: 992px) {
+  .product-display-wrap {
+    padding: 0 5%;
+  }
+}
+
+/* .product-display {
+  max-height: 600px;
+} */
+.display-inline {
+  /* margin-bottom: 20px; */
+  /* justify-content: space-around; */
+  display: flex;
+  vertical-align: middle;
+}
+.display-inline .discontinued {
+  display: inline-block;
+
+  border: 1px solid #0097da;
+  color: #0097da;
+  padding: 5px;
+  margin-left: 10px;
+}
+.display-inline .new {
+  display: inline-block;
+  background-color: #f00;
+  color: #fff;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.display-inline h5 {
+  margin: 0;
+  font-size: 12px;
+}
+
+.description > h4 {
+  color: #888;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+.display-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 992px) {
+  .flexslider {
+    width: 70%;
+  }
+}
+/*--- 影片照片輪播 ----*/
+.flexslider img {
+  overflow: hidden;
+  height: 100%;
+}
+.flexslider .slides img {
+  width: 300px !important;
+}
+.display-inline .violator {
+  margin-left: 10px;
+}
+.icons img {
+  height: 30px;
+}
+.slides li {
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+.slides li img {
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.flex-control-nav li {
+  height: 65px;
+  width: 65px;
+  padding: 2px;
+  border: 1px solid #eee;
+  margin-top: 2px;
+  position: relative;
+}
+.flex-control-nav li img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+/* 
+.cbm-data {
+  margin-top: 50px; 
+   height: 480px;
+} */
+
+/* @media screen and (min-width: 978px) and (max-width: 1169px) {
+  .cbm-data {
+    height: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 977px) {
+  .cbm-data {
+    height: 265px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cbm-data {
+    margin-top: 10px;
+    height: auto;
+  }
+} */
+
+.cbm-data ul {
+  margin-left: 20px;
+}
+
+.cbm-data li {
+  line-height: 26px;
+}
+
+.btn-wrap {
+  /* border-top: 1px solid #ccc; */
+  padding-top: 10px;
+}
+.btn-wrap .btn {
+  width: 100%;
+}
+.description .btn-wrap .btn-modal {
+  margin-bottom: 10px;
+}
+
+/* .DF-download-bt {
+  display: block;
+  background-color: #b1b1b1;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 6px;
+  text-decoration: none;
+} */
+
+/* .DF-download-bt:hover {
+  background-color: #555555;
+  color: #ffffff;
+  text-decoration: none;
+} */
+
+@media screen and (min-width: 768px) and (max-width: 977px) {
+  .DF-download-bt {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .DF-download-bt {
+    margin-bottom: 10px;
+  }
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #5db75d;
+}
+
+.photo-gallery li {
+  list-style: none;
+  display: inline-block;
+  margin-top: 3px;
+  margin-right: 4px;
+}
+
+.photo-gallery img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #dadada;
+}
+
+.flex-direction-nav a {
+  /*圖片左右箭頭*/
+  height: 50px !important;
+}
+
+/*產品描述,特性,應用,規格,影片 sm md lg 顯示*/
+.product-collateral {
+  margin-top: 30px;
+  position: relative;
+}
+.product-nav {
+  z-index: 100;
+  /* padding: 5px 0; */
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+.nav-sticky {
+  position: sticky;
+  top: -1px;
+  z-index: 900;
+}
+@media screen and (min-width: 768px) {
+  .product-nav {
+    position: sticky;
+    top: 51px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .product-nav {
+    position: sticky;
+    top: 54px;
+  }
+  .nav-flex {
+    display: flex !important;
+    justify-content: space-around;
+  }
+  .scroll-name {
+    /* max-width: 60px;
+    max-height: 60px; */
+  }
+}
+
+.tab-content {
+  margin: auto;
+  max-width: 1200px;
+}
+
+@media screen and(min-width:768px) {
+  .tab-content {
+    width: 80%;
+  }
+  .navbar {
+    border-bottom: 1px solid #e7e7e7;
+  }
+}
+.tab-content-padding {
+  padding-top: 30px;
+  overflow-y: auto;
+}
+
+.tab-content-padding ul {
+  padding: 20px;
+}
+
+.tab-content-padding li {
+  line-height: 26px;
+}
+.tab-content-padding img {
+  margin: auto;
+}
+.product-nav li {
+  padding: 15px 0;
+  border-right: 1px #fff solid;
+  text-align: center;
+}
+
+.product-nav li a {
+  text-decoration: none;
+  color: #414141;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.navbar-default {
+  background-color: #fff;
+  border: none;
+}
+
+.nav-mb {
+  list-style-type: none;
+  text-align: center;
+}
+.nav-mb li {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 18px;
+}
+/*產品描述,特性,應用,規格,影片 xs 顯示*/
+.product-collateral-small {
+  margin-top: 20px;
+}
+
+.panel-heading {
+  padding: 0;
+}
+
+.accordion-toggle {
+  background-color: #5db75d;
+  display: block;
+  font-weight: bold;
+  line-height: 1;
+  padding: 15px;
+  position: relative;
+}
+
+.panel-heading .collapsed {
+  font-weight: normal;
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.panel {
+  box-shadow: none;
+  margin-bottom: 5px;
+}
+
+.panel-body ul {
+  padding-left: 20px;
+}
+
+.panel-body li {
+  line-height: 26px;
+}
+
+.panel-title {
+  color: #fff;
+}
+
+/* ====================================================================================================================
+ * 自適應嵌入影片 Start
+ * ====================================================================================================================*/
+.video-background-color {
+  background-color: #eeeeee;
+  padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  .video-background-color {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .video-background-color {
+    margin-bottom: 20px;
+  }
+
+  .video-background-color:last-child {
+    margin-bottom: 0;
+  }
+}
+.video-title i {
+  color: #888;
+  font-size: 20px;
+}
+
+.video-title ul {
+  padding-left: 0;
+  display: flex;
+}
+
+.video-title li {
+  /* display: inline-block; */
+  padding-left: 10px;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 767px) {
+  .video-title li {
+    font-size: 16px;
+  }
+}
+/* 
+.video-product-name {
+  border-left: 10px solid #555555;
+  padding-left: 10px;
+} */
+
+.video-container {
+  position: relative;
+  padding-bottom: 60%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ====================================================================================================================
+ * 立即購買彈出對話框 Start
+ * ====================================================================================================================*/
+.bulk-purchase {
+  margin-top: 50px;
+}
+.page-header {
+  vertical-align: middle;
+  display: flex;
+}
+.page-header img,
+.page-header h3 {
+  height: 50px;
+  vertical-align: middle;
+}
+
+/* ====================================================================================================================
+ *video 播放 Start
+ * ====================================================================================================================*/
+.video_Info .box .btn-more {
+  /* margin: 0 auto; */
+  width: 100%;
+}
+.video_Info p {
+  margin: 0;
+}
+.video_Info .box {
+  border: 1px solid #eee;
+  margin-top: 10px;
+}
+.video_Info .box .content {
+  height: 100px;
+}
+/* 跳窗 */
+.page-title {
+  margin: 20px 0 20px;
+}
+
+.page-title .header {
+  color: #008c78;
+  border-bottom: 1px solid #ccc;
+  font-size: 26px;
+  padding-bottom: 9px;
+  text-align: center;
+  font-weight: bolder;
+}
+.form-horizontal .contact-description {
+  text-align: center;
+  color: #008c78;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* 
+@media screen and (min-width: 768px) {
+  .form-group .form-item {
+    margin: 7% 0;
+  }
+  .form-group {
+    padding: 20px 50px;
+  }
+} */
+textarea {
+  resize: none;
+  width: 100%;
+  height: 200px;
+}
+.login .form-horizontal {
+  margin: 5%;
+}
+
+.btn-login {
+  width: 100%;
+  background-color: #008c78;
+  color: #fff;
+  font-weight: bolder;
+}
+.btn-login:hover {
+  background-color: #005752;
+  color: #fff;
+}
+
+.form-group {
+  vertical-align: middle;
+}

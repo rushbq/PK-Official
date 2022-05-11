@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site_Clean.master.cs" Inherits="Site_Clean" %>
+
+<%@ Import Namespace="Resources" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title><%=Param_WebTitle%></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Styles.Render("~/bundles/css") %>
+        
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="CssContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off">
+        <div id="wrap">
+            <!-- // Header Start // -->
+            <header id="header">
+                <!--LogoBar-->
+                <div id="LogoBar_zone">
+                    <div class="container">
+                        <div class="row">
+                            <div class="Logo_image col-md-5 col-sm-6 col-xs-6">
+                                <a href="<%=Application["WebUrl"] %>">
+                                    <%--<img src="<%=Application["WebUrl"] %>images/prokits-logo_<%=fn_Area.PKWeb_Area %>.png" alt="Pro'sKit" />--%>
+                                    <img src="<%=CDN_Url %>images/PKWeb/logo/prokits-logo.png" alt="Pro'sKit" /></a>
+                            </div>
+
+                            <!-- 搜尋 & 語系 按鈕 Start -->
+                            <div class="col-md-7 col-sm-6 col-xs-6">
+                                <div class="navbar-form navbar-right" style="padding-top: 15px;">
+                                    <div class="input-group">
+                                        <!-- Search -->
+                                        <asp:TextBox ID="tb_Keyword1" runat="server" CssClass="form-control hidden-xs" autocomplete="off" MaxLength="50"></asp:TextBox>
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-default hidden-xs" onclick="triggerSearch('1')">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+
+                                            <!-- Lang -->
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                    <%=fn_Desc.PubAll.LangName(fn_Language.PKWeb_Lang) %>&nbsp;<span class="glyphicon glyphicon-cog"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                                    <li class="dropdown-header"><%=resPublic.dp_語系 %> (<%=fn_Desc.PubAll.LangName(fn_Language.PKWeb_Lang) %>)</li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="<%=Application["WebUrl"] %>Redirect.aspx?ActType=l&Data=en-US">English</a></li>
+                                                    <li><a href="<%=Application["WebUrl"] %>Redirect.aspx?ActType=l&Data=zh-TW">繁體中文</a></li>
+                                                    <li><a href="<%=Application["WebUrl"] %>Redirect.aspx?ActType=l&Data=zh-CN">简体中文</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 搜尋 & 語系 按鈕 End -->
+                        </div>
+                    </div>
+                </div>
+                <!--LogoBar end-->
+                <!-- 導覽列 Start -->
+                <div class="navbar navbar-inverse df-nav fix-header" role="navigation">
+                    <div class="container">
+                        <!-- Menu三條顯示 -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand hidden-sm hidden-md hidden-lg">MENU</a>
+                        </div>
+
+                        <!-- 導覽URL Start -->
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <!-- 選單 Start -->
+                            <asp:Literal ID="lt_TopMenu" runat="server"></asp:Literal>
+                            <!-- 選單 End -->
+                            <!-- 右側功能 -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <!-- 登入/登出 -->
+                                <li class="dropdown">
+                                    <asp:LinkButton ID="lbtn_login" runat="server" OnClick="lbtn_login_Click"></asp:LinkButton>
+                                    <asp:PlaceHolder ID="ph_Member" runat="server">
+                                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-user fa-lg"></i>
+                                            &nbsp;<%=fn_Param.MemberName %>&nbsp;<i class="fa fa-caret-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="<%=Application["WebUrl"] %>MemberData"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;<%=resPublic.title_會員資料 %></a></li>
+                                            <li><a href="<%=Application["WebUrl"] %>ChangePwd"><i class="fa fa-key fa-fw"></i>&nbsp;<%=resPublic.title_變更密碼 %></a></li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <asp:LinkButton ID="lbtn_logout" runat="server" OnClick="lbtn_logout_Click"></asp:LinkButton></li>
+                                        </ul>
+                                    </asp:PlaceHolder>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-sitemap fa-lg"></i>&nbsp;<i class="fa fa-caret-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="<%=Dealer_Url %>" target="_blank"><i class="fa fa-users fa-fw"></i>&nbsp;<%=Resources.resPublic.home_經銷商專區 %></a></li>
+                                        <li><a href="<%=Application["WebUrl"] %>ContactUs"><i class="fa fa-envelope fa-fw"></i>&nbsp;<%=resPublic.home_聯絡我們 %></a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="form-group">
+                                <div class="input-group hidden-md hidden-lg hidden-sm col-xs-12">
+                                    <asp:TextBox ID="tb_Keyword2" runat="server" CssClass="form-control" autocomplete="off" MaxLength="50"></asp:TextBox>
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default" onclick="triggerSearch('2')">
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 導覽URL End -->
+                    </div>
+                </div>
+                <!-- 導覽列 End -->
+                <%-- 觸發搜尋用按鈕(hide) --%>
+                <asp:Button ID="btn_Search1" runat="server" OnClick="btn_Search1_Click" Style="display: none" />
+                <asp:Button ID="btn_Search2" runat="server" OnClick="btn_Search2_Click" Style="display: none" />
+            </header>
+            <!-- // Header End // -->
+
+            <!-- // Body Start // -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- // Body End // -->
+        </div>
+        <!-- // Footer Start // -->
+        <footer>
+            <div id="footer">
+                <div class="container hidden-xs navigation-footer">
+                    <ul>
+                        <asp:Literal ID="lt_FooterMenu" runat="server"></asp:Literal>
+
+                        <li>
+                            <h3><%=Resources.resPublic.home_社群 %></h3>
+                            <ul>
+                                <li>
+                                    <a href="https://www.youtube.com/user/myProsKit" target="_blank" title="Youtube">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x youtube"></i>
+                                            <i class="fa fa-youtube-play fa-stack-1x"></i>
+                                        </span>
+                                    </a>
+                                    &nbsp;
+                                    <a href="<%=Facebook_Url %>" target="_blank" title="Facebook">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x facebook"></i>
+                                            <i class="fa fa-facebook fa-stack-1x"></i>
+                                        </span>
+                                    </a>
+                                    &nbsp;
+                                    <a href="http://weibo.com/579771150?refer_flag=1001030101_&is_hot=1" target="_blank" title="Weibo">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x youtube"></i>
+                                            <i class="fa fa-weibo fa-stack-1x"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="Copyright_zone">
+                    <div class="row content">
+                        <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                            &copy; <%: DateTime.Now.Year %> <%=Resources.resPublic.footer_copyright %>
+                        </div>
+                    </div>
+                    <div class="row content">
+                        <div class="col-xs-12">
+                            <ul class="list-inline">
+                                <li class="hidden-xs">&copy; <%: DateTime.Now.Year %> <%=Resources.resPublic.footer_copyright %></li>
+                                <li><a href="<%=Application["WebUrl"] %>Terms" class="first"><%=Resources.resPublic.txt_使用條款 %></a></li>
+                                <li>|</li>
+                                <li><a href="<%=Application["WebUrl"] %>Privacy"><%=Resources.resPublic.txt_隱私權聲明 %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row content">
+                        <div class="col-xs-12">
+                            <%=Resources.resPublic.footer_browser %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- // Footer End // -->
+        <div id="gotop" class="hidden-xs">TOP</div>
+
+        <!-- // Scripts Start // -->
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/bundles/public") %>
+        </asp:PlaceHolder>
+        <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- // Scripts End // -->
+
+    </form>
+</body>
+</html>

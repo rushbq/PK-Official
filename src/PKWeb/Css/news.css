@@ -1,0 +1,326 @@
+/* News列表頁 Start
+----------------------------------*/
+
+.page-title {
+  margin: 10px 5px;
+}
+.page-title .header {
+  font-size: 26px;
+  font-weight: bold;
+}
+.page-body .card-title {
+  color: #007719;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.page-body .card {
+  /* height: 368px; */
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+}
+.card a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .page-body .card:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-body .card {
+    height: 400px;
+  }
+}
+.page-body .card:hover {
+  background-color: #eee;
+}
+.page-body .card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.page-subtitle {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+/* News列表頁--old */
+/* .page-title {
+  line-height: 36px;
+  margin-bottom: 12px;
+}
+
+
+
+.News_Info {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.News_Info a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+.News_Info .myImg {
+  margin-right: 20px;
+}
+
+.News_Info .title {
+  color: #007719;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.News_Info .date {
+  color: #696969;
+  font-size: 15px;
+}
+
+.News_Info .text {
+  color: #333;
+  line-height: 22px;
+} */
+
+/* News列表頁 end
+----------------------------------*/
+
+/* News明細頁 Start
+----------------------------------*/
+.New_Release_Info {
+  margin-top: 20px;
+  padding: 10px 20px;
+  line-height: 180%;
+}
+
+.New_Release_Info .title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #007719;
+  text-align: center;
+}
+
+.New_Release_Info p {
+  text-align: justify;
+  font-size: 18px;
+}
+@media screen and (max-width: 767px) {
+  .New_Release_Info .title {
+    font-size: 22px;
+  }
+  .New_Release_Info p {
+    font-size: 16px;
+  }
+}
+
+.New_Release_Info .date {
+  color: #696969;
+  text-align: right;
+}
+
+.New_Release_Info img {
+  margin: 0 auto;
+}
+
+/* News明細頁 end
+----------------------------------*/
+
+/* 圖片集 start
+-----------------------------------*/
+#myGallery {
+  position: relative;
+}
+
+#GItems {
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
+  margin: 0;
+  padding: 0;
+}
+
+#GItems li {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  display: block;
+  padding: 4px;
+  margin-bottom: 17px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  width: 210px;
+}
+
+#GItems li.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#GItems li img {
+  display: block;
+}
+
+#GItems li p {
+  color: #666;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+  font-weight: 200;
+  margin: 7px 0 2px 7px;
+}
+/* 圖片集 end
+-----------------------------------*/
+
+/* 展覽列表頁 start
+-----------------------------------*/
+.Exhibition_Note {
+  margin: 20px 0;
+}
+
+.Exhibition_Info .title {
+  padding: 10px 0;
+  font-weight: bold;
+  color: #007719;
+  font-size: 123.1%;
+  font-weight: bold;
+}
+.Exhibition_Info p {
+  margin: 0;
+  padding: 0 5px;
+}
+.Exhibition_Info .time,
+.Exhibition_Info .location {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+.caption {
+  height: 220px;
+}
+
+.Exhibition_Info .btn {
+  background-color: #fff;
+  border: 2px solid #008c78;
+  border-radius: 5px;
+  color: #008c78;
+  font-weight: bolder;
+}
+.Exhibition_Info .btn:hover {
+  background-color: #005752;
+  border: 2px solid #005752;
+  color: #fff;
+  font-weight: bolder;
+}
+.Exhibition_Info .btn-group {
+  margin: 15px 0;
+}
+@media screen and (max-width: 992px) and(min-width: 769px) {
+  .Exhibition_Info .btn {
+    padding: 5px 10px;
+  }
+  .Exhibition_Info .btn-group a {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Exhibition_Info img {
+    float: left;
+    display: block;
+  }
+
+  .Exhibition_Info .caption {
+    clear: both;
+  }
+}
+/* 展覽列表頁 end
+-----------------------------------*/
+
+/* 展覽Location start
+-----------------------------------*/
+.df-container-margin .location_info img {
+  margin: 0 auto;
+}
+
+/* 展覽Location end
+-----------------------------------*/
+
+/* Promotion頁面 start
+-----------------------------------*/
+.panel-body img {
+  margin: 0 auto;
+}
+
+.Promotion_Info .df-topic-img {
+  padding-right: 10px;
+}
+
+.accordion-style.panel-group .panel-heading {
+  padding: 0;
+}
+
+.accordion-style.panel-group .panel-heading .accordion-toggle {
+  background-color: #eef4f9;
+  display: block;
+  font-weight: bold;
+  line-height: 1;
+  padding: 15px;
+  position: relative;
+}
+
+.accordion-style.panel-group .panel-heading .accordion-toggle img {
+  margin-right: 10px;
+}
+
+.accordion-style.panel-group .panel-heading .accordion-toggle.collapsed {
+  font-weight: normal;
+  background-color: #f5f5f5;
+}
+
+.accordion-style.panel-group .panel {
+  box-shadow: none;
+}
+/* Promotion頁面 end
+-----------------------------------*/
+
+/* ProTidings start
+-----------------------------------*/
+.Protidings_Info ul {
+  margin-left: 20px;
+}
+
+.Protidings_Info ul li {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+.Protidings_Info {
+  margin-top: 20px;
+}
+
+.Protidings_Info img {
+  margin-bottom: 10px;
+}
+
+.Protidings_Info .pro_ditings_date {
+  float: right;
+}
+
+/* ProTidings end
+-----------------------------------*/

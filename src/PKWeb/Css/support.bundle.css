@@ -1,0 +1,628 @@
+/* 經銷據點 Start
+----------------------------------*/
+.page-title {
+    line-height: 36px;
+    padding-bottom: 9px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+    .page-title .header {
+        font-size: 26px;
+    }
+
+.Where_To_Buy_Zone img {
+    margin-right: 10px;
+}
+
+.Where_To_Buy_Zone .country {
+    padding-bottom: 10px;
+}
+
+    .Where_To_Buy_Zone .country a {
+        color: #000000;
+    }
+
+    .Where_To_Buy_Zone .country div > div {
+        margin-bottom: 20px;
+    }
+
+.dealer-info {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+    .dealer-info .title {
+        color: #007719;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .dealer-info p > i {
+        width: 40px;
+    }
+
+    .dealer-info ul > li {
+        vertical-align: top !important;
+    }
+
+/* 經銷據點 End
+----------------------------------*/
+
+
+
+/* Inquiry Start
+----------------------------------*/
+.inq {
+    padding: 5px 140px;
+}
+
+@media (max-width: 767px) {
+    .inq {
+        padding: 0px 40px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .inq {
+        padding: 0px 30px;
+    }
+}
+
+.inq .content-title {
+    margin: 20px 0 20px;
+}
+
+    .inq .content-title .header {
+        border-bottom: 1px solid #eee;
+        font-size: 22px;
+        padding-bottom: 9px;
+    }
+/* Inquiry End
+----------------------------------*/
+
+
+/* Download Start
+----------------------------------*/
+.Download_info {
+    margin-top: 20px;
+}
+
+    .Download_info .df-btn {
+        padding-right: 10px;
+    }
+
+    .Download_info ul > li {
+        text-align: center;
+    }
+
+        .Download_info ul > li a {
+            color: #646464;
+        }
+
+    .Download_info .df-square-bg {
+        color: #8b8b8b;
+    }
+/* Download End
+----------------------------------*/
+
+
+
+/* Knowledge Start
+----------------------------------*/
+.df-container-margin .search {
+    margin-bottom: 20px;
+}
+
+.Knowledge_Info .title {
+    font-weight: bold;
+    color: #007719;
+    font-weight: bold;
+}
+
+.Knowledge_Info .name {
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+}
+
+@media screen and (min-width: 768px) {
+    .Knowledge_Info .content {
+        height: 120px;
+        padding: 0 6px;
+    }
+
+    .Knowledge_Info img {
+        margin: 15px auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .Knowledge_Info .content {
+        height: 120px;
+        padding: 0 6px;
+    }
+
+    .Knowledge_Info img {
+        float: left;
+        display: block;
+    }
+
+    .Knowledge_Info .caption {
+        clear: both;
+    }
+}
+
+.Knowledge_Info .box {
+    display: block;
+    padding: 4px 4px 10px 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    position: relative;
+}
+
+
+.df-container-margin .knowledge_info img {
+    margin: 0 auto;
+}
+
+/* Knowledge End
+----------------------------------*/
+
+
+
+/* ====================================================================================================================
+ * 常見問題 共用的CSS Start
+ * ====================================================================================================================*/
+
+.technical_faq_result .contact_area a {
+    color: #333;
+    text-decoration: none;
+}
+
+.media-left {
+    /* 解除產照片右方的空白 */
+    padding-right: 0px !important;
+}
+
+.media_item:last-child {
+    /*產品品項list頁時使用*/
+    border-bottom: none;
+}
+
+.frequently_questions_item li {
+    background: url("/Css/../images/more-button-blue.gif") no-repeat scroll 0 18px;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 1px 0 1px 10px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+    .frequently_questions_item li a {
+        color: #000000;
+        display: block;
+        padding: 10px 0;
+    }
+
+        .frequently_questions_item li a:hover {
+            background: #f9f9f9;
+            text-decoration: none;
+        }
+
+.media_post .media_item .df-btn-margin {
+    /*常見問題,知識分享,下載專區按鈕左邊空白*/
+    padding-top: 20px;
+}
+
+
+/* ====================================================================================================================
+ * 常見問題 查詢頁 Start
+ * ====================================================================================================================*/
+
+.jumbotron .text-right .df-btn-margin {
+    margin-top: 10px;
+}
+
+
+/* ====================================================================================================================
+ * 常見問題 相關產品查詢結果 左半部 Start
+ * ====================================================================================================================*/
+
+.technical_faq_result .df_border_right {
+    border-right: solid 1px #eee;
+    padding-right: 20px;
+    margin-top: 30px;
+}
+
+.technical_faq_result .contact_area p {
+    /*技術咨詢,找尋銷售據點按鈕*/
+    background: #eeeeee;
+    padding: 10px 10px;
+    width: auto;
+    font-size: 16px;
+}
+
+    .technical_faq_result .contact_area p:hover {
+        background: #D7D7D7;
+    }
+
+.technical_faq_result .contact_area .faq_list_search {
+    /* 常見問題搜尋bar */
+    margin-top: 30px;
+}
+
+
+/* 平板,手機專用 */
+
+@media screen and (max-width: 767px) {
+    .technical_faq_result .contact_area .faq_list_search {
+        /* 常見問題搜尋bar */
+        margin-top: 0px;
+    }
+
+    .media_item:first-child {
+        padding: 30px 0 10px 0px;
+    }
+}
+
+
+/* ====================================================================================================================
+ * 常見問題 相關產品查詢結果 右半部 Start
+ * ====================================================================================================================*/
+
+.media:last-child {
+    /*產品列表最後一個不加底線*/
+    border-bottom: none;
+}
+
+.pk_name {
+    /* 品名,品號文字大小 */
+    font-size: 20px;
+}
+
+.df-btn-default {
+    /* 縮小至xs畫面的常見問題,知識分享,下載中心三個按鈕 */
+    color: #FFFFFF !important;
+    background-color: #b3b3b3 !important;
+    border-color: #FFFFFF !important;
+}
+
+    .df-btn-default:hover {
+        /* 縮小至xs畫面的常見問題,知識分享,下載中心三個按鈕 */
+        color: #b3b3b3 !important;
+        background-color: #E6E6E6 !important;
+        border-color: #FFFFFF !important;
+    }
+
+.media_post {
+    /* 中間隔線 與 左邊空白設定 */
+    border-left: solid 1px #eee;
+    margin-top: 30px;
+}
+
+
+/* 桌上型電腦專用 */
+
+@media screen and (min-width: 1170px) {
+    .media_item {
+        padding: 30px 0 30px 50px;
+        border-bottom: solid 1px #eee;
+        margin: 0 50px;
+    }
+}
+
+
+/* 桌上型電腦專用 介於 1170px 和 1199px*/
+
+@media screen and (min-width: 1170px) and (max-width: 1199px) {
+    .media_post .media_item .faq_bt_group {
+        /*常見問題,知識分享,下載專區按鈕左邊空白*/
+        padding-top: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1169px) {
+    .media_post {
+        /* 中間隔線 與 左邊空白設定 */
+        border-left: solid 1px #eee;
+        padding: 0 30px;
+    }
+
+    .media_item {
+        padding: 50px 0 50px 20px;
+        border-bottom: solid 1px #eee;
+    }
+}
+
+
+/* 桌上型電腦專用 介於 768px 和 977px */
+
+@media screen and (min-width: 768px) and (max-width: 977px) {
+}
+
+
+/* 平板,手機專用 */
+
+@media screen and (max-width: 767px) {
+    .media_post {
+        border-left: none;
+    }
+
+    .media_item {
+        padding: 30px 0 10px 0px;
+        border-bottom: solid 1px #CCCCCC;
+    }
+}
+
+
+/* 常見問題、知識分享、下載專區按鈕 Start */
+
+.faq_bt_group .df-square-bg {
+    color: #B3B3B3;
+}
+
+.faq_bt_group ul > li {
+    text-align: center;
+}
+
+.Download_info {
+    margin-top: 20px;
+}
+
+    .Download_info .df-btn {
+        padding-right: 10px;
+    }
+
+    .Download_info ul > li {
+        text-align: center;
+    }
+
+        .Download_info ul > li a {
+            color: #646464;
+        }
+
+    .Download_info .df-square-bg {
+        color: #8b8b8b;
+    }
+
+
+/* ====================================================================================================================
+ * 常見問題 單一品項問題列表 左半部 Start
+ * ====================================================================================================================*/
+
+
+/* 單一品項問題列表 左半部 共用 */
+
+.frequently_questions_area .frequently_questions_contents .questions_title {
+    /* 常見問題標題 */
+    border-bottom: solid 1px #eeeeee;
+    padding: 20px 0;
+}
+
+.frequently_questions_area {
+    /* 中間隔線 與 左邊空白設定 */
+    /*border-left: solid 1px #CCCCCC;*/
+    padding-left: 50px;
+    margin-top: 30px;
+}
+
+
+/* 桌上型電腦專用 */
+
+@media screen and (min-width: 1170px) {
+    .frequently_questions_area .text-orange {
+        color: #5f5f5f;
+    }
+
+    .frequently_questions_item {
+        overflow-x: visible;
+    }
+
+    .main_product_photo {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+}
+
+
+/* 桌上型電腦專用 */
+
+@media screen and (min-width: 768px) and (max-width: 1169px) {
+    .frequently_questions_area {
+        /* 中間隔線 與 左邊空白設定 */
+        /*border-left: solid 1px #CCCCCC;*/
+        padding-left: 50px;
+    }
+
+        .frequently_questions_area .text-orange {
+            color: #5f5f5f;
+        }
+
+    .main_product_photo {
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+}
+
+
+/* 平板,手機專用 */
+
+@media screen and (max-width: 767px) {
+    .frequently_questions_area {
+        padding: 0 0 50px 0px;
+        /*border-bottom: solid 1px #CCCCCC;*/
+    }
+
+        .frequently_questions_area .text-orange {
+            color: #FF8000;
+        }
+
+    .technical_faq_result .df_border_right {
+        /* 取消中間隔線 */
+        border-right: none;
+    }
+
+    .main_product_photo {
+        margin-top: 20px;
+    }
+
+    .technical_faq_result .contact_area .pk_name_gp {
+        margin-bottom: 8px;
+    }
+}
+
+
+/* ====================================================================================================================
+ * 問題回答內容頁 左半部 Start
+ * ====================================================================================================================*/
+
+.accordion-style.panel-group .panel-heading {
+    padding: 0;
+}
+
+    .accordion-style.panel-group .panel-heading .accordion-toggle {
+        background-color: #eef4f9;
+        display: block;
+        font-weight: bold;
+        line-height: 1;
+        padding: 15px;
+        position: relative;
+    }
+
+        .accordion-style.panel-group .panel-heading .accordion-toggle.collapsed {
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+
+.accordion-style.panel-group .panel {
+    box-shadow: none;
+}
+
+.feedback {
+    /* 這篇文章實用嗎 背景色*/
+    background: #f5f5f5;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 18px;
+}
+
+    .feedback .df-btn-width {
+        /* 是與否按鈕寬度 */
+        width: 80px;
+    }
+
+    .feedback .form-control-margin {
+        /* 文字輸入框下方空白 */
+        margin-bottom: 20px;
+    }
+
+    .feedback .message_box {
+        /* 訊息回饋上方空白 */
+        margin-top: 30px;
+    }
+
+.primary {
+    /* 文字斷行處理 */
+    word-break: break-all;
+    padding-top: 30px;
+}
+
+.primary_article ul {
+    /* 針對html編輯器的ul邊界處理 */
+    padding-left: 20px;
+}
+
+.primary_article ol {
+    /* 針對html編輯器的ol邊界處理 */
+    padding-left: 20px;
+}
+
+
+/* 桌上型電腦專用 */
+
+@media screen and (min-width: 1170px) {
+    .primary .primary_nav {
+        /* 右半部問題快速連結區 上&左空白設定*/
+        padding-left: 20px;
+    }
+
+    .feedback .community_share {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* 桌上型電腦專用 */
+
+@media screen and (min-width: 768px) and (max-width: 1169px) {
+    .primary .primary_nav {
+        /* 右半部問題快速連結區 上&左空白設定*/
+        padding-left: 20px;
+    }
+
+    .feedback .community_share {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* 平板,手機專用 */
+
+@media screen and (max-width: 767px) {
+    .primary .primary_nav {
+        /* 右半部問題快速連結區 上&左空白設定*/
+        padding-top: 40px;
+    }
+
+    .feedback .community_share {
+        margin-bottom: 10px;
+    }
+}
+
+.primary .primary_nav ul li {
+    /* 右半部問題快速連結區 li設定*/
+    background: #f5f5f5;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+    .primary .primary_nav ul li.in {
+        /* 右半部問題快速連結區 li設定*/
+        border-left: solid 2px #B0B0B0;
+    }
+
+.primary .primary_nav li a {
+    /* 右半部問題快速連結區 li a 設定*/
+    display: block;
+    padding: 10px 0 10px 14px;
+    text-decoration: none;
+}
+
+.primary .primary_nav ul li:hover {
+    /* 右半部問題快速連結區 ul li滑鼠反應*/
+    background: #E7E7E7;
+    border-left: solid 1px #B0B0B0;
+}
+
+.primary_nav .return_pg li:hover {
+    border-left: none !important;
+}
+
+.primary_nav .return_pg a {
+    background: #EAF5FF;
+    color: #787878;
+    font-weight: bold;
+}
+
+    .primary_nav .return_pg a:hover {
+        background: #E7E7E7;
+        color: #636363;
+    }

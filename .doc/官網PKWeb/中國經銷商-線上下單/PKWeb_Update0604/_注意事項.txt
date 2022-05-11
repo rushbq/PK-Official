@@ -1,0 +1,6 @@
+fn_Param.cs
+ -  注意db name
+
+IIS
+ - 要開啟ASP.NET模擬功能(EXCEL讀取需實體路徑)
+ - 帳號使用 read (1234qwer)

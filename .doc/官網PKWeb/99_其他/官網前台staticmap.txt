@@ -1,0 +1,6 @@
+靜態地圖
+http://maps.googleapis.com/maps/api/staticmap?zoom=15&size=500x500&sensor=false&markers=color:red%7C24.9839922,121.53484649999996
+
+線上地圖,傳入參數
+https://www.google.com.tw/maps/place/25.047923,121.51708/@25.047923,121.51708,16z
+https://www.google.com.tw/maps/place/香港灣仔博覽道一號/@22.282016,114.1720093,16z

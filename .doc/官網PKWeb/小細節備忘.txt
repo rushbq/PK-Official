@@ -1,0 +1,4 @@
+[EcLife API]
+ - 在下列程式,有寫死ApiKey, ApiUrl, ApiToken, 若有變動需手動處理
+ -- PKShop_Service -> myParams.xml
+ -- PKWeb -> Login.aspx

@@ -1,0 +1,261 @@
+/* ====================================================================================================================
+ * 共用 Start
+ * ====================================================================================================================*/
+
+.content img {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.download-content {
+    margin-top: 30px;
+}
+
+    .download-content .btn {
+        margin-bottom: 20px;
+    }
+
+
+    /*下載內容產品縮圖*/
+
+    .download-content img {
+        width: 64px;
+        height: 64px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+    }
+
+/*搜索結果*/
+.search-result {
+    background: #f5f5f5;
+}
+
+.search-result .title {
+    padding:10px 0;
+    font-size: 16px;
+    color: #424242;
+    font-weight: bold;
+}
+
+.search-result span {
+    color: #ff6700;
+}
+
+/* ====================================================================================================================
+ * 經銷商下載分類 Start
+ * ====================================================================================================================*/
+
+.blok-link .block:hover {
+    background: #eeeeee;
+}
+
+.block {
+    padding: 20px 40px;
+}
+
+    .block .media-body {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .block .media-body {
+        vertical-align: middle !important;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+
+        .block .media-body h5 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+    color: #5D5D5D !important;
+    background-color: #eeeeee !important;
+    border-color: #ddd !important;
+}
+
+
+/* ====================================================================================================================
+ * 左側浮動選單, MD LG 螢幕顯示 Start
+ * ====================================================================================================================*/
+
+.float-menu {
+    position: fixed;
+    top: 150px;
+    left: -152px;
+    width: 202px;
+    background: #FFF;
+    z-index: 10000;
+    padding: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+    .float-menu .name {
+        background: #ffffff;
+    }
+
+.list .icon {
+    float: right;
+    vertical-align: middle;
+    text-align: center;
+    width: 25px;
+}
+
+.list ul {
+    margin-bottom: 0;
+}
+
+    .list ul li {
+        border-bottom: solid 2px #efefef;
+        border-right: solid 5px #5cb85c;
+    }
+
+        .list ul li a {
+            display: block;
+            text-decoration: none;
+            color: #333333;
+            padding: 10px;
+        }
+
+        .list ul li:hover {
+            /*border-left: solid 5px #5cb85c;*/
+            border-right: solid 5px #ffffff;
+            background: #5cb85c;
+        }
+
+.list .in {
+    border-right: solid 5px #5cb85c;
+    background: #5cb85c;
+    color: #ffffff;
+}
+
+    .list .in span {
+        color: #ffffff !important;
+    }
+
+    .list .in .icon i {
+        color: #ffffff !important;
+    }
+
+
+/*分類選擇*/
+
+.list ul li:hover:first-child {
+    border-left: none;
+}
+
+.open-up {
+    font-weight: bold;
+    background: #c8f4c8;
+}
+
+    .open-up .arrow {
+        color: #138a13;
+    }
+
+
+/* ====================================================================================================================
+ * 產品圖片 Start
+ * ====================================================================================================================*/
+
+.download-title {
+    font-size: 24px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+
+/* ====================================================================================================================
+ * 燈片圖庫 Start
+ * ====================================================================================================================*/
+
+.accordion-style.panel-group .panel-heading {
+    padding: 0;
+}
+
+    .accordion-style.panel-group .panel-heading .accordion-toggle.collapsed {
+        font-weight: normal;
+        background-color: #f5f5f5;
+    }
+
+    .accordion-style.panel-group .panel-heading .accordion-toggle {
+        background-color: #eef4f9;
+        display: block;
+        font-weight: bold;
+        line-height: 1;
+        padding: 15px;
+        position: relative;
+    }
+
+
+/* ====================================================================================================================
+ * 停產通知 Start
+ * ====================================================================================================================*/
+
+
+/*表頭*/
+
+.page-title {
+    line-height: 36px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 9px;
+}
+
+    .page-title .header {
+        font-size: 26px;
+    }
+
+
+/*停產、設變、新品內容、e-newsletter*/
+
+.page-body .content-info {
+    border-bottom: 1px solid #eee;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+
+.page-body .media-img {
+    margin-right: 20px;
+}
+
+    .page-body .media-img a:hover {
+        border-color: #bababa;
+        text-decoration: none;
+    }
+
+.media-body a:hover {
+    text-decoration: none;
+}
+
+.media-body h4 {
+    color: #007719;
+}
+
+.page-body .date {
+    color: #696969;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.page .pull-left {
+    margin-top: 20px;
+}
+
+.footer-year {
+    margin-top: 50px;
+}
+
+    .footer-year ul li {
+        display: inline;
+        padding-right: 10px;
+    }

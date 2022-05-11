@@ -1,0 +1,790 @@
+﻿/* metro dashboard states */
+.metro-nav {
+    position: relative;
+    z-index: 101;
+    /*max-width:120px;*/
+}
+
+    .metro-nav .nav-block-orange {
+        background: #f37b53;
+    }
+
+    .metro-nav .nav-block-yellow {
+        background: #FFB400;
+    }
+
+    .metro-nav .nav-block-blue {
+        background: #0DAED3;
+    }
+
+    .metro-nav .nav-block-green {
+        background: #74B749;
+    }
+
+    .metro-nav .nav-block-red {
+        background: #de577b;
+    }
+
+    .metro-nav .nav-block-purple {
+        background: #9d4a9c;
+    }
+
+    .metro-nav .nav-block-grey {
+        background: #77808a;
+    }
+    /*---new add--*/
+    .metro-nav .nav-light-blue {
+        background: #61b9ff;
+    }
+
+    .metro-nav .nav-light-green {
+        background: #00a489;
+    }
+
+    .metro-nav .nav-deep-terques {
+        background: #0bc0cb;
+    }
+
+    .metro-nav .nav-light-purple {
+        background: #847cc5;
+    }
+
+    .metro-nav .nav-light-yellow {
+        background: #e5bc64;
+    }
+
+    .metro-nav .nav-deep-gray {
+        background: #434343;
+    }
+
+    .metro-nav .nav-light-brown {
+        background: #ab8465;
+    }
+
+    .metro-nav .nav-deep-red {
+        background: #b33062;
+    }
+
+    .metro-nav .nav-olive {
+        background: #959801;
+    }
+
+    .metro-nav .nav-deep-thistle {
+        background: #9e7698;
+    }
+
+.metro-fix-view .metro-nav-block.double {
+    width: 251px !important;
+}
+
+.metro-fix-view .metro-nav-block.long {
+    width: 251px !important;
+    height: 235px !important;
+}
+
+    .metro-fix-view .metro-nav-block.long .value {
+        padding-top: 30px !important;
+        display: inline-block;
+    }
+
+        .metro-fix-view .metro-nav-block.long .value i {
+            font-size: 90px;
+        }
+
+.metro-fix-view .metro-nav-block {
+    color: white;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-weight: 300;
+    height: 120px;
+    letter-spacing: 0.02em;
+    line-height: 20px;
+    margin: 0 1% 1% 0;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    width: 120px !important;
+    z-index: 1;
+}
+
+
+.metro-nav .metro-nav-block.double {
+    width: 28%;
+}
+
+.metro-nav .metro-nav-block {
+    color: white;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-weight: 300;
+    height: 114px;
+    letter-spacing: 0.02em;
+    line-height: 20px;
+    margin: 0 1% 1% 0;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    width: 17%;
+    z-index: 1;
+}
+
+    /* Icon */
+    .metro-nav .metro-nav-block i {
+        font-size: 50px;
+        margin-top: 15px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+
+    .metro-nav .metro-nav-block:last-child {
+        margin-right: 0;
+    }
+
+    .metro-nav .metro-nav-block a {
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+        height: 90%;
+        line-height: 16px;
+        overflow: hidden;
+        padding: 5px 10px;
+        position: absolute;
+        text-overflow: ellipsis;
+        vertical-align: top;
+        width: 88%;
+        text-decoration: none;
+    }
+
+        .metro-nav .metro-nav-block a i {
+            transition: all 0.5s ease-in-out 0s;
+            -moz-transition: all 0.5s ease-in-out 0s;
+            -webkit-transition: all 0.5s ease-in-out 0s;
+            -o-transition: all 0.5s ease-in-out 0s;
+        }
+
+        .metro-nav .metro-nav-block a .info {
+            transition: all 0.4s ease-in-out 0s;
+            -moz-transition: all 0.4s ease-in-out 0s;
+            -webkit-transition: all 0.4s ease-in-out 0s;
+            -o-transition: all 0.4s ease-in-out 0s;
+        }
+
+        .metro-nav .metro-nav-block a:hover i {
+            transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            font-size: 50px;
+            opacity: 0.2;
+        }
+
+    .metro-nav .metro-nav-block.long a:hover i {
+        font-size: 200px;
+    }
+
+    .metro-nav .metro-nav-block.long a {
+        height: 96%;
+    }
+
+    .metro-nav .metro-nav-block a:hover .info {
+        transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        font-size: 40px;
+        opacity: 0.6;
+    }
+
+    .metro-nav .metro-nav-block:hover {
+        opacity: 0.8;
+    }
+
+    .metro-nav .metro-nav-block.double a {
+        width: 94%;
+    }
+
+    .metro-nav .metro-nav-block .info {
+        font-size: 24px;
+        position: absolute;
+        right: 10px;
+        top: 45px;
+    }
+
+    .metro-nav .metro-nav-block .status, .metro-nav .metro-nav-block .tile-status {
+        background-color: transparent;
+        bottom: -10px;
+        font-size: 14px;
+        left: 10px;
+        min-height: 30px;
+        position: absolute;
+    }
+
+/* login page */
+.login-wrap {
+    width: 960px;
+    margin: 5% auto 0;
+    color: #fff;
+    text-align: center;
+}
+
+    .login-wrap .metro {
+        height: 150px;
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+
+    .login-wrap .big {
+        width: 340px;
+        height: 310px;
+        margin: 0 10px 10px 0;
+    }
+
+    .login-wrap .double-size {
+        width: 310px;
+    }
+
+    .login-wrap .single-size {
+        width: 150px;
+    }
+
+    .login-wrap .red {
+        background: #e8687f;
+    }
+
+    .login-wrap .green {
+        background: #90bb4f;
+    }
+
+    .login-wrap .yellow {
+        background: #f5c147;
+    }
+
+    .login-wrap .terques {
+        background: #38bec9;
+    }
+
+    .login-wrap .navy-blue {
+        background: #5f7cb4;
+    }
+
+    .login-wrap .deep-red {
+        background: #993f3e;
+    }
+
+    .login-wrap .blue {
+        background: #48b5ee;
+    }
+
+    .login-wrap .purple {
+        background: #af5ec5;
+    }
+
+    .login-wrap .gray {
+        background: #595858;
+    }
+
+.login-btn, .login-btn:hover {
+    background: none;
+    font-size: 28px;
+    margin-top: 55px;
+    color: #fff;
+}
+
+    .login-btn i {
+        font-size: 22px !important;
+        padding-top: 0 !important;
+        display: inline !important;
+    }
+
+.btn-home, .btn-home:hover {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.login-wrap .single-size a.social-link, .login-wrap .double-size a.social-link {
+    margin-top: 45px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+}
+
+    .login-wrap .single-size a.social-link i, .login-wrap .double-size a.social-link i {
+        font-size: 20px;
+        display: block;
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+
+.login-footer {
+    width: 100%;
+    display: inline-block;
+}
+
+.remember-hint input[type="checkbox"] {
+    margin-top: -2px;
+}
+
+.forgot-hint a {
+    color: #fff;
+    margin-right: 10px;
+}
+
+
+/*lock page*/
+body.lock {
+    background: #393939;
+}
+
+.lock-header {
+    margin-top: 5%;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.lock-input {
+    margin-top: 60px;
+}
+
+    .lock-input input {
+        height: 30px;
+        width: 75%;
+        background: #fff;
+        box-shadow: none;
+        border: 1px solid #fff;
+        color: #222;
+    }
+
+        .lock-input input:focus {
+            border: 1px solid #fff !important;
+        }
+
+    .lock-input button.btn {
+        height: 40px;
+        background: #3db5a1;
+        border: 1px solid #3db5a1 !important;
+    }
+
+        .lock-input button.btn i {
+            color: #fff;
+            font-size: 14px;
+        }
+
+.single-size i {
+    font-size: 65px;
+    display: block;
+    padding-top: 30px;
+}
+
+.single-size span, .double-size span {
+    font-size: 20px;
+}
+
+    .single-size span.warning, .double-size span.warning {
+        font-size: 65px;
+        padding-top: 35px;
+        display: inline-block;
+    }
+
+    .double-size span.page-txt {
+        font-size: 30px;
+        padding-top: 30px;
+        display: inline-block;
+    }
+
+.double-size a {
+    color: #0d48d3;
+}
+
+.big span {
+    font-size: 65px;
+    padding-top: 100px;
+    display: inline-block;
+}
+
+.double-size span {
+    padding: 0 20px;
+}
+
+.double-size i {
+    font-size: 70px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.user-position {
+    margin-top: 40px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+    a.user-position:hover {
+        color: #fff;
+    }
+
+.user-position i, .social-link i {
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+}
+
+.user-position:hover i, .social-link:hover i {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    opacity: 0.2;
+}
+
+a.social-link i {
+    font-size: 30px !important;
+}
+
+/* Responsive */
+/* phones and tablets */
+@media (min-width: 768px) and (max-width: 1280px) {
+    .metro-fix-view .metro-nav-block.long {
+        height: 237px !important;
+    }
+
+    .double-size i {
+        /*display: block;*/
+    }
+}
+
+@media (max-width:979px) {
+    .login-wrap .big {
+        width: 97%;
+    }
+
+    .double-size i {
+        /*display: block;*/
+    }
+}
+
+/*  tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .metro-fix-view .metro-nav-block.long {
+        height: 237px !important;
+    }
+
+    .metro-nav {
+        z-index: 99 !important;
+    }
+
+    /*login page*/
+
+    .login-wrap {
+        width: 100%;
+    }
+
+        .login-wrap .single-size {
+            width: 31.8%;
+        }
+
+        .login-wrap .double-size {
+            width: 96%;
+        }
+
+            .login-wrap .double-size.login {
+                width: 31.8%;
+            }
+
+            .login-wrap .double-size span, .login-wrap .single-size span {
+                padding: 0;
+            }
+
+                .login-wrap .single-size span.warning, .double-size span.warning {
+                    padding-top: 35px;
+                }
+
+            .login-wrap .double-size input {
+                /*width: 90%;*/
+            }
+
+            .login-wrap .double-size span.page-txt {
+                padding-top: 40px;
+            }
+
+        .login-wrap .metro {
+            margin: 0 5px 5px 0;
+        }
+    /*-------*/
+
+    .double-size i {
+        /*display: block;*/
+    }
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 767px) {
+    /*metro*/
+    .metro-nav .metro-nav-block, .metro-nav .metro-nav-block.double {
+        width: 49%;
+    }
+
+        .metro-nav .metro-nav-block:last-child {
+            margin-right: 1%;
+        }
+
+        .metro-nav .metro-nav-block a {
+            width: 94%;
+        }
+
+    .metro-fix-view .metro-nav-block.long {
+        height: 237px !important;
+    }
+
+    .metro-nav {
+        z-index: 99 !important;
+    }
+
+    /*login page*/
+
+    .login-wrap {
+        width: 100%;
+    }
+
+        .login-wrap .single-size {
+            width: 31.8%;
+        }
+
+        .login-wrap .double-size {
+            width: 96%;
+        }
+
+            .login-wrap .double-size.login {
+                width: 48%;
+            }
+
+            .login-wrap .double-size span, .login-wrap .single-size span {
+                padding: 0;
+            }
+
+                .login-wrap .single-size span.warning, .double-size span.warning {
+                    padding-top: 35px;
+                }
+
+            .login-wrap .double-size input {
+                width: 80%;
+            }
+
+            .login-wrap .double-size span.page-txt {
+                padding-top: 40px;
+            }
+
+        .login-wrap .metro {
+            margin: 0 5px 5px 0;
+        }
+    /*-------*/
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 430px) {
+
+    /*metro*/
+
+    .metro-nav .metro-nav-block, .metro-nav .metro-nav-block.double {
+        width: 49%;
+    }
+
+        .metro-nav .metro-nav-block:last-child {
+            margin-right: 1%;
+        }
+
+        .metro-nav .metro-nav-block a {
+            width: 94%;
+        }
+
+    .metro-fix-view .metro-nav-block {
+        width: 124px !important;
+    }
+
+        .metro-fix-view .metro-nav-block a {
+            width: 84% !important;
+        }
+
+    .metro-nav {
+        z-index: 99 !important;
+    }
+
+
+    /*login page*/
+
+    .login-wrap {
+        width: 100%;
+    }
+
+        .login-wrap .double-size, .login-wrap .single-size {
+            width: 95%;
+        }
+
+            .login-wrap .double-size.login {
+                width: 95%;
+            }
+
+            .login-wrap .double-size span, .login-wrap .single-size span {
+                padding: 0;
+            }
+
+                .login-wrap .single-size span.warning, .double-size span.warning {
+                    padding-top: 35px;
+                }
+
+            .login-wrap .double-size input {
+                width: 80%;
+            }
+
+            .login-wrap .double-size span.page-txt {
+                padding-top: 40px;
+            }
+
+        .login-wrap .metro {
+            margin: 0 5px 5px 0;
+        }
+    /*-------*/
+    .double-size i {
+        display: block;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 385px) {
+
+    /*metro*/
+    .metro-nav .metro-nav-block, .metro-nav .metro-nav-block.double {
+        width: 49%;
+    }
+
+        .metro-nav .metro-nav-block:last-child {
+            margin-right: 1%;
+        }
+
+        .metro-nav .metro-nav-block a {
+            width: 94%;
+        }
+
+    .metro-fix-view .metro-nav-block {
+        width: 124px !important;
+    }
+
+        .metro-fix-view .metro-nav-block a {
+            width: 84% !important;
+        }
+
+    .metro-nav {
+        z-index: 99 !important;
+    }
+
+
+    /*login page*/
+
+    .login-wrap {
+        width: 100%;
+    }
+
+        .login-wrap .double-size, .login-wrap .single-size {
+            width: 95%;
+        }
+
+            .login-wrap .double-size span, .login-wrap .single-size span {
+                padding: 0;
+            }
+
+                .login-wrap .single-size span.warning, .double-size span.warning {
+                    padding-top: 35px;
+                }
+
+            .login-wrap .double-size input {
+                width: 70%;
+            }
+
+            .login-wrap .double-size span.page-txt {
+                padding-top: 40px;
+            }
+
+        .login-wrap .metro {
+            margin: 0 5px 5px 0;
+        }
+    /*-------*/
+
+    .double-size i {
+        display: block;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 320px) {
+
+    /*metro*/
+
+    .metro-nav .metro-nav-block, .metro-nav .metro-nav-block.double {
+        width: 49%;
+    }
+
+        .metro-nav .metro-nav-block:last-child {
+            margin-right: 1%;
+        }
+
+        .metro-nav .metro-nav-block a {
+            width: 94%;
+        }
+
+    .metro-fix-view .metro-nav-block {
+        width: 124px !important;
+    }
+
+        .metro-fix-view .metro-nav-block a {
+            width: 84% !important;
+        }
+
+    .metro-nav {
+        z-index: 99 !important;
+    }
+
+    /*login page*/
+
+    .login-wrap {
+        width: 100%;
+    }
+
+        .login-wrap .double-size, .login-wrap .single-size {
+            width: 48%;
+        }
+
+            .login-wrap .double-size span, .login-wrap .single-size span {
+                padding: 0;
+            }
+
+                .login-wrap .single-size span.warning, .double-size span.warning {
+                    padding-top: 35px;
+                }
+
+            .login-wrap .double-size input {
+                width: 70%;
+            }
+
+            .login-wrap .double-size span.page-txt {
+                padding-top: 40px;
+            }
+
+        .login-wrap .metro {
+            margin: 0 5px 5px 0;
+        }
+    /*-------*/
+    #login .lock {
+        display: none !important;
+    }
+
+    #login, #lock {
+        width: 260px !important;
+        margin: 50px auto 0 !important;
+    }
+}

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="msg_try" xml:space="preserve">
+    <value>请尝试以下操作</value>
+  </data>
+  <data name="msg_帳號已使用" xml:space="preserve">
+    <value>您的电子邮件已经是宝工会员帐号，请使用一般登入。&lt;br/&gt;若您不记得密码，请前往「&lt;a href="http://www.prokits.com.tw/ForgotPwd"&gt;忘记密码&lt;/a&gt;」以取得新密码。</value>
+  </data>
+  <data name="msg_授權失敗" xml:space="preserve">
+    <value>授权失败，请重新授权。</value>
+  </data>
+  <data name="msg_登入失敗" xml:space="preserve">
+    <value>无法进行登入，请确认帐号及密码是否正确。</value>
+  </data>
+  <data name="msg_發生錯誤" xml:space="preserve">
+    <value>发生错误，请确认您输入的资料是否正确。</value>
+  </data>
+  <data name="msg_經銷商申請失敗" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msg_經銷商申請完成" xml:space="preserve">
+    <value>&lt;p&gt;感谢您申请加入「宝工经销商资格」，我们已受理您的申请, 并将您填写的资料予以建档。&lt;/p&gt;&lt;p&gt;经销商审核资格需要若干个工作时间，请您耐心等候，审核通过后将会有业务窗口与您联络, 感谢您的支持与鼓励。&lt;/p&gt;</value>
+  </data>
+  <data name="msg_註冊失敗" xml:space="preserve">
+    <value>若您持续看到此画面</value>
+  </data>
+  <data name="msg_註冊成功" xml:space="preserve">
+    <value>已建立您的會員帳號。使用前，我們必須先確認您的電子郵件是正常可使用。&lt;br /&gt;请检查您的电子邮件，并查看来自台湾宝工的驗證電子郵件。按一下「立即驗證」連結，並使用您的新帳號和密碼登入。</value>
+  </data>
+  <data name="msg_變更密碼失敗" xml:space="preserve">
+    <value>很抱歉，您的密码变更失败。</value>
+  </data>
+  <data name="msg_變更密碼成功" xml:space="preserve">
+    <value>新密码设定成功，下次登入时请输入新的密码。</value>
+  </data>
+  <data name="msg_資料修改失敗" xml:space="preserve">
+    <value>资料修改失败</value>
+  </data>
+  <data name="msg_資料修改成功" xml:space="preserve">
+    <value>资料修改成功</value>
+  </data>
+  <data name="msg_驗證信" xml:space="preserve">
+    <value>电子邮件验证已发送。&lt;br/&gt;请检查您的电子邮件，并查看来自台湾宝工的验证电子邮件。按一下「立即验证」连结。</value>
+  </data>
+  <data name="msg_驗證成功" xml:space="preserve">
+    <value>请开始使用您设定的帐号及密码进行登入。</value>
+  </data>
+  <data name="msg_驗證碼過期" xml:space="preserve">
+    <value>验证码已过期或是未取得验证码。</value>
+  </data>
+  <data name="title_oops" xml:space="preserve">
+    <value>Oops</value>
+  </data>
+  <data name="title_授權失敗" xml:space="preserve">
+    <value>授权失败</value>
+  </data>
+  <data name="title_登入失敗" xml:space="preserve">
+    <value>登入失败</value>
+  </data>
+  <data name="title_經銷商申請失敗" xml:space="preserve">
+    <value>經銷商資料申請填寫失敗</value>
+  </data>
+  <data name="title_經銷商申請完成" xml:space="preserve">
+    <value>经销商资料申请填写完成</value>
+  </data>
+  <data name="title_註冊失敗" xml:space="preserve">
+    <value>注册失败</value>
+  </data>
+  <data name="title_變更密碼失敗" xml:space="preserve">
+    <value>变更密码失败</value>
+  </data>
+  <data name="title_變更密碼成功" xml:space="preserve">
+    <value>变更密码成功</value>
+  </data>
+  <data name="title_資料修改失敗" xml:space="preserve">
+    <value>资料修改失败</value>
+  </data>
+  <data name="title_資料修改成功" xml:space="preserve">
+    <value>资料修改成功</value>
+  </data>
+  <data name="title_驗證" xml:space="preserve">
+    <value>验证您的电子邮件位址</value>
+  </data>
+  <data name="title_驗證成功" xml:space="preserve">
+    <value>恭喜您 !!</value>
+  </data>
+  <data name="url_回到首頁" xml:space="preserve">
+    <value>回到首页</value>
+  </data>
+  <data name="url_密碼驗證" xml:space="preserve">
+    <value>请点我重新取得密码验证信</value>
+  </data>
+  <data name="url_忘記密碼" xml:space="preserve">
+    <value>忘记密码</value>
+  </data>
+  <data name="url_與我們聯繫" xml:space="preserve">
+    <value>请与我们联系</value>
+  </data>
+  <data name="url_返回" xml:space="preserve">
+    <value>请点我返回上一页</value>
+  </data>
+</root>

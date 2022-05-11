@@ -1,0 +1,844 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  /*padding-top: 70px;*/
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 60px;
+}
+
+/* 共用雜項 Start
+----------------------------------*/
+.df-container-margin {
+  margin-top: 20px;
+  min-height: 400px;
+  padding: 0 15px;
+}
+
+.breadcrumb a {
+  color: #005856 !important;
+}
+
+.fixImg {
+  border: 1px solid #f3f3f3 !important;
+}
+
+ul {
+  margin: 0;
+}
+
+/* 共用雜項 End
+----------------------------------*/
+
+/* 共用按鈕 Start
+----------------------------------*/
+
+.btn-green-block {
+  background-color: #008c78;
+  color: #fff;
+  font-weight: bolder;
+}
+.btn-green-block:hover {
+  background-color: #005752;
+  color: #fff;
+}
+
+.btn-green-border {
+  background-color: #fff;
+  border: 2px solid #008c78;
+  color: #008c78;
+  font-weight: bolder;
+}
+.btn-green-border:hover {
+  background-color: #005752;
+  border: 2px solid #005752;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.btn-orange {
+  background-color: #ef8336;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.btn-orange:hover {
+  background-color: #ea5414;
+  color: #fff;
+  font-weight: bolder;
+}
+
+/* 共用按鈕 End
+----------------------------------*/
+
+/* 色碼表 Start
+----------------------------------*/
+.text-green {
+  color: #007719;
+}
+
+.text-red {
+  color: #ff0000;
+}
+
+.text-blue {
+  color: #0b8dc6;
+}
+
+.text-gray {
+  color: #5d5d5d;
+}
+
+.text-orange {
+  color: #ff8000;
+}
+
+.text-yellow {
+  color: #f4de17;
+}
+
+.text-purple {
+  color: #754bf1;
+}
+/* 色碼表 End
+----------------------------------*/
+
+/* 產品分類小圖 Start
+----------------------------------*/
+.cate-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+/* images */
+.cate-icon {
+  height: 56px;
+  width: 56px;
+}
+
+.cate-icon,
+.cate-content .cate-icon {
+  background-image: url("https://cdn.prokits.com.tw/images/PKWeb/index/icon-categories.png");
+}
+
+/* positioning */
+/*  第1行 */
+.cate-icon-2110 {
+  background-position: 0 0;
+}
+/* 2110 */
+
+.cate-icon-2120 {
+  background-position: -56px 0px;
+}
+/* 2120 */
+
+.cate-icon-2130 {
+  background-position: -112px 0px;
+}
+/* 2130 */
+
+.cate-icon-2140 {
+  background-position: -168px 0px;
+}
+/* 2140 */
+
+.cate-icon-2150 {
+  background-position: -224px 0px;
+}
+/* 2150 */
+
+/*  第2行 */
+.cate-icon-2160 {
+  background-position: 0px -56px;
+}
+/* 2160 */
+
+.cate-icon-2170 {
+  background-position: -56px -56px;
+}
+/* 2170 */
+
+.cate-icon-2190 {
+  background-position: -112px -56px;
+}
+/* 2190 */
+
+.cate-icon-2210 {
+  background-position: -168px -56px;
+}
+/* 2210 */
+
+.cate-icon-2220 {
+  background-position: -224px -56px;
+}
+/* 2220 */
+
+/*  第3行 */
+.cate-icon-2211 {
+  background-position: 0px -112px;
+}
+/* 2211 */
+
+.cate-icon-2260 {
+  background-position: -56px -112px;
+}
+/* 2260 */
+
+.cate-icon-2230 {
+  background-position: -112px -112px;
+}
+/* 2230 */
+
+.cate-icon-2240 {
+  background-position: -168px -112px;
+}
+/* 2240 */
+
+.cate-icon-2250 {
+  background-position: -224px -112px;
+}
+/* 2250 */
+
+/*  第4行 */
+.cate-icon-2270 {
+  background-position: 0px -168px;
+}
+/* 2270 */
+
+.cate-icon-2290 {
+  background-position: -56px -168px;
+}
+/* 2290 */
+
+.cate-icon-2280 {
+  background-position: -112px -168px;
+}
+/* 2280 */
+
+.cate-icon-2300 {
+  background-position: -168px -168px;
+}
+/* 2300 */
+
+.cate-icon-2310 {
+  background-position: -224px -168px;
+}
+/* 2310 */
+
+/*  第5行 */
+.cate-icon-2248 {
+  background-position: 0px -225px;
+}
+/* 2248 */
+
+.Categories_zone .Cate_Text {
+  font-size: 77%;
+  line-height: 3px;
+  width: 90%;
+  margin: 6px auto;
+  line-height: 14px;
+  color: #646464;
+}
+
+.Categories_zone ul > li {
+  list-style-type: none;
+  display: block;
+  width: 100px;
+  float: left;
+  text-align: center;
+  height: 110px;
+}
+/* 產品分類小圖 End
+----------------------------------*/
+
+/* Header Start
+----------------------------------*/
+/*LogoBarZone*/
+#LogoBar_zone {
+  background: #fcfdff; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfdff 0%, #dddee0 100%); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #fcfdff),
+    color-stop(100%, #dddee0)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    top,
+    #fcfdff 0%,
+    #dddee0 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(
+    top,
+    #fcfdff 0%,
+    #dddee0 100%
+  ); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fcfdff 0%, #dddee0 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #fcfdff 0%, #dddee0 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfdff', EndColorstr='#dddee0',GradientType=0 ); /* IE6-9 */
+}
+
+.Logo_image {
+  margin: 10px 0;
+}
+/*LogoBar End*/
+
+/*Search Area*/
+.Searc_btn {
+  line-height: 77px;
+}
+
+.Searc_bar {
+  margin-bottom: 6px;
+}
+
+.df-collapse {
+  background: #dddee0;
+}
+
+.input-all {
+  padding: 6px 6px;
+}
+
+/*Search Area End*/
+
+/*login*/
+#Sign_In {
+  width: 215px;
+  height: 381px;
+  background: #a3a194;
+  padding: 10px 10px;
+  /*z-index: 500;*/
+  /*position: absolute;*/
+  /*top: 70px;*/
+  /*left: 45px;*/
+  /*border: solid 1px #89867d;*/
+}
+
+#Sign_In h3 {
+  font-weight: bold;
+  font-size: 108%; /*rEnders 14px */
+}
+
+.Password_title {
+  margin-top: 10px;
+}
+
+.Remember_Me_title {
+  margin-top: 10px;
+}
+
+.Sing_In_bt {
+  width: 195px;
+  height: 24px;
+  background: #555555;
+  color: #ffffff;
+  line-height: 24px;
+  font-weight: bold;
+  font-size: 108%; /*rEnders 14px */
+  text-align: center;
+  margin-top: 10px;
+}
+
+.Sing_In_bt:hover {
+  background: #dbdcd6;
+  color: #000000;
+}
+
+.Forgot_Password {
+  text-align: center;
+  margin-top: 20px;
+  border-bottom: solid 1px #ffffff;
+}
+
+.Forgot_Password h6 {
+  color: #000000;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 93%; /*rEnders 12px */
+}
+
+.Forgot_Password h6 a {
+  color: #ffffff;
+}
+
+.New_to_Channellock h3 {
+  font-weight: bold;
+  font-size: 108%; /*rEnders 14px */
+}
+
+.New_to_Channellock {
+  margin-top: 30px;
+}
+
+.Create_An_Account_bt {
+  width: 195px;
+  height: 24px;
+  background: #555555;
+  color: #ffffff;
+  line-height: 24px;
+  font-weight: bold;
+  font-size: 108%; /*rEnders 14px */
+  text-align: center;
+  margin-top: 10px;
+}
+
+.Create_An_Account_bt:hover {
+  background: #dbdcd6;
+  color: #000000;
+}
+/*login End*/
+
+/*Cart*/
+#Cart_State {
+  width: 215px;
+  height: 170px;
+  background: #a3a194;
+  z-index: 500;
+  position: absolute;
+  top: 70px;
+  left: 179px;
+  padding: 10px 10px;
+}
+
+.Item_In_Cart_title h3 {
+  font-weight: bold;
+  font-size: 108%; /*rEnders 14px */
+  margin-top: 0px;
+}
+
+.View_Cart_bt {
+  width: 195px;
+  height: 24px;
+  background: #555555;
+  color: #ffffff;
+  line-height: 24px;
+  font-weight: bold;
+  font-size: 93%; /*rEnders 12px */
+  text-align: center;
+}
+
+.View_Cart_bt:hover {
+  background: #dbdcd6;
+  color: #000000;
+}
+
+.Checkout_bt {
+  width: 195px;
+  height: 24px;
+  background: #555555;
+  color: #ffffff;
+  line-height: 24px;
+  font-weight: bold;
+  font-size: 93%; /*rEnders 12px */
+  text-align: center;
+  margin-top: 10px;
+}
+
+.Checkout_bt:hover {
+  background: #dbdcd6;
+  color: #000000;
+}
+
+.Cart_Bt_all {
+  border-top: solid 1px #ffffff;
+  padding-top: 16px;
+  margin-top: 20px;
+}
+/*cart End*/
+
+/*Nav*/
+.df-nav {
+  background: #555555 !important;
+  border-color: #555555 !important;
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
+}
+.navbar-overflow {
+  overflow-y: auto;
+}
+.nav li a:hover {
+  color: #000000;
+}
+@media screen and (min-width: 768px) {
+}
+
+.nav-home-hide {
+  display: none !important;
+}
+.xs-logo {
+  padding: 5%;
+  height: 15vmin;
+}
+.xs-logo img {
+  height: 100%;
+}
+
+.caret {
+  display: inline-block !important;
+  color: #fff;
+}
+
+/* 手機板NAVBAR */
+.navbar-header .navbar-toggle {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+.navbar-toggle span {
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-group {
+    display: block;
+  }
+  .nav li {
+    padding: 5px 0;
+  }
+  .nav .visible-xs {
+    display: inline-block !important;
+  }
+}
+/* 凍結選單 */
+.sticky {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+/*Nav End*/
+/* Header End
+----------------------------------*/
+
+/* Footer Start
+----------------------------------*/
+footer {
+  background: #555555;
+  position: absolute;
+  width: 100%;
+}
+
+.navigation-footer {
+  margin: 10px auto;
+  /* margin-bottom: 40px; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-block {
+  color: #ffffff;
+  display: block;
+  float: left;
+  font-size: 100%;
+  font-weight: bold;
+  list-style-type: none;
+
+  /* line-height: 25px; */
+  /* width: 140px; */
+}
+.footer-block:not(:first-child) {
+  /* border-left: 4px solid #fff; */
+  padding: 10px;
+}
+.footer-block ul li {
+  list-style: none;
+}
+
+.navigation-footer ul li a {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.navigation-footer h3 {
+  color: #00ba5b;
+  font-size: 108%; /*rEnders 14px */
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.facebook {
+  color: #3b5998;
+}
+
+.youtube {
+  color: #c4302b;
+}
+
+.twitter {
+  color: #00a0d1;
+}
+
+/*社群媒體*/
+.community-icon li {
+  float: left;
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+/* 版權宣告 */
+.Copyright_zone {
+  background: #005856;
+  padding: 15px 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .Copyright_zone > div:first-child {
+    margin-bottom: 10px;
+  }
+}
+
+.Copyright_zone .content {
+  color: #ffffff;
+  font-size: 77%;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.Copyright_zone .content ul {
+  margin-bottom: 0px;
+}
+
+.Copyright_zone a {
+  color: #ffffff;
+}
+
+.Copyright_zone a:hover {
+  text-decoration: underline;
+}
+/* Footer End
+----------------------------------*/
+
+/* 例外處理頁面 Start
+----------------------------------*/
+.exception-info {
+  margin: 60px 0 80px;
+}
+
+.exception-info .icon {
+  font-size: 100px;
+  color: #f8b800;
+  text-align: center;
+}
+
+.exception-info .message {
+  text-align: center;
+  font-size: 20px;
+}
+/* 例外處理頁面 End
+----------------------------------*/
+
+/* To TOP Start */
+#gotop {
+  display: none;
+  position: fixed;
+  right: 13px;
+  bottom: 80px;
+  padding: 10px 15px;
+  font-size: 12px;
+  background: #111111;
+  color: #fff;
+  cursor: pointer;
+  filter: alpha(opacity=80); /*IE,透明度50%*/
+  -moz-opacity: 0.8; /*Firefox,透明度50%*/
+  opacity: 0.8; /*其他浏览器,透明度50%*/
+}
+/* To TOP End */
+
+/* cookie提醒 Start */
+.cookiebanner-style {
+  background-color: #005856;
+  border-color: #005856;
+  padding-top: 20px;
+  opacity: 0.9;
+}
+
+.cookie-text {
+  color: #ffffff;
+}
+
+.cookie-text a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.btn-cookie {
+  margin: 5px;
+}
+
+/* cookie提醒 End */
+
+/* Override Start
+----------------------------------*/
+.page-header {
+  margin-top: 30px !important;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .page-header {
+    margin: 0 !important;
+  }
+}
+.page-header > h3 {
+  font-weight: bolder;
+
+  height: 50px;
+  vertical-align: middle;
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.notify-row .badge {
+  position: absolute;
+  top: 1px;
+  z-index: 100;
+  right: 1px;
+}
+
+@media screen and (max-width: 767px) {
+  .notify-row .badge {
+    position: relative;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+.badge {
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  border-radius: 10px !important;
+  padding: 2px 6px;
+}
+
+.label {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+  text-shadow: none !important;
+  padding: 6px 7px 6px 7px !important;
+}
+
+.label-default,
+.badge-default {
+  background-color: #abbac3;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #abbac3),
+    color-stop(100%, #abbac3)
+  );
+  background-image: -webkit-linear-gradient(top, #abbac3, #abbac3);
+  background-image: -moz-linear-gradient(top, #abbac3, #abbac3);
+  background-image: -ms-linear-gradient(top, #abbac3, #abbac3);
+  background-image: -o-linear-gradient(top, #abbac3, #abbac3);
+  background-image: linear-gradient(top, #abbac3, #abbac3);
+}
+
+.label-success,
+.badge-success {
+  background-color: #82af6f;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #82af6f),
+    color-stop(100%, #82af6f)
+  );
+  background-image: -webkit-linear-gradient(top, #82af6f, #82af6f);
+  background-image: -moz-linear-gradient(top, #82af6f, #82af6f);
+  background-image: -ms-linear-gradient(top, #82af6f, #82af6f);
+  background-image: -o-linear-gradient(top, #82af6f, #82af6f);
+  background-image: linear-gradient(top, #82af6f, #82af6f);
+}
+
+.label-danger,
+.badge-danger {
+  background-color: #d15b47;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #d15b47),
+    color-stop(100%, #d15b47)
+  );
+  background-image: -webkit-linear-gradient(top, #d15b47, #d15b47);
+  background-image: -moz-linear-gradient(top, #d15b47, #d15b47);
+  background-image: -ms-linear-gradient(top, #d15b47, #d15b47);
+  background-image: -o-linear-gradient(top, #d15b47, #d15b47);
+  background-image: linear-gradient(top, #d15b47, #d15b47);
+}
+
+.label-warning,
+.badge-warning {
+  background-color: #f89406;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #f89406),
+    color-stop(100%, #f89406)
+  );
+  background-image: -webkit-linear-gradient(top, #f89406, #f89406);
+  background-image: -moz-linear-gradient(top, #f89406, #f89406);
+  background-image: -ms-linear-gradient(top, #f89406, #f89406);
+  background-image: -o-linear-gradient(top, #f89406, #f89406);
+  background-image: linear-gradient(top, #f89406, #f89406);
+}
+
+.label-info,
+.badge-info {
+  background-color: #3a87ad;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #3a87ad),
+    color-stop(100%, #3a87ad)
+  );
+  background-image: -webkit-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: -moz-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: -ms-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: -o-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: linear-gradient(top, #3a87ad, #3a87ad);
+}
+
+/* Override End
+----------------------------------*/
+
+/* ====================================================================================================================
+ * Share button Start
+ * ====================================================================================================================*/
+
+.share-btn a {
+  color: #ffffff;
+}
+
+.share-btn .facebook {
+  color: #3b5998;
+}
+
+.share-btn .twitter {
+  color: #00a0d1;
+}
+
+.share-btn .weibo {
+  color: #fc910f;
+}

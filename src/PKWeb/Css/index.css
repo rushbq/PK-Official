@@ -1,0 +1,295 @@
+/* 輪播Banner Start
+----------------------------------*/
+.df-carousel-inner img {
+  margin: 0 auto;
+  /*width: 100%;*/
+}
+
+/* 複寫輪播廣告 */
+.carousel-control {
+  height: 95%;
+  width: 20%;
+}
+@media screen and (max-width: 768px) {
+  .carousel-control {
+    height: 80%;
+    width: 20%;
+  }
+}
+.carousel-control .glyphicon {
+  color: #0079c0 !important;
+}
+.carousel-indicators {
+  /* bottom: -5px !important;
+  margin-left: -48% !important;
+  text-align: left !important; */
+  position: static;
+  width: 100%;
+  margin: 5px auto;
+}
+
+.carousel-indicators li {
+  width: 14px !important;
+  height: 14px !important;
+  margin: 0px 7px !important;
+  border: 0px !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: #000 !important;
+}
+
+.carousel-indicators .active {
+  background-color: #0079c0 \9 !important;
+  background-color: rgba(0, 121, 192, 0.9) !important;
+}
+/* 輪播Banner end
+----------------------------------*/
+/* 4格導出網頁 Start 
+----------------------------------*/
+@media screen and (max-width: 768px) {
+  .promo-group .promo-item {
+    padding: 20px;
+  }
+  /* .promo-group .promo-item {
+    border: 1px solid #ccc;
+  } */
+  .promo-group .promo-item:nth-child(2),
+  .promo-item:nth-child(5) {
+    /* border-right: 1px solid #ccc; */
+    border-left: 1px solid #ccc;
+  }
+  .promo-group .line {
+    border: 1px solid #ccc;
+  }
+
+  /* .promo-group .promo-item:nth-child(1),
+  .promo-item:nth-child(2) {
+    border-bottom: 1px solid #ccc;
+  } */
+  .promo-group .promo-item {
+    text-align: center;
+    width: 48%;
+    display: inline-block;
+    margin: 1px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .promo-group .promo-item {
+    padding: 20px;
+  }
+  .promo-group {
+    display: flex;
+    margin: 20px 0 10px 0;
+  }
+  .promo-group .promo-item:not(:last-child) {
+    border-right: 1px solid #ccc;
+  }
+  .promo-group .promo-item:hover {
+    /* background-color: #ccc; */
+    transform: scale(1.1); /*放大1.1倍*/
+  }
+  .promo-group .promo-item {
+    text-align: center;
+  }
+}
+
+.promo-group .promo-item a {
+  text-decoration: none;
+}
+.promo-group .promo-item img {
+  width: 90%;
+}
+.promo-group .promo-item h2 {
+  font-size: 4vmin;
+  color: #555555;
+}
+
+@media screen and (min-width: 768px) {
+  .promo-group .promo-item h2 {
+    font-size: 3vmin;
+    color: #555555;
+  }
+}
+
+/* 4格導出網頁 end 
+----------------------------------*/
+
+/* 四格廣告 Start
+----------------------------------*/
+
+/* .promo_zone {
+  margin: 5px 0px 0px 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .promo_zone .row div:first-child {
+    padding-right: 2px;
+  }
+
+  .promo_zone .row div:nth-child(2) {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .promo_zone .row div:nth-child(3) {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .promo_zone .row div:last-child {
+    padding-left: 2px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promo_zone .row div:nth-child(odd) {
+    padding-right: 2px;
+  }
+
+  .promo_zone .row div:nth-child(even) {
+    padding-left: 2px;
+  }
+} */
+
+/* 四格廣告 end
+----------------------------------*/
+
+/* News & Events Start
+----------------------------------*/
+.Middle_Message_zone .myBody {
+  margin-top: 5px !important;
+  border: 1px solid #eee;
+}
+
+.Middle_Message_zone .More_bt {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  line-height: 14px;
+}
+
+.Middle_Message_zone .More_bt a {
+  color: #ffffff !important;
+}
+
+.Middle_Message_zone .header h5 {
+  font-weight: bold;
+  font-size: 115%;
+  color: #ffffff;
+  background: #555555;
+  padding-left: 10px;
+  line-height: 35px;
+  margin-top: 10px;
+}
+.Middle_Message_zone .title {
+  font-weight: bold;
+  color: #007719;
+  line-height: 24px;
+}
+.Middle_Message_zone a {
+  text-decoration: none;
+}
+.Middle_Message_zone .detail-btn {
+  flex: 1;
+  background-color: #fff;
+  border: 2px solid #008c78;
+  color: #008c78;
+  font-weight: bolder;
+}
+.detail-btn:hover {
+  background-color: #005752;
+  border: 2px solid #005752;
+  color: #fff;
+}
+.Middle_Message_zone .location,
+.Middle_Message_zone .time {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+.Middle_Message_zone p {
+  margin: 0 5px;
+  display: inline-block;
+}
+.Middle_Message_zone .info-box {
+  padding: 15px;
+}
+@media screen and (max-width: 768px) {
+  .Middle_Message_zone .info-box {
+    padding: 0px 10px;
+  }
+  .Middle_Message_zone .title {
+    font-size: 16px;
+  }
+  .Middle_Message_zone p {
+    font-size: 12px;
+  }
+}
+
+.Middle_Message_zone .image-box {
+  /* height: 150px;
+  width: 250px;
+  position: relative;
+  overflow: hidden;
+  
+  object-fit: cover; */
+  background-color: #eee;
+  padding: 0;
+}
+.Middle_Message_zone .image-box img {
+  margin: 0;
+  height: 200px;
+
+  /* position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
+  object-fit: contain;
+}
+.Middle_Message_zone .title .Middle_Message_zone .content {
+  color: #555555;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .Middle_Message_zone .More_bt {
+    margin-top: 10px;
+  }
+}
+
+/* News & Events end
+----------------------------------*/
+
+/* Where to buy, Video, eCatalogue, Dr.Pro'sKit Start
+----------------------------------*/
+.Small_Message_zone .block {
+  background: #555555;
+}
+
+.Small_Message_zone .block h3 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 115%;
+  line-height: 30px;
+  height: 22px;
+  padding-left: 10px;
+}
+
+/* Where to buy, Video, eCatalogue, Dr.Pro'sKit end
+----------------------------------*/
+
+/*產品分類 icon Start
+----------------------------------*/
+.Categories_zone h3 {
+  background: #555555;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 115%;
+  line-height: 35px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.Categories_zone /*產品分類 icon end
+----------------------------------*/ ;;
