@@ -234,23 +234,6 @@ public class fn_Param
     /// </summary>
     /// <param name="ip"></param>
     /// <returns></returns>
-    /// <remarks>
-    ///台灣網段：
-    ///192.168.1
-    ///192.168.3
-    ///172.16.40
-    ///172.16.50
-
-    ///上海網段
-    ///192.168.0
-    ///172.16.42
-    ///172.16.52
-
-    ///深圳網段：
-    ///192.168.2
-    ///172.16.41
-    ///172.16.51
-    /// </remarks>
     private static string CheckLocalIP(string ip)
     {
         if (string.IsNullOrEmpty(ip))
@@ -258,18 +241,36 @@ public class fn_Param
             return "";
         }
 
+        /*
+            台灣
+            192.168.1
+            192.168.3
+            192.168.168
+            192.168.169
+            172.16.40
+            172.16.50
+
+            上海
+            192.168.0
+            192.168.4
+            192.168.171
+            172.16.42
+            172.16.52
+         */
+
         //定義指定網段及國家別
         Dictionary<string, string> dicCode = new Dictionary<string, string>();
         dicCode.Add("1921681", "TW");
         dicCode.Add("1921683", "TW");
+        dicCode.Add("192168168", "TW");
+        dicCode.Add("192168169", "TW");
         dicCode.Add("1721640", "TW");
         dicCode.Add("1721650", "TW");
         dicCode.Add("1921680", "CN");
+        dicCode.Add("1921684", "CN");
+        dicCode.Add("192168171", "CN");
         dicCode.Add("1721642", "CN");
         dicCode.Add("1721652", "CN");
-        dicCode.Add("1921682", "CN");
-        dicCode.Add("1721641", "CN");
-        dicCode.Add("1721651", "CN");
 
         //分割字串
         string[] ipAry = Regex.Split(ip, @"\.{1}");
