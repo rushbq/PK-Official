@@ -331,17 +331,17 @@ public class fn_Member
             using (SqlCommand cmd = new SqlCommand())
             {
                 //宣告
-                StringBuilder SBSql = new StringBuilder();
                 int GetMemID;
 
                 //[SQL] - 取得新編號
-                SBSql.AppendLine(" DECLARE @GetMemID AS INT ");
-                SBSql.AppendLine(" SET @GetMemID = (");
-                SBSql.AppendLine("  SELECT Mem_ID FROM Member_SocialToken WHERE (Social_ID = @Social_ID)");
-                SBSql.AppendLine(" );");
-                SBSql.AppendLine(" SELECT @GetMemID AS GetMemID");
+                string sql = @"
+                    DECLARE @GetMemID AS INT
+                    SET @GetMemID = (
+                     SELECT Mem_ID FROM Member_SocialToken WHERE (Social_ID = @Social_ID)
+                    );
+                    SELECT @GetMemID AS GetMemID";
 
-                cmd.CommandText = SBSql.ToString();
+                cmd.CommandText = sql;
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("Social_ID", userId);
                 using (DataTable DT = dbConn.LookupDT(cmd, out ErrMsg))
@@ -353,22 +353,23 @@ public class fn_Member
                 //--- 開始新增資料 ---
                 //[SQL] - 清除參數設定
                 cmd.Parameters.Clear();
-                SBSql.Clear();
 
-                //[SQL] - 資料處理, 修改會員資料
-                SBSql.AppendLine(" UPDATE Member_Data SET ");
-                SBSql.AppendLine("  LastName = @LastName, FirstName = @FirstName");
-                SBSql.AppendLine("  , Country_Code = @Country_Code, Update_Time = GETDATE()");
-                SBSql.AppendLine(" WHERE (Mem_ID = @Mem_ID);");
 
-                //[SQL] - 資料處理, 修改社群資料
-                SBSql.AppendLine(" UPDATE Member_SocialToken SET Token = @Token");
-                SBSql.AppendLine(" WHERE (Mem_ID = @Mem_ID) AND (Social_ID = @Social_ID)");
+                //[SQL] - 資料處理, 
+                sql = @"
+                /* 修改會員資料 */
+                 UPDATE Member_Data SET 
+                  LastName = @LastName, FirstName = @FirstName
+                  , Update_Time = GETDATE()
+                 WHERE (Mem_ID = @Mem_ID);
+
+                /* 修改社群資料 */
+                UPDATE Member_SocialToken SET Token = @Token WHERE (Mem_ID = @Mem_ID) AND (Social_ID = @Social_ID);";
 
                 //[SQL] - Command
-                cmd.CommandText = SBSql.ToString();
+                cmd.CommandText = sql;
                 cmd.Parameters.AddWithValue("Mem_ID", GetMemID);
-                cmd.Parameters.AddWithValue("Country_Code", locale.Right(2).ToUpper());
+                //cmd.Parameters.AddWithValue("Country_Code", locale.Right(2).ToUpper());  locale已停用
                 cmd.Parameters.AddWithValue("LastName", last_name);
                 cmd.Parameters.AddWithValue("FirstName", first_name);
                 cmd.Parameters.AddWithValue("Social_ID", userId);

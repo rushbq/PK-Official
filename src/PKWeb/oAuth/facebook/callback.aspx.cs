@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using API_Facebook;
 using ExtensionMethods;
 using Newtonsoft.Json.Linq;
+using LogRecord;
 
 public partial class oAuth_facebook_callback : System.Web.UI.Page
 {
@@ -36,7 +37,7 @@ public partial class oAuth_facebook_callback : System.Web.UI.Page
                 string AppID, AppSecret, Perms;
                 if (false == fn_Extensions.Get_AppInfo(1, out AppID, out AppSecret, out Perms))
                 {
-                    Response.Redirect(GoUrl("6"));
+                    Response.Redirect(GoUrl("61"));
                     return;
                 }
 
@@ -60,7 +61,7 @@ public partial class oAuth_facebook_callback : System.Web.UI.Page
 
                         //取得Access Token
                         string myToken = Get_NewToken(AppID, AppSecret, Request.QueryString["code"]);
-                    
+
 
                         //判斷是否成功取得token
                         if (string.IsNullOrEmpty(myToken))
@@ -91,7 +92,7 @@ public partial class oAuth_facebook_callback : System.Web.UI.Page
                                 //不存在, 建立帳號, 新增token, 再執行登入
                                 if (!fn_Member.AccountProcess(UserID, Email, FirstName, LastName, Locale, myToken, "Facebook", "Create"))
                                 {
-                                    Response.Redirect(GoUrl("6"));
+                                    Response.Redirect(GoUrl("62"));
                                     break;
                                 }
                             }
@@ -108,7 +109,14 @@ public partial class oAuth_facebook_callback : System.Web.UI.Page
                                     //存在, 更新token, 再執行登入
                                     if (!fn_Member.AccountProcess(UserID, Email, FirstName, LastName, Locale, myToken, "Facebook", "Update"))
                                     {
-                                        Response.Redirect(GoUrl("6"));
+                                        string logdesc = "myToken={0}, Email={1}, UserID={2}, func={3}".FormatThis(
+                                             myToken
+                                             , Email
+                                             , UserID
+                                             , "fn_Member.AccountProcess"
+                                            );
+                                        fn_Log.writeLog(UserID, logdesc, "6001", "callback.aspx");
+                                        Response.Redirect(GoUrl("63"));
                                         break;
                                     }
                                 }

@@ -58,7 +58,7 @@ namespace LogRecord
         /// </summary>
         /// <param name="Platform">來源(前台/後台)</param>
         /// <param name="EventID">事件代號</param>
-        /// <param name="EventDesc">事件簡述(50字內)</param>
+        /// <param name="EventDesc">事件簡述</param>
         /// <param name="EventDetail">事件詳述</param>
         /// <param name="CreateWho">建立者</param>
         /// <param name="IP">IP</param>
@@ -89,7 +89,7 @@ namespace LogRecord
                     cmd.Parameters.AddWithValue("FromIP", IP);
                     cmd.Parameters.AddWithValue("Platform", Platform);
                     cmd.Parameters.AddWithValue("EventID", EventID);
-                    cmd.Parameters.AddWithValue("EventDesc", EventDesc.Left(100));
+                    cmd.Parameters.AddWithValue("EventDesc", EventDesc);
                     cmd.Parameters.AddWithValue("EventDetail", EventDetail);
                     cmd.Parameters.AddWithValue("TraceID", TraceID);
 

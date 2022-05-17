@@ -48,6 +48,12 @@ public partial class Message : System.Web.UI.Page
                         //登入失敗
                         this.ph_message6.Visible = true;
                         break;
+                    case "61":
+                    case "62":
+                    case "63":
+                        //登入失敗
+                        this.ph_message6.Visible = true;
+                        break;
 
                     case "7":
                         //補發驗證信
