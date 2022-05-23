@@ -24,7 +24,7 @@
 
             //載入Html
             $.ajax({
-                url: WebUrl + 'myInfo/html/' + Lang + '/Privacy.html?v=20211007',
+                url: WebUrl + 'myInfo/html/' + Lang + '/Privacy.html?v=20220523',
                 dataType: "html"
 
             }).done(function (response) {
