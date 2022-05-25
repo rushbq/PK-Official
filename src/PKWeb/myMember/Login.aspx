@@ -48,8 +48,8 @@
                         <a href="<%=Application["WebUrl"] %>ForgotPwd" class="myBox" data-type="iframe" data-title="<%=this.GetLocalResourceObject("txt_忘記密碼").ToString()%>"><%=this.GetLocalResourceObject("txt_忘記密碼").ToString()%></a>
 
                         <div class="line"></div>
-
-                        <a href="<%=Application["WebUrl"] %>SignUp" class="myBox" data-type="iframe" data-title="<%=this.GetLocalResourceObject("txt_前往註冊").ToString()%>"><%=this.GetLocalResourceObject("txt_前往註冊").ToString()%></a>
+                        <a href="<%=Application["WebUrl"] %>SignUp"><%=this.GetLocalResourceObject("txt_前往註冊").ToString()%></a>
+                        <%--<a href="<%=Application["WebUrl"] %>SignUp" class="myBox" data-type="iframe" data-title="<%=this.GetLocalResourceObject("txt_前往註冊").ToString()%>"><%=this.GetLocalResourceObject("txt_前往註冊").ToString()%></a>--%>
                     </div>
                 </div>
             </div>
