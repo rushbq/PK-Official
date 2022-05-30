@@ -11,7 +11,7 @@ public partial class EventReg : System.Web.UI.Page
     public string ErrMsg;
     public string DataID = "0dc02318-4235-41d1-b3f2-dcb09f2f998c";
     public string eventFolder = "Thanks202205";
-    public string eventTitle = "寶工感恩月登錄抽獎活動";
+    public string eventTitle = "寶工感恩月登錄專區";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -19,8 +19,14 @@ public partial class EventReg : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
+                //隱藏主頁的meta
+                PlaceHolder myMeta = (PlaceHolder)Master.FindControl("ph_MetaInfo");
+                myMeta.Visible = false;
+
+
                 //Token驗證
-                CheckToken();
+                //#165391014161 取消檢查
+                //CheckToken();
 
                 //檢查活動是否有效
                 CheckDataValid();

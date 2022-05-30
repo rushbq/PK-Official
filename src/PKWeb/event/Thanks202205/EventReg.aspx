@@ -1,9 +1,16 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EventReg.aspx.cs" Inherits="EventReg" %>
 
-
 <asp:Content ID="myCss" ContentPlaceHolderID="CssContent" runat="Server">
     <%: Styles.Render("~/bundles/member-css") %>
     <%: Styles.Render("~/bundles/DTpicker-css") %>
+    <title>Pro'sKit | <%:eventTitle %></title>
+    <meta name="keywords" content="寶工, 宝工, 工具, Proskit, Prokits, Tool, <%:eventTitle %>" />
+    <meta name="description" content="<%:eventTitle %>" />
+    <meta property="og:url" content="<%=Application["WebUrl"] %>event/<%:eventFolder %>/" />
+    <meta property="og:title" content="<%:eventTitle %>" />
+    <meta property="og:description" content="<%:eventTitle %>" />
+    <meta property="og:image" content="<%=Application["WebUrl"] %>event/<%:eventFolder %>/act2.jpg?v=0429" />
+    <meta property="og:image:width" content="600" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
     <img src="act2.jpg?v=0429" class="img-responsive" alt="登錄活動" />
@@ -127,11 +134,18 @@
                     <div class="header">&nbsp;</div>
                 </div>
                 <div>
-登錄抽獎活動辦法如下：<br />
-活動時間；2022/5/1 AM 00:00 開始至 2022/5/31 PM 23:59〈網路消費依結帳時間，店面消費依當日營業時間〉
-滿額登錄抽獎活動，於任一平台，購買寶工工具或寶工科學玩具，單筆消費滿額即可參加一次抽獎機會。
-抽獎活動預計於 2022/6/15 前抽出，中獎者須提供完整並清楚的購買證明與明細，否則取消中獎資格。
-聯絡資料請務必填寫正確，若中獎聯絡不到本人視同放棄。
+                    <b>登錄送咖啡與抽獎活動辦法如下：</b><br />
+                    <ul>
+                        <li>
+                            活動時間:2022/6/1 AM 00:00 開始至 2022/6/30 PM 23:59〈網路消費依結帳時間，店面消費依當日營業時間〉。
+                        </li>
+                        <li>
+                            滿額登錄送咖啡與抽獎活動，於任一平台，購買寶工工具或寶工科學玩具，單筆消費滿額即可參加一次。消費滿 $ 300送全家咖啡、滿 $ 2,000抽Jabra藍芽耳機、滿 $ 5,000抽Apple iPad。
+                        </li>
+                        <li>
+                            抽獎活動預計於 2022/7/15 前抽出，咖啡兌換與抽獎中獎者須提供完整並清楚的購買證明與明細，否則取消資格。聯絡資料請務必填寫正確，若聯絡不到本人視同放棄。
+                        </li>
+                    </ul>
                 </div>
             </div>
 
