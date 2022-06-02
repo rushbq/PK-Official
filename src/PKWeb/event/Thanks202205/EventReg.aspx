@@ -13,7 +13,7 @@
     <meta property="og:image:width" content="600" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
-    <img src="act2.jpg?v=0429" class="img-responsive" alt="登錄活動" />
+    <img src="act2.jpg?v=0529" class="img-responsive" alt="登錄活動" style="width:100%" />
     <div class="container">
         <div class="login login-bg">
             <div class="login-area">
