@@ -25,9 +25,6 @@
                         <span>篩選器</span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#filter">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -106,9 +103,6 @@
                         <span class="glyphicon glyphicon-list"></span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#result">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -149,11 +143,11 @@
                                     </div>
                                 </td>
                                 <td class="text-center">
-                                    <%#Eval("StartTime").ToString().ToDateString("yyyy-MM-dd HH:mm:ss") %>
+                                    <%#Eval("StartTime").ToString().ToDateString("yyyy-MM-dd HH:mm") %>
                                     <br />
                                     <i class="fa fa-chevron-down"></i>
                                     <br />
-                                    <%#Eval("EndTime").ToString().ToDateString("yyyy-MM-dd HH:mm:ss") %>
+                                    <%#Eval("EndTime").ToString().ToDateString("yyyy-MM-dd HH:mm") %>
                                 </td>
                                 <td class="text-center">
                                     <asp:Label ID="lb_onIndex" runat="server" CssClass="label label-danger" Text="首頁顯示"></asp:Label>
@@ -191,7 +185,7 @@
         $(function () {
             //換頁時, 滑動到內容區
             <% if (Req_PageIdx != 1)
-               { %>
+        { %>
             //取得元素
             var _thisID = $('#result');
 

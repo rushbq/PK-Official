@@ -34,9 +34,6 @@
                         <span>基本設定</span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#data">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -211,9 +208,6 @@
                             <span>圖片集</span>
                         </div>
                         <div class="pull-right">
-                            <a data-toggle="collapse" href="#block">
-                                <span class="glyphicon glyphicon-sort"></span>
-                            </a>
                         </div>
                         <div class="clearfix"></div>
                     </div>

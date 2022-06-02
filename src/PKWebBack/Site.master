@@ -26,10 +26,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!-- Search button (screen<767px) -->
-                    <%-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-search">
-                        <i class="fa fa-search fa-inverse fa-lg"></i>
-                    </button>--%>
                     <div class="navbar-brand">
                         <!-- sidebar toggle button -->
                         <a href="#menu-toggle" class="btn btn-success" id="menu-toggle" style="margin-top: -17px;"><span class="glyphicon glyphicon-th"></span></a>
@@ -40,26 +36,8 @@
                     </div>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Top 左側Menu Start -->
-                    <%--<ul class="nav navbar-nav">
-                        <li><a href="#">Menu1</a></li>
-                        <li><a href="#">Menu2</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu3 <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">XX</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">oo</a></li>
-                            </ul>
-                        </li>
-                    </ul>--%>
-                    <!-- Top 左側Menu End -->
                     <!-- Top 右側Menu Start -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Search button (screen>767px) -->
-                        <%-- <li class="hidden-xs">
-                            <a href="javascript:void(0);" data-toggle="collapse" data-target=".nav-search"><i class="fa fa-search fa-lg"></i></a>
-                        </li>--%>
                         <!-- 其他網站連結 -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -67,25 +45,15 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="http://productcenter.prokits.com.tw" target="_blank">產品中心</a></li>
-                                <li><a href="http://pkef.prokits.com.tw" target="_blank">PKEF</a></li>
-                                <li><a href="http://pk711.prokits.com.tw" target="_blank">專案服務區</a></li>
-                                <li class="divider"></li>
-                                <li><a href="http://www.prokits.com.tw" target="_blank">寶工官網</a></li>
+                                <li><a href="https://productcenter.prokits.com.tw" target="_blank">產品中心</a></li>
+                                <li><a href="https://www.prokits.com.tw" target="_blank">寶工官網</a></li>
                             </ul>
                         </li>
-                        <!-- Profile & 登出 -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <li>
+                            <a>
                                 <i class="fa fa-user fa-lg"></i>
                                 &nbsp;<%=Session["Login_UserName"] %>
-                                <b class="caret"></b>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <asp:LinkButton ID="lbtn_Logout" runat="server" OnClick="lbtn_Logout_Click"><i class="fa fa-sign-out"></i>&nbsp;登出</asp:LinkButton>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                     <!-- Top 右側Menu End -->

@@ -42,9 +42,9 @@
         routes.MapPageRoute("AuthSetByUser", "Auth/User/Set/{DataID}", "~/Authorization/SetUser.aspx", false,
            new RouteValueDictionary {
                     { "DataID", "New" }});
-        routes.MapPageRoute("AuthSetByGroup", "Auth/Group/Set/{DataID}", "~/Authorization/SetGroup.aspx", false,
-          new RouteValueDictionary {
-                    { "DataID", "New" }});
+        //routes.MapPageRoute("AuthSetByGroup", "Auth/Group/Set/{DataID}", "~/Authorization/SetGroup.aspx", false,
+        //  new RouteValueDictionary {
+        //            { "DataID", "New" }});
 
         // [登入]
         routes.MapPageRoute("LoginPage", "ServiceLogin", "~/Login/LoginPage.aspx", false);
@@ -83,16 +83,16 @@
                     { "DataID", "New" }});
 
         // [Promo] - Stop on 20150826
-        routes.MapPageRoute("Promo_Search", "Promo/Search/{PageID}", "~/myPromo/Search.aspx", false,
-            new RouteValueDictionary {
-                    { "PageID", "1" }});
-        routes.MapPageRoute("Promo_Edit", "Promo/Edit/{DataID}", "~/myPromo/Edit.aspx", false,
-            new RouteValueDictionary {
-                    { "DataID", "New" }});
-        routes.MapPageRoute("Promo_EditSub", "Promo/Edit/Detail/{ParentID}/{LangCode}/{DataID}", "~/myPromo/Edit_Sub.aspx", false,
-           new RouteValueDictionary {
-                    { "LangCode", "en-us" },
-                    { "DataID", "New" }});
+        //routes.MapPageRoute("Promo_Search", "Promo/Search/{PageID}", "~/myPromo/Search.aspx", false,
+        //    new RouteValueDictionary {
+        //            { "PageID", "1" }});
+        //routes.MapPageRoute("Promo_Edit", "Promo/Edit/{DataID}", "~/myPromo/Edit.aspx", false,
+        //    new RouteValueDictionary {
+        //            { "DataID", "New" }});
+        //routes.MapPageRoute("Promo_EditSub", "Promo/Edit/Detail/{ParentID}/{LangCode}/{DataID}", "~/myPromo/Edit_Sub.aspx", false,
+        //   new RouteValueDictionary {
+        //            { "LangCode", "en-us" },
+        //            { "DataID", "New" }});
 
         // [Country]
         routes.MapPageRoute("Country_Search", "Country/Search/{PageID}", "~/myCountry/Search.aspx", false,
@@ -193,11 +193,11 @@
         // [統計資料]
         routes.MapPageRoute("Stat_ProdClass", "Stat/ProdClass", "~/myStat/ProdClass.aspx", false);
         routes.MapPageRoute("Stat_ProdItem", "Stat/ProdItem/{DataID}", "~/myStat/ProdItem.aspx", false,
-            new RouteValueDictionary { 
+            new RouteValueDictionary {
                 {"DataID", "ALL"}
             });
-        
-        
+
+
         // [Orders]
         routes.MapPageRoute("Order_Search", "eOrder/List", "~/myOrders/Search.aspx", false);
 

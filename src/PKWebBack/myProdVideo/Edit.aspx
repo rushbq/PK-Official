@@ -27,9 +27,7 @@
                         <span>群組基本設定</span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#data">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
+                      
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -208,9 +206,7 @@
                         <span>各語系設定狀態</span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#result">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
+                        
                     </div>
                     <div class="clearfix"></div>
                 </div>

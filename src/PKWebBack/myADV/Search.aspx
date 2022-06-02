@@ -25,9 +25,6 @@
                         <span>篩選器</span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#filter">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -116,9 +113,6 @@
                         <span class="glyphicon glyphicon-list"></span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#result">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
                     </div>
                     <div class="clearfix"></div>
                 </div>

@@ -18,6 +18,7 @@
         </div>
     </div>
     <!-- Page Header End -->
+    <h2>~~~~ 功能未開發 ~~~~</h2>
     <!-- Filter Start -->
     <div class="row">
         <div class="col-sm-12">

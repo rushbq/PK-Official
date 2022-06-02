@@ -303,33 +303,33 @@ public partial class Site : MasterPage, IProgID
     }
     #endregion
 
-    #region -- 按鈕事件 --
-    /// <summary>
-    /// 登出
-    /// </summary>
-    protected void lbtn_Logout_Click(object sender, EventArgs e)
-    {
-        //判斷是否使用內部AD驗證
-        string IsAD = System.Web.Configuration.WebConfigurationManager.AppSettings["AD_IsUse"];
-        if (IsAD.ToUpper().Equals("Y"))
-        {
-            //清除Cookie
-            if (Request.Cookies["PK_UserSID"] != null)
-            {
-                HttpCookie myCookie = new HttpCookie("PK_UserSID");
-                myCookie.Expires = DateTime.Now.AddDays(-1d);
-                Response.Cookies.Add(myCookie);
-            }
-        }
+    //#region -- 按鈕事件 --
+    ///// <summary>
+    ///// 登出
+    ///// </summary>
+    //protected void lbtn_Logout_Click(object sender, EventArgs e)
+    //{
+    //    //判斷是否使用內部AD驗證
+    //    string IsAD = System.Web.Configuration.WebConfigurationManager.AppSettings["AD_IsUse"];
+    //    if (IsAD.ToUpper().Equals("Y"))
+    //    {
+    //        //清除Cookie
+    //        if (Request.Cookies["PK_UserSID"] != null)
+    //        {
+    //            HttpCookie myCookie = new HttpCookie("PK_UserSID");
+    //            myCookie.Expires = DateTime.Now.AddDays(-1d);
+    //            Response.Cookies.Add(myCookie);
+    //        }
+    //    }
 
-        //清除Session
-        Session.Clear();
-        Session.Abandon();
+    //    //清除Session
+    //    Session.Clear();
+    //    Session.Abandon();
 
-        //導向登入頁
-        Response.Redirect("{0}ServiceLogin/".FormatThis(Application["WebUrl"]));
-    }
-    #endregion
+    //    //導向登入頁
+    //    Response.Redirect("{0}ServiceLogin/".FormatThis(Application["WebUrl"]));
+    //}
+    //#endregion
 
     /// <summary>
     /// 瀏覽器Title

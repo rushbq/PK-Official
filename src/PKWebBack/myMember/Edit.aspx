@@ -26,9 +26,6 @@
                         <span>會員基本資料</span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#data">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -460,9 +457,6 @@
                             <span>經銷商資料</span>
                         </div>
                         <div class="pull-right">
-                            <a data-toggle="collapse" href="#result">
-                                <span class="glyphicon glyphicon-sort"></span>
-                            </a>
                         </div>
                         <div class="clearfix"></div>
                     </div>

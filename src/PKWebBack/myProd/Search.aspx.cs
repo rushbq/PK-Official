@@ -1,17 +1,13 @@
-﻿using System;
+﻿using ExtensionMethods;
+using ExtensionUI;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ExtensionIO;
-using ExtensionMethods;
-using ExtensionUI;
 
 public partial class Prod_Search : SecurityCheck
 {
@@ -456,13 +452,13 @@ public partial class Prod_Search : SecurityCheck
                 switch (GetIsNew)
                 {
                     case "Y":
-                        lb_IsNew.Text = "新品";
+                        lb_IsNew.Text = "新品專區";
                         lb_IsNew.Visible = true;
                         lb_IsNew.CssClass = "label label-danger";
                         break;
 
                     case "Z":
-                        lb_IsNew.Text = "推薦";
+                        lb_IsNew.Text = "熱銷推薦";
                         lb_IsNew.Visible = true;
                         lb_IsNew.CssClass = "label label-info";
                         break;

@@ -11,7 +11,7 @@
         <!-- 路徑導航 End -->
         <div class="service-group">
             <div class="service-item">
-                <a href="mailto:pk@mail.prokits.com.tw">
+                <a href="<%=Application["WebUrl"] %>ContactUs/">
                     <img src="<%=Application["WebUrl"] %>images/about_us/icons8-new-message-96.png" alt="mail" />
                     <p>E-Mail</p>
                 </a>
@@ -38,12 +38,6 @@
                 <a href="https://line.me/R/ti/p/%40alp6806x">
                     <img src="<%=Application["WebUrl"] %>images/about_us/icons8-line-96.png" alt="LINE" />
                     <p>LINE</p>
-                </a>
-            </div>
-            <div class="service-item">
-                <a href="<%=Application["WebUrl"] %>ContactUs/">
-                    <img src="<%=Application["WebUrl"] %>images/about_us/icons8-info-squared-96.png" alt="Contact Us" />
-                    <p>Support</p>
                 </a>
             </div>
         </div>
@@ -80,7 +74,7 @@
         });
     </script>
     <!-- venobox JS -->
-    <link rel="stylesheet" href="<%=Application["WebUrl"] %>js/VenoBox-master/venobox/venobox.css">
+    <link rel="stylesheet" href="<%=Application["WebUrl"] %>js/VenoBox-master/venobox/venobox.css" />
     <script src="<%=Application["WebUrl"] %>js/VenoBox-master/venobox/venobox.min.js"></script>
     <script src="<%=Application["WebUrl"] %>js/venobox_zoom.js"></script>
 </asp:Content>

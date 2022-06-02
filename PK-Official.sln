@@ -45,6 +45,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PKScience", "http://localho
 		SlnRelativePath = "src\PKScience\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PKWebback", "http://localhost/PKWebback", "{A1DA304A-38E9-4542-8A5E-536ABCA20A82}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		Debug.AspNetCompiler.VirtualPath = "/PKWebback"
+		Debug.AspNetCompiler.PhysicalPath = "src\PKWebBack\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\PKWebback\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/PKWebback"
+		Release.AspNetCompiler.PhysicalPath = "src\PKWebBack\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\PKWebback\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "src\PKWebBack\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +80,10 @@ Global
 		{EF99409F-0F2F-4C71-906B-DFA957C3617C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF99409F-0F2F-4C71-906B-DFA957C3617C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF99409F-0F2F-4C71-906B-DFA957C3617C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A1DA304A-38E9-4542-8A5E-536ABCA20A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DA304A-38E9-4542-8A5E-536ABCA20A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DA304A-38E9-4542-8A5E-536ABCA20A82}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DA304A-38E9-4542-8A5E-536ABCA20A82}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

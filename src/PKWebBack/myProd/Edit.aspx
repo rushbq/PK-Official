@@ -27,9 +27,7 @@
                         <span>基本設定</span>
                     </div>
                     <div class="pull-right">
-                        <a data-toggle="collapse" href="#data">
-                            <span class="glyphicon glyphicon-sort"></span>
-                        </a>
+                      
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -48,7 +46,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-sm-3 col-md-3 col-lg-2" for="MainContent_tb_Rpt_Folder">上架區域 <em>*</em></label>
+                                <label class="control-label col-sm-3 col-md-3 col-lg-2" for="MainContent_tb_Rpt_Folder">上架區域(語系) <em>*</em></label>
                                 <div class="col-sm-9 col-md-9 col-lg-10">
                                     <asp:CheckBoxList ID="cbl_Area" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow"></asp:CheckBoxList>
                                     <asp:CustomValidator ID="cv_check_Area" runat="server" ErrorMessage="請選擇「上架區域」" Display="Dynamic"
@@ -114,8 +112,8 @@
                                     <div class="form-inline">
                                         <div class="showRadioGrp">
                                             <asp:RadioButtonList ID="rbl_IsNew" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-                                                <asp:ListItem Value="Z">推薦</asp:ListItem>
-                                                <asp:ListItem Value="Y">新品</asp:ListItem>
+                                                <asp:ListItem Value="Z">熱銷推薦</asp:ListItem>
+                                                <asp:ListItem Value="Y">新品專區</asp:ListItem>
                                                 <asp:ListItem Value="N" Selected="True">一般品</asp:ListItem>
                                             </asp:RadioButtonList>
                                         </div>
