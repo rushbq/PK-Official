@@ -323,14 +323,12 @@ public partial class myOrder_Step3 : SecurityCheckDealer
             //    emailTo.Add(mailto.MailAddress);
             //}
 
-            //發給指定對象(2020/7/20 #99-20200720-0003)
-            //20201225:移除szsales
+            //發給指定對象
             emailTo.Add("SH_Sales@mail.prokits.com.tw");
             emailTo.Add("SH_OPTeam@mail.prokits.com.tw");
-            emailTo.Add("opteam@mail.prokits.com.tw");
 
             //固定傳送MAIL:系統收件箱
-            emailTo.Add(fn_Param.SysMail_Inform);
+            //emailTo.Add(fn_Param.SysMail_Inform);
 
             //Set reciever
             fn_Mail.Reciever = emailTo;

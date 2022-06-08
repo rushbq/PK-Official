@@ -350,7 +350,7 @@ public partial class Login : System.Web.UI.Page
 
             //[設定參數] - 收件人
             List<string> emailTo = new List<string>();
-            emailTo.Add("mis@mail.prokits.com.tw");
+            emailTo.Add("clyde@mail.prokits.com.tw");
 
             fn_Mail.Reciever = emailTo;
 
