@@ -370,6 +370,7 @@ public partial class Site : System.Web.UI.MasterPage, IProgID
                 cmd.Parameters.Clear();
 
                 //[SQL] - 資料查詢
+                // LinkUrl 應該已停用(220602)
                 SBSql.AppendLine(" SELECT RTRIM(Class_ID) AS Class_ID, Class_Name_{0} AS Class_Name, LinkUrl ".FormatThis(fn_Language.Param_Lang));
                 SBSql.AppendLine(" FROM Prod_Class WITH(NOLOCK) ");
                 SBSql.AppendLine(" WHERE (LEFT(RTRIM(Class_ID),1) = '2') AND (Display = 'Y') AND (Display_PKWeb = 'Y') ");
@@ -407,7 +408,7 @@ public partial class Site : System.Web.UI.MasterPage, IProgID
         }
         catch (Exception)
         {
-            throw new Exception("系統發生錯誤 - Categories");
+            throw new Exception("系統發生錯誤 - Tools Categories");
         }
 
     }
@@ -463,7 +464,7 @@ public partial class Site : System.Web.UI.MasterPage, IProgID
         }
         catch (Exception)
         {
-            throw new Exception("系統發生錯誤 - Categories");
+            throw new Exception("系統發生錯誤 - Robots Categories");
         }
 
     }

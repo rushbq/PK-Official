@@ -225,6 +225,16 @@
                     </div>
                 </div>
             </asp:PlaceHolder>
+            
+            <!-- 產品其他資訊-->
+            <asp:PlaceHolder ID="data_info5" runat="server">
+
+                <div id="section5" class="specification content container-fluid">
+                    <div class="tab-content-padding">
+                        <asp:Literal ID="lt_OtherInfo" runat="server"></asp:Literal>
+                    </div>
+                </div>
+            </asp:PlaceHolder>
         </div>
         <!-- // Content End // -->
 

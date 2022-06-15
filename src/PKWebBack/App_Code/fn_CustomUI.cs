@@ -1201,7 +1201,7 @@ namespace ExtensionUI
             List<NewsDisplay> list_NewsDisp = new List<NewsDisplay>();
             list_NewsDisp.Add(new NewsDisplay("S", "{0}待上架".FormatThis(showIcon ? "<i class=\"fa fa-wheelchair\"></i>&nbsp;" : ""), 1));
             list_NewsDisp.Add(new NewsDisplay("Y", "{0}已上架".FormatThis(showIcon ? "<i class=\"fa fa-check\"></i>&nbsp;" : ""), 2));
-            list_NewsDisp.Add(new NewsDisplay("N", "{0}已下架".FormatThis(showIcon ? "<i class=\"fa fa-ban\"></i>&nbsp;" : ""), 3));
+            list_NewsDisp.Add(new NewsDisplay("N", "{0}下架了".FormatThis(showIcon ? "<i class=\"fa fa-ban\"></i>&nbsp;" : ""), 3));
 
             return list_NewsDisp;
         }

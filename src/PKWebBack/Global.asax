@@ -56,7 +56,7 @@
                 });
 
 
-        // [News]
+        // [新聞中心]
         routes.MapPageRoute("News_Search", "News/Search/{PageID}", "~/myNews/Search.aspx", false,
             new RouteValueDictionary {
                     { "PageID", "1" }});
@@ -81,6 +81,21 @@
            new RouteValueDictionary {
                     { "LangCode", "en-us" },
                     { "DataID", "New" }});
+
+
+        // [最新消息]
+        routes.MapPageRoute("Article_Search", "Article/Search/{PageID}", "~/myArticle/Search.aspx", false,
+            new RouteValueDictionary {
+                    { "PageID", "1" }});
+        routes.MapPageRoute("Article_Edit", "Article/Edit/{DataID}", "~/myArticle/Edit.aspx", false,
+            new RouteValueDictionary {
+                    { "DataID", "New" }});
+        routes.MapPageRoute("Article_EditSub", "Article/Edit/Detail/{ParentID}/{LangCode}/{DataID}", "~/myArticle/Edit_Sub.aspx", false,
+           new RouteValueDictionary {
+                    { "LangCode", "en-us" },
+                    { "DataID", "New" }});
+        routes.MapPageRoute("Article_EditBox", "Article/Edit/DetailBox/{GroupID}/{ParentID}/{DataID}", "~/myArticle/Edit_DetailBox.aspx", false);
+
 
         // [Promo] - Stop on 20150826
         //routes.MapPageRoute("Promo_Search", "Promo/Search/{PageID}", "~/myPromo/Search.aspx", false,

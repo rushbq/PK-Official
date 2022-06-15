@@ -63,6 +63,7 @@ public partial class myProd_ProdView : System.Web.UI.Page
                 //產品客製資訊
                 SBSql.AppendLine(" , myInfo.Info1 AS InfoFullDesc, myInfo.Info2 AS InfoFeature, myInfo.Info3 AS InfoApp");
                 SBSql.AppendLine(" , myInfo.Info4 AS InfoSpec, myInfo.Info5 AS InfoDesc, myInfo.Info9 AS InfoDescSeo");
+                SBSql.AppendLine(" , myInfo.Info7 AS TitleSeo, myInfo.Info10 AS InfoOther");
 
                 //是否為新品
                 SBSql.AppendLine(" , (CASE WHEN (DATEDIFF(DAY, GP.StartTime, GETDATE()) <= 365) AND (GP.IsNew = 'Y') THEN 'Y' ELSE 'N' END) AS IsNewItem");
@@ -70,9 +71,9 @@ public partial class myProd_ProdView : System.Web.UI.Page
 
                 //是否已停售
                 SBSql.AppendLine(" , (CASE WHEN GETDATE() > myData.Stop_Offer_Date THEN 'Y' ELSE 'N' END) AS IsStop");
-                //產品主圖(判斷圖片中心 2->1->3->4->5->7->8->9)
+                //產品主圖(判斷圖片中心 2->1->3->4->5->7->8->9->10)
                 SBSql.AppendLine(" , (SELECT TOP 1 (ISNULL(Pic02,'') + '|' + ISNULL(Pic01,'') + '|' + ISNULL(Pic03,'') + '|' + ISNULL(Pic04,'') ");
-                SBSql.AppendLine("    + '|' + ISNULL(Pic05,'') + '|' + ISNULL(Pic07,'') + '|' + ISNULL(Pic08,'') + '|' + ISNULL(Pic09,'')) AS PicGroup");
+                SBSql.AppendLine("    + '|' + ISNULL(Pic05,'') + '|' + ISNULL(Pic07,'') + '|' + ISNULL(Pic08,'') + '|' + ISNULL(Pic09,'') + '|' + ISNULL(Pic10,'')) AS PicGroup");
                 SBSql.AppendLine("     FROM [ProductCenter].dbo.ProdPic_Photo WITH (NOLOCK) WHERE (ProdPic_Photo.Model_No = myData.Model_No)");
                 SBSql.AppendLine("   ) AS PhotoGroup ");
 
@@ -131,11 +132,12 @@ public partial class myProd_ProdView : System.Web.UI.Page
                     Model_Name = DT.Rows[0]["ModelName"].ToString();
                     string ModelName = DT.Rows[0]["ModelName"].ToString();
                     string PhotoGroup = DT.Rows[0]["PhotoGroup"].ToString();
-
+                    string TitleSeo = DT.Rows[0]["TitleSeo"].ToString();
 
                     //-- Meta資訊 --
                     //重設標題
-                    meta_Title = "Pro'sKit {0}{1} | {2}".FormatThis(Model_Name, Model_No, Resources.resPublic.title_All);
+                    string metaTitle = string.IsNullOrWhiteSpace(TitleSeo) ? "Pro'sKit " + Model_Name : TitleSeo;
+                    meta_Title = "{0} | {1}".FormatThis(metaTitle, Resources.resPublic.title_All);
                     meta_Desc = DT.Rows[0]["InfoDesc"].ToString().Left(100);
                     meta_Url = "{0}Product/{1}/".FormatThis(
                         Application["WebUrl"].ToString()
@@ -146,14 +148,6 @@ public partial class myProd_ProdView : System.Web.UI.Page
                     //關鍵字
                     meta_Keyword = GetData_Tags(Model_No);
                     meta_DescSeo = DT.Rows[0]["InfoDescSeo"].ToString();
-
-                    ////Navi代入類別名稱
-                    //this.Ascx_Navi1.Param_CustomName = "<li><a href=\"{1}Products/{2}\">{0}</a></li><li>{3}</li>".FormatThis(
-                    //    fn_CustomUI.Get_ProdClassName(DT.Rows[0]["Class_ID"].ToString(), fn_Language.Param_Lang)
-                    //    , Application["WebUrl"].ToString()
-                    //    , DT.Rows[0]["Class_ID"].ToString()
-                    //    , Model_No
-                    //    );
 
                     lt_navbar.Text = "<li><a href=\"{1}Products/{2}\">{0}</a></li><li>{3}</li>".FormatThis(
                         fn_CustomUI.Get_ProdClassName(DT.Rows[0]["Class_ID"].ToString(), fn_Language.Param_Lang)
@@ -242,6 +236,14 @@ public partial class myProd_ProdView : System.Web.UI.Page
 
                     }
 
+                    //產品其他資訊(#5)
+                    string InfoOther = DT.Rows[0]["InfoOther"].ToString();
+                    if (!string.IsNullOrEmpty(InfoOther))
+                    {
+                        this.lt_OtherInfo.Text = InfoOther;
+
+                    }
+                    
                     //尺寸示意圖
                     this.lt_SpecPic.Text = string.IsNullOrEmpty(DT.Rows[0]["SpecPic"].ToString())
                         ? ""
@@ -254,15 +256,15 @@ public partial class myProd_ProdView : System.Web.UI.Page
                     ph_FAQ.Visible = !_cntFAQ.Equals(0);
 
 
-                    //一般下載
+                    //一般下載(PKEF)
                     int _dwFile = Convert.ToInt32(DT.Rows[0]["CntDwFile"]);
                     ph_download.Visible = !_dwFile.Equals(0);
 
-                    //商城輔圖下載
+                    //特色圖下載(來源:產品中心-商城輔圖)
                     int _mallPic = Convert.ToInt32(DT.Rows[0]["CntMallPic"]);
                     ph_mallPic.Visible = !_mallPic.Equals(0);
 
-                    //圖片集下載
+                    //圖片集下載(來源:圖片資料庫-產品圖下載)
                     if (string.IsNullOrEmpty(fn_Param.MemberID))
                     {
                         this.ph_gallery.Visible = false;
