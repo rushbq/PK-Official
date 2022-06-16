@@ -4,6 +4,19 @@
  */
 
 CKEDITOR.editorConfig = function (config) {
+	//允許所有的html tag, 不讓套件自動亂改
+	config.allowedContent = true;
+	//工具欄是否可以被收縮
+	config.toolbarCanCollapse = true;
+	//工具欄默認是否展開
+	config.toolbarStartupExpanded = true;
+	//height
+	config.height = 350;
+	//定義fontsize
+	config.fontSize_sizes = '12/12px;13/13px;16/16px;15/15px;18/18px;20/20px;22/22px;24/24px;36/36px;48/48px;';
+	//fontname
+	config.font_names = 'Arial;Arial Black;Comic Sans MS;Courier New;Tahoma;Times New Roman;Verdana;新細明體;細明體;標楷體;微軟正黑體';
+    
     config.toolbarGroups = [
 		{ name: 'document', groups: ['mode', 'document', 'doctools'] },
 		{ name: 'clipboard', groups: ['clipboard', 'undo'] },

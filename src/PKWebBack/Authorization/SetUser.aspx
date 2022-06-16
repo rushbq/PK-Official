@@ -58,27 +58,17 @@
                         <hr />
                         <asp:PlaceHolder ID="ph_data" runat="server" Visible="false">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div style="padding-bottom: 5px;">
                                         <input type="button" id="showAll" class="btn btn-info" value="展開" />
                                         <input type="button" id="hideAll" class="btn btn-warning" value="折疊" />
-                                        <input type="button" id="copyGP" class="btn btn-success" value="複製群組權限" />
                                     </div>
-                                    <div id="copyGPmessage" class="alert alert-danger hide">群組權限已複製，記得按下「設定權限」才會生效!</div>
                                     <ul id="myTree" class="ztree">
                                     </ul>
 
                                     <asp:TextBox ID="tb_IDvalues" runat="server" Style="display: none"></asp:TextBox>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div>
-                                        <a class="btn btn-success">
-                                            <i class="fa fa-users fa-lg"></i>&nbsp;群組權限參考
-                                        </a>
-                                    </div>
-                                    <ul id="myTree_GP" class="ztree">
-                                    </ul>
-                                </div>
+
                             </div>
                         </asp:PlaceHolder>
                         <!-- Content End -->
@@ -192,7 +182,7 @@
         //Load
         $(document).ready(function () {
             <%if (!string.IsNullOrEmpty(Param_Guid))
-              {%>
+        {%>
             getAuthList();
             <%}%>
 
@@ -206,79 +196,12 @@
                 expandAll(false);
             });
 
-            //複製群組權限按鈕
-            $("#copyGP").click(function () {
-                //開始複製群組權限
-                $.ajax({
-                    async: false,
-                    cache: false,
-                    type: 'POST',
-                    dataType: "json",
-                    url: "<%=Application["WebUrl"]%>Ajax_Data/Json_GetAuthList.aspx",
-                data: {
-                    DataType: 'COPY_GROUP',
-                    Guid: '<%=Param_Guid %>'
-                },
-                     error: function () {
-                         alert('樹狀選單載入失敗!');
-                     },
-                     success: function (data) {
-                         zNodes = data;
-
-                         //顯示訊息
-                         $('#copyGPmessage').removeClass("hide").addClass("show");
-
-                         //載入zTree
-                         $.fn.zTree.init($("#myTree"), setting, zNodes);
-                     }
-                });
-
-            });
         });
 
 
     </script>
     <%-- zTree End --%>
-    <%-- zTree(群組權限) Start --%>
-    <script>
-        //宣告節點
-        var zNodes_GP;
 
-        //取得資料
-        function getAuthList_GP() {
-            $.ajax({
-                async: false,
-                cache: false,
-                type: 'POST',
-                dataType: "json",
-                url: "<%=Application["WebUrl"]%>Ajax_Data/Json_GetAuthList.aspx",
-                data: {
-                    DataType: 'User_IN_Group',
-                    Guid: '<%=Param_Guid %>'
-                },
-                error: function () {
-                    alert('樹狀選單載入失敗!');
-                },
-                success: function (data) {
-                    zNodes_GP = data;
-                }
-            });
-            //載入zTree
-            $.fn.zTree.init($("#myTree_GP"), setting, zNodes_GP);
-        }
-
-
-        //Load
-        $(document).ready(function () {
-            <%if (!string.IsNullOrEmpty(Param_Guid))
-              {%>
-            getAuthList_GP();
-            <%}%>
-
-        });
-
-    </script>
-    <%-- zTree(群組權限) End --%>
     <%-- 連動式選單 Start --%>
     <script type="text/javascript">
         $(function () {
