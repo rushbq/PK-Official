@@ -2,6 +2,7 @@
 using ExtensionUI;
 using LogRecord;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -137,17 +138,30 @@ public partial class myProd_ProdView : System.Web.UI.Page
                     //-- Meta資訊 --
                     //重設標題
                     string metaTitle = string.IsNullOrWhiteSpace(TitleSeo) ? "Pro'sKit " + Model_Name : TitleSeo;
-                    meta_Title = "{0} | {1}".FormatThis(metaTitle,Resources.resPublic.title_All);
+                    meta_Title = "{0} | {1}".FormatThis(metaTitle, Resources.resPublic.title_All);
                     meta_Desc = DT.Rows[0]["InfoDesc"].ToString().Left(100);
                     meta_Url = "{0}RobotKit/{1}/".FormatThis(
                         Application["WebUrl"].ToString()
                         , Model_No
                         );
                     meta_Image = GetData_MainPic(PhotoGroup, Model_No);
-
-                    //關鍵字
-                    meta_Keyword = GetData_Tags(Model_No);
                     meta_DescSeo = DT.Rows[0]["InfoDescSeo"].ToString();
+
+                    //關鍵字Meta
+                    IEnumerable<string> GetTags = GetData_Tags(Model_No);
+                    string tagString = string.Join(",", GetTags.ToArray());
+                    meta_Keyword = tagString;
+
+                    //關鍵字Label
+                    string labelHtml = "";
+                    string labelUrl = Application["WebUrl"].ToString() + "Search/Tool/?k=";
+                    foreach (string tag in GetTags)
+                    {
+                        labelHtml += string.Format("<a class=\"label label-success\" href=\"{1}\">{0}</a>&nbsp;"
+                            , tag
+                            , labelUrl + Server.UrlEncode(tag));
+                    }
+                    lt_TagLabel.Text = labelHtml;
 
                     //Navi代入類別名稱
                     lt_navbar.Text = "<li><a href=\"{1}RobotKits/{2}\">{0}</a></li><li>{3}</li>".FormatThis(
@@ -244,7 +258,7 @@ public partial class myProd_ProdView : System.Web.UI.Page
                         this.lt_OtherInfo.Text = InfoOther;
 
                     }
-                    
+
                     //尺寸示意圖
                     this.lt_SpecPic.Text = string.IsNullOrEmpty(DT.Rows[0]["SpecPic"].ToString())
                         ? ""
@@ -674,7 +688,7 @@ public partial class myProd_ProdView : System.Web.UI.Page
     /// 取得產品關鍵字
     /// </summary>
     /// <returns></returns>
-    private string GetData_Tags(string dataID)
+    private IEnumerable<string> GetData_Tags(string dataID)
     {
         //[取得資料] - 取得資料
         using (SqlCommand cmd = new SqlCommand())
@@ -687,22 +701,16 @@ public partial class myProd_ProdView : System.Web.UI.Page
             SBSql.AppendLine(" FROM Prod GP ");
             SBSql.AppendLine("     INNER JOIN Prod_Rel_Tags RelTag ON GP.Model_No = RelTag.Model_No ");
             SBSql.AppendLine("     INNER JOIN Prod_Tags Tags ON RelTag.Tag_ID = Tags.Tag_ID ");
-            SBSql.AppendLine("WHERE (GP.Model_No = @Model_No) ");
+            SBSql.AppendLine("WHERE (UPPER(RelTag.LangCode) = UPPER(@Lang)) AND (GP.Model_No = @Model_No) ");
             cmd.CommandText = SBSql.ToString();
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("Model_No", dataID);
+            cmd.Parameters.AddWithValue("Lang", fn_Language.PKWeb_Lang);
             using (DataTable DT = dbConn.LookupDT(cmd, out ErrMsg))
             {
-                if (DT.Rows.Count == 0)
-                {
-                    return "";
-                }
-
-                //Get tags
-                var tags = string.Join(",", DT.AsEnumerable()
+                var tags = DT.AsEnumerable()
                     .Select(x => x["TagName"].ToString())
-                    .ToArray());
-
+                    .ToList();
 
                 return tags;
             }

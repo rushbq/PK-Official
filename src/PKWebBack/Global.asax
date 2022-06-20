@@ -42,9 +42,6 @@
         routes.MapPageRoute("AuthSetByUser", "Auth/User/Set/{DataID}", "~/Authorization/SetUser.aspx", false,
            new RouteValueDictionary {
                     { "DataID", "New" }});
-        //routes.MapPageRoute("AuthSetByGroup", "Auth/Group/Set/{DataID}", "~/Authorization/SetGroup.aspx", false,
-        //  new RouteValueDictionary {
-        //            { "DataID", "New" }});
 
         // [登入]
         routes.MapPageRoute("LoginPage", "ServiceLogin", "~/Login/LoginPage.aspx", false);
@@ -96,22 +93,9 @@
                     { "DataID", "New" }});
         routes.MapPageRoute("Article_EditBox", "Article/Edit/DetailBox/{GroupID}/{ParentID}/{DataID}", "~/myArticle/Edit_DetailBox.aspx", false);
 
-
-        // [Promo] - Stop on 20150826
-        //routes.MapPageRoute("Promo_Search", "Promo/Search/{PageID}", "~/myPromo/Search.aspx", false,
-        //    new RouteValueDictionary {
-        //            { "PageID", "1" }});
-        //routes.MapPageRoute("Promo_Edit", "Promo/Edit/{DataID}", "~/myPromo/Edit.aspx", false,
-        //    new RouteValueDictionary {
-        //            { "DataID", "New" }});
-        //routes.MapPageRoute("Promo_EditSub", "Promo/Edit/Detail/{ParentID}/{LangCode}/{DataID}", "~/myPromo/Edit_Sub.aspx", false,
-        //   new RouteValueDictionary {
-        //            { "LangCode", "en-us" },
-        //            { "DataID", "New" }});
-
         // [Country]
         routes.MapPageRoute("Country_Search", "Country/Search/{PageID}", "~/myCountry/Search.aspx", false,
-            new RouteValueDictionary {
+        new RouteValueDictionary {
                     { "PageID", "1" }});
         routes.MapPageRoute("Country_Edit", "Country/Edit/{DataID}", "~/myCountry/Edit.aspx", false,
             new RouteValueDictionary {
@@ -138,17 +122,6 @@
                     { "DataID", "New" }});
         routes.MapPageRoute("FAQ_EditBox", "FAQ/Edit/DetailBox/{ParentID}/{DataID}", "~/myFAQ/Edit_DetailBox.aspx", false);
 
-        // [KE] - Stop on 20150826
-        //routes.MapPageRoute("KE_Search", "KE/Search/{PageID}", "~/myKE/Search.aspx", false,
-        //    new RouteValueDictionary {
-        //            { "PageID", "1" }});
-        //routes.MapPageRoute("KE_Edit", "KE/Edit/{DataID}", "~/myKE/Edit.aspx", false,
-        //    new RouteValueDictionary {
-        //            { "DataID", "New" }});
-        //routes.MapPageRoute("KE_EditSub", "KE/Edit/Detail/{ParentID}/{LangCode}/{DataID}", "~/myKE/Edit_Sub.aspx", false,
-        //   new RouteValueDictionary {
-        //            { "LangCode", "en-us" },
-        //            { "DataID", "New" }});
 
         // [廣告]
         routes.MapPageRoute("Adv_Search", "Adv/Search/{PageID}", "~/myAdv/Search.aspx", false,
@@ -192,6 +165,7 @@
             new RouteValueDictionary {
                     { "PageID", "1" }});
 
+
         // [產品影片]
         routes.MapPageRoute("PV_Search", "PV/Search/{PageID}", "~/myProdVideo/Search.aspx", false,
             new RouteValueDictionary {
@@ -214,10 +188,6 @@
             new RouteValueDictionary {
                 {"DataID", "ALL"}
             });
-
-
-        // [Orders]
-        routes.MapPageRoute("Order_Search", "eOrder/List", "~/myOrders/Search.aspx", false);
 
     }
 </script>

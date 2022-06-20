@@ -81,6 +81,9 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="description">
                     <h4><%=this.GetLocalResourceObject("txt_產品敘述").ToString()%></h4>
+                    <div style="padding-bottom: 5px;">
+                        <asp:Literal ID="lt_TagLabel" runat="server"></asp:Literal>
+                    </div>
                     <!-- 認證符號 -->
                     <div class="icons">
                         <ul class="list-inline">

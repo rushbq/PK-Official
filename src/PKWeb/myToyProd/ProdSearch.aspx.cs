@@ -153,14 +153,7 @@ public partial class myToyProd_ProdList : System.Web.UI.Page
                 SBSql.Append("  SELECT RelTag.Model_No");
                 SBSql.Append("  FROM Prod_Rel_Tags RelTag");
                 SBSql.Append("   INNER JOIN Prod_Tags Tags ON RelTag.Tag_ID = Tags.Tag_ID ");
-                SBSql.Append("  WHERE (UPPER(Tags.Tag_Name) LIKE '%' + UPPER(@Keyword) + '%') ");
-                SBSql.Append("  ))");
-
-                //--info2
-                SBSql.Append(" OR (GP.Model_No IN (");
-                SBSql.Append("  SELECT Model_No");
-                SBSql.Append("  FROM [ProductCenter].dbo.Prod_Info");
-                SBSql.Append("  WHERE (UPPER(Lang) = UPPER(@Lang)) AND (Info2 LIKE '%' + @Keyword + '%') ");
+                SBSql.Append("  WHERE (UPPER(RelTag.LangCode) = UPPER(@Lang)) AND (UPPER(Tags.Tag_Name) LIKE '%' + UPPER(@Keyword) + '%') ");
                 SBSql.Append("  ))");
 
                 SBSql.Append(" )");
@@ -222,14 +215,7 @@ public partial class myToyProd_ProdList : System.Web.UI.Page
                 SBSql.Append("  SELECT RelTag.Model_No");
                 SBSql.Append("  FROM Prod_Rel_Tags RelTag");
                 SBSql.Append("   INNER JOIN Prod_Tags Tags ON RelTag.Tag_ID = Tags.Tag_ID ");
-                SBSql.Append("  WHERE (UPPER(Tags.Tag_Name) LIKE '%' + UPPER(@Keyword) + '%') ");
-                SBSql.Append("  ))");
-
-                //--info2
-                SBSql.Append(" OR (GP.Model_No IN (");
-                SBSql.Append("  SELECT Model_No");
-                SBSql.Append("  FROM [ProductCenter].dbo.Prod_Info");
-                SBSql.Append("  WHERE (UPPER(Lang) = UPPER(@Lang)) AND (Info2 LIKE '%' + @Keyword + '%') ");
+                SBSql.Append("  WHERE (UPPER(RelTag.LangCode) = UPPER(@Lang)) AND (UPPER(Tags.Tag_Name) LIKE '%' + UPPER(@Keyword) + '%') ");
                 SBSql.Append("  ))");
 
                 SBSql.Append(" )");
@@ -536,17 +522,9 @@ public partial class myToyProd_ProdList : System.Web.UI.Page
                       SELECT RelTag.Model_No
                       FROM Prod_Rel_Tags RelTag
                        INNER JOIN Prod_Tags Tags ON RelTag.Tag_ID = Tags.Tag_ID 
-                      WHERE (UPPER(Tags.Tag_Name) LIKE '%' + UPPER(@Keyword) + '%') 
-                      ))
-
-                    /*--info2*/
-                     OR (GP.Model_No IN (
-                      SELECT Model_No
-                      FROM [ProductCenter].dbo.Prod_Info
-                      WHERE (UPPER(Lang) = UPPER(@Lang)) AND (Info2 LIKE '%' + @Keyword + '%') 
+                      WHERE (UPPER(RelTag.LangCode) = UPPER(@Lang)) AND (UPPER(Tags.Tag_Name) LIKE '%' + UPPER(@Keyword) + '%') 
                       ))
                      )";
-
 
                 cmd.Parameters.AddWithValue("Keyword", Req_Keyword);
                 cmd.Parameters.AddWithValue("Lang", fn_Language.PKWeb_Lang);

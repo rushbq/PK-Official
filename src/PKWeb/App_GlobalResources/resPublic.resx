@@ -374,4 +374,7 @@ Mail ： sha@mail.prokits.com.tw</value>
   <data name="meta_og_description" xml:space="preserve">
     <value>A friend that you can  trust</value>
   </data>
+  <data name="title_最新消息" xml:space="preserve">
+    <value>News</value>
+  </data>
 </root>

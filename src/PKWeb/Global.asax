@@ -233,9 +233,11 @@
               new RouteValueDictionary {
                     { "Year", DateTime.Now.Year }});
         routes.MapPageRoute("ExpoPhotos", "Expo/Photos/{DataID}", "~/myExpo/ExpoPhotos.aspx", false);
-
-        //[促銷]
-        //routes.MapPageRoute("PromoList", "Promo", "~/myNews/PromoList.aspx", false);
+        //[Article]
+        routes.MapPageRoute("ArticleList", "Article/{Year}", "~/myArticle/ArticleList.aspx", false,
+              new RouteValueDictionary {
+                    { "Year", DateTime.Now.Year }});
+        routes.MapPageRoute("ArticleView", "Article/View/{DataID}", "~/myArticle/ArticleView.aspx", false);
 
 
         /* 技術支援 */
