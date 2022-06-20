@@ -56,6 +56,11 @@ public partial class Prod_Edit : SecurityCheck
                 if (!string.IsNullOrEmpty(Param_thisID))
                 {
                     LookupData();
+
+                    //Tag 維護
+                    ph_TagInfo.Visible = false;
+                    ph_TagsList.Visible = true;
+                    ph_TagsScript.Visible = true;
                 }
 
             }
@@ -92,15 +97,13 @@ public partial class Prod_Edit : SecurityCheck
                 cmd.Parameters.Clear();
 
                 //[SQL] - 資料查詢
-                SBSql.AppendLine(" SELECT GP.*, Tags.Tag_ID, Tags.Tag_Name ");
+                SBSql.AppendLine(" SELECT GP.*");
                 SBSql.AppendLine("  , (SELECT Display_Name FROM {0}.dbo.User_Profile WHERE ([Guid] = GP.Create_Who)) AS Create_Name "
                     .FormatThis(fn_SysDB.Param_DB));
                 SBSql.AppendLine("  , (SELECT Display_Name FROM {0}.dbo.User_Profile WHERE ([Guid] = GP.Update_Who)) AS Update_Name "
                     .FormatThis(fn_SysDB.Param_DB));
                 SBSql.AppendLine("  , Sub.Catelog_Vol, Sub.Page");
                 SBSql.AppendLine("  FROM Prod GP ");
-                SBSql.AppendLine("      LEFT JOIN Prod_Rel_Tags RelTag ON GP.Model_No = RelTag.Model_No ");
-                SBSql.AppendLine("      LEFT JOIN Prod_Tags Tags ON RelTag.Tag_ID = Tags.Tag_ID ");
                 SBSql.AppendLine("      LEFT JOIN [ProductCenter].dbo.Prod_Item Sub ON GP.Model_No = Sub.Model_No");
                 SBSql.AppendLine(" WHERE (GP.Prod_ID = @DataID) ");
                 cmd.CommandText = SBSql.ToString();
@@ -180,29 +183,6 @@ public partial class Prod_Edit : SecurityCheck
                         this.tb_Model_No.ReadOnly = true;
                         this.btn_GetIcon.Visible = false;
 
-                        //填入Tag Html
-                        if (!string.IsNullOrEmpty(DT.Rows[0]["Tag_ID"].ToString()))
-                        {
-                            StringBuilder itemHtml = new StringBuilder();
-
-                            for (int row = 0; row < DT.Rows.Count; row++)
-                            {
-                                //取得參數
-                                string TagID = DT.Rows[row]["Tag_ID"].ToString();
-                                string TagName = DT.Rows[row]["Tag_Name"].ToString();
-
-                                //組合Html
-                                itemHtml.AppendLine("<li id=\"li_{0}\" style=\"padding-top:5px;\">".FormatThis(row));
-                                itemHtml.Append("<input type=\"hidden\" class=\"item_ID\" value=\"{0}\" />".FormatThis(TagID));
-                                itemHtml.Append("<input type=\"hidden\" class=\"item_Name\" value=\"{0}\" />".FormatThis(TagName));
-                                itemHtml.Append("<a href=\"javascript:Delete_Item('{0}');\" class=\"btn btn-success\">{1}&nbsp;<span class=\"glyphicon glyphicon-trash\"></span></a>"
-                                    .FormatThis(row, TagName));
-                                itemHtml.AppendLine("</li>");
-                            }
-
-                            this.lt_myItems.Text = itemHtml.ToString();
-                        }
-
                         //帶出關聯資料, 認證符號
                         LookupData_Detail(this.tb_Model_No.Text);
                     }
@@ -269,7 +249,7 @@ public partial class Prod_Edit : SecurityCheck
                             cbl.Items[col].Selected = true;
                         }
                     }
-                   
+
                     //判斷是否有已選取的項目
                     var query = DT.AsEnumerable()
                         .Where(filter => filter.Field<string>("IsChecked").Equals("Y"))
@@ -626,17 +606,8 @@ public partial class Prod_Edit : SecurityCheck
                         , Cryptograph.MD5Encrypt(NewID.ToString(), Application["DesKey"].ToString())
                         );
 
-            //Tag 關聯設定
-            if (false == Set_TagRel(NewID.ToString()))
-            {
-                fn_Extensions.JsAlert("關鍵字資料新增失敗！", thisUrl);
-                return;
-            }
-            else
-            {
-                //導向本頁
-                Response.Redirect(thisUrl);
-            }
+            //導向本頁
+            Response.Redirect(thisUrl);
         }
 
     }
@@ -754,139 +725,130 @@ public partial class Prod_Edit : SecurityCheck
                 return;
             }
 
-            //Tag 關聯設定
-            if (false == Set_TagRel(Param_thisID))
-            {
-                fn_Extensions.JsAlert("關鍵字資料新增失敗！", Page_CurrentUrl);
-                return;
-            }
-            else
-            {
-                //導向本頁
-                Response.Redirect(Page_CurrentUrl);
-            }
+            //導向本頁
+            Response.Redirect(Page_CurrentUrl);
         }
     }
 
-    /// <summary>
-    /// 關聯設定
-    /// </summary>
-    /// <param name="DataID">單頭資料編號</param>
-    /// <returns></returns>
-    private bool Set_TagRel(string DataID)
-    {
-        //取得欄位值
-        string Get_IDs = this.tb_All_itemID.Text;
-        string Get_Names = this.tb_All_itemName.Text;
+    ///// <summary>
+    ///// 關聯設定
+    ///// </summary>
+    ///// <param name="DataID">單頭資料編號</param>
+    ///// <returns></returns>
+    //private bool Set_TagRel(string DataID)
+    //{
+    //    //取得欄位值
+    //    string Get_IDs = this.tb_All_itemID_tw.Text;
+    //    string Get_Names = this.tb_All_itemName_tw.Text;
 
-        //判斷是否為空
-        if (string.IsNullOrEmpty(Get_IDs) || string.IsNullOrEmpty(Get_Names))
-        {
-            return true;
-        }
+    //    //判斷是否為空
+    //    if (string.IsNullOrEmpty(Get_IDs) || string.IsNullOrEmpty(Get_Names))
+    //    {
+    //        return true;
+    //    }
 
-        //取得陣列資料
-        string[] strAry_ID = Regex.Split(Get_IDs, @"\|{2}");
-        string[] strAry_Name = Regex.Split(Get_Names, @"\|{2}");
+    //    //取得陣列資料
+    //    string[] strAry_ID = Regex.Split(Get_IDs, @"\|{2}");
+    //    string[] strAry_Name = Regex.Split(Get_Names, @"\|{2}");
 
-        //宣告暫存清單
-        List<TempParam> ITempList = new List<TempParam>();
+    //    //宣告暫存清單
+    //    List<TempParam> ITempList = new List<TempParam>();
 
-        //存入暫存清單
-        for (int row = 0; row < strAry_ID.Length; row++)
-        {
-            ITempList.Add(new TempParam(strAry_ID[row], strAry_Name[row]));
-        }
+    //    //存入暫存清單
+    //    for (int row = 0; row < strAry_ID.Length; row++)
+    //    {
+    //        ITempList.Add(new TempParam(strAry_ID[row], strAry_Name[row]));
+    //    }
 
-        //過濾重複資料
-        var query = from el in ITempList
-                    group el by new
-                    {
-                        ID = el.tmp_ID,
-                        Name = el.tmp_Name
-                    } into gp
-                    select new
-                    {
-                        ID = gp.Key.ID,
-                        Name = gp.Key.Name
-                    };
+    //    //過濾重複資料
+    //    var query = from el in ITempList
+    //                group el by new
+    //                {
+    //                    ID = el.tmp_ID,
+    //                    Name = el.tmp_Name
+    //                } into gp
+    //                select new
+    //                {
+    //                    ID = gp.Key.ID,
+    //                    Name = gp.Key.Name
+    //                };
 
-        //處理Tag資料
-        using (SqlCommand cmd = new SqlCommand())
-        {
-            //宣告
-            StringBuilder SBSql = new StringBuilder();
+    //    //處理Tag資料
+    //    using (SqlCommand cmd = new SqlCommand())
+    //    {
+    //        //宣告
+    //        StringBuilder SBSql = new StringBuilder();
 
-            //[SQL] - 清除參數設定
-            cmd.Parameters.Clear();
+    //        //[SQL] - 清除參數設定
+    //        cmd.Parameters.Clear();
 
-            SBSql.AppendLine(" DELETE FROM Prod_Rel_Tags WHERE (Model_No = @ModelNo) ");
-            SBSql.AppendLine(" Declare @New_ID AS INT ");
+    //        SBSql.AppendLine(" DELETE FROM Prod_Rel_Tags WHERE (Model_No = @ModelNo) ");
+    //        SBSql.AppendLine(" Declare @New_ID AS INT ");
 
-            int row = 0;
-            foreach (var item in query)
-            {
-                /*
-                 * 若ID = 0, 則新增資料(Prod_Tags) & 設定關聯(Prod_Rel_Tags)
-                 * ID <> 0, 設定關聯
-                 */
-                row++;
+    //        int row = 0;
+    //        foreach (var item in query)
+    //        {
+    //            /*
+    //             * 若ID = 0, 則新增資料(Prod_Tags) & 設定關聯(Prod_Rel_Tags)
+    //             * ID <> 0, 設定關聯
+    //             */
+    //            row++;
 
-                //判斷編號
-                if (item.ID.Equals("0"))
-                {
-                    //判斷名稱是否已存在
-                    SBSql.AppendLine("IF NOT EXISTS (SELECT * FROM Prod_Tags WHERE (Tag_Name = @Tag_Name_{0}))".FormatThis(row));
-                    SBSql.AppendLine(" BEGIN ");
+    //            //判斷編號
+    //            if (item.ID.Equals("0"))
+    //            {
+    //                //判斷名稱是否已存在
+    //                SBSql.AppendLine("IF NOT EXISTS (SELECT * FROM Prod_Tags WHERE (Tag_Name = @Tag_Name_{0}))".FormatThis(row));
+    //                SBSql.AppendLine(" BEGIN ");
 
-                    //新增Tag
-                    SBSql.AppendLine(" SET @New_ID = (SELECT ISNULL(MAX(Tag_ID), 0) + 1 FROM Prod_Tags) ");
-                    SBSql.AppendLine(" INSERT INTO Prod_Tags( ");
-                    SBSql.AppendLine("  Tag_ID, Tag_Name");
-                    SBSql.AppendLine(" ) VALUES ( ");
-                    SBSql.AppendLine("  @New_ID, @Tag_Name_{0}".FormatThis(row));
-                    SBSql.AppendLine(" ); ");
+    //                //新增Tag
+    //                SBSql.AppendLine(" SET @New_ID = (SELECT ISNULL(MAX(Tag_ID), 0) + 1 FROM Prod_Tags) ");
+    //                SBSql.AppendLine(" INSERT INTO Prod_Tags( ");
+    //                SBSql.AppendLine("  Tag_ID, Tag_Name");
+    //                SBSql.AppendLine(" ) VALUES ( ");
+    //                SBSql.AppendLine("  @New_ID, @Tag_Name_{0}".FormatThis(row));
+    //                SBSql.AppendLine(" ); ");
 
-                    //新增關聯
-                    SBSql.AppendLine(" INSERT INTO Prod_Rel_Tags( ");
-                    SBSql.AppendLine("  Tag_ID, Model_No");
-                    SBSql.AppendLine(" ) VALUES ( ");
-                    SBSql.AppendLine("  @New_ID, @ModelNo");
-                    SBSql.AppendLine(" ); ");
+    //                //新增關聯
+    //                SBSql.AppendLine(" INSERT INTO Prod_Rel_Tags( ");
+    //                SBSql.AppendLine("  Tag_ID, Model_No");
+    //                SBSql.AppendLine(" ) VALUES ( ");
+    //                SBSql.AppendLine("  @New_ID, @ModelNo");
+    //                SBSql.AppendLine(" ); ");
 
-                    SBSql.AppendLine(" END ");
+    //                SBSql.AppendLine(" END ");
 
-                    cmd.Parameters.AddWithValue("Tag_Name_" + row, item.Name);
-                }
-                else
-                {
-                    //新增其他Tag關聯
-                    SBSql.AppendLine(" INSERT INTO Prod_Rel_Tags( ");
-                    SBSql.AppendLine("  Tag_ID, Model_No");
-                    SBSql.AppendLine(" ) VALUES ( ");
-                    SBSql.AppendLine("  @Tag_ID_{0}, @ModelNo".FormatThis(row));
-                    SBSql.AppendLine(" ); ");
+    //                cmd.Parameters.AddWithValue("Tag_Name_" + row, item.Name);
+    //            }
+    //            else
+    //            {
+    //                //新增其他Tag關聯
+    //                SBSql.AppendLine(" INSERT INTO Prod_Rel_Tags( ");
+    //                SBSql.AppendLine("  Tag_ID, Model_No");
+    //                SBSql.AppendLine(" ) VALUES ( ");
+    //                SBSql.AppendLine("  @Tag_ID_{0}, @ModelNo".FormatThis(row));
+    //                SBSql.AppendLine(" ); ");
 
-                    cmd.Parameters.AddWithValue("Tag_ID_" + row, item.ID);
-                }
-            }
+    //                cmd.Parameters.AddWithValue("Tag_ID_" + row, item.ID);
+    //            }
+    //        }
 
-            //[SQL] - Command
-            cmd.CommandText = SBSql.ToString();
-            //cmd.Parameters.AddWithValue("DataID", DataID);
-            cmd.Parameters.AddWithValue("ModelNo", this.hf_ModelNo.Value);
-            if (dbConn.ExecuteSql(cmd, out ErrMsg) == false)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+    //        //[SQL] - Command
+    //        cmd.CommandText = SBSql.ToString();
+    //        //cmd.Parameters.AddWithValue("DataID", DataID);
+    //        cmd.Parameters.AddWithValue("ModelNo", this.hf_ModelNo.Value);
+    //        if (dbConn.ExecuteSql(cmd, out ErrMsg) == false)
+    //        {
+    //            return false;
+    //        }
+    //        else
+    //        {
+    //            return true;
+    //        }
 
-        }
+    //    }
 
-    }
+    //}
 
     /// <summary>
     /// 資料刪除

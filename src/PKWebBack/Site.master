@@ -32,6 +32,7 @@
                         <!-- Logo -->
                         <a href="<%=Application["WebUrl"] %>">
                             <img style="max-width: 150px; margin-top: -15px;" src="<%=Application["WebUrl"] %>images/base/prokits-logo.png" alt="Proskit" /></a>
+                        <%=Application["WebName"] %>
                         (Local)
                     </div>
                 </div>

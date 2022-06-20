@@ -175,6 +175,9 @@
            new RouteValueDictionary {
                     { "LangCode", "en-us" },
                     { "DataID", "New" }});
+        routes.MapPageRoute("Tag_Search", "Config/Tags/{PageID}", "~/mySetting/Tags_Search.aspx", false,
+        new RouteValueDictionary {
+                    { "PageID", "1" }});
 
         // [會員]
         routes.MapPageRoute("Member_Search", "Member/Search/{PageID}", "~/myMember/Search.aspx", false,

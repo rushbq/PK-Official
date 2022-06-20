@@ -25,6 +25,21 @@ public class fn_Param
     }
     private static string _DesKey;
 
+    /// <summary>
+    /// Webrl
+    /// </summary>
+    public static string Web_Url
+    {
+        get
+        {
+            return System.Web.Configuration.WebConfigurationManager.AppSettings["WebUrl"];
+        }
+        set
+        {
+            _Web_Url = value;
+        }
+    }
+    private static string _Web_Url;
 
     /// <summary>
     /// CDN網址

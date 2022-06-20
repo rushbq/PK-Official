@@ -10,11 +10,6 @@
         .dragMe {
             cursor: all-scroll;
         }
-
-        /* 強迫設定 ckeditor 高度*/
-        .cke_contents {
-            height: 400px !important;
-        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">

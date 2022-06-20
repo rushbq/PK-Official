@@ -27,7 +27,6 @@
                         <span>基本設定</span>
                     </div>
                     <div class="pull-right">
-                      
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -37,29 +36,30 @@
                         <div class="form-horizontal">
                             <div class="form-group">
                                 <label class="control-label col-sm-3 col-md-3 col-lg-2">資料編號</label>
-                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                <div class="col-sm-3 col-md-3 col-lg-4">
                                     <p class="form-control-static">
                                         <strong>
                                             <asp:Label ID="lb_DataID" runat="server" Text="系統自動編號" CssClass="styleGreen"></asp:Label></strong>
                                     </p>
                                 </div>
+                                <label class="control-label col-sm-3 col-md-3 col-lg-2">目錄 / 頁次</label>
+                                <div class="control-label col-sm-3 col-md-3 col-lg-4">
+                                    <asp:Label ID="lb_Vol" runat="server"></asp:Label>&nbsp;/&nbsp;
+                                    <asp:Label ID="lb_Page" runat="server"></asp:Label>
+                                </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="control-label col-sm-3 col-md-3 col-lg-2" for="MainContent_tb_Rpt_Folder">上架區域(語系) <em>*</em></label>
-                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                <div class="col-sm-3 col-md-3 col-lg-4">
                                     <asp:CheckBoxList ID="cbl_Area" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow"></asp:CheckBoxList>
                                     <asp:CustomValidator ID="cv_check_Area" runat="server" ErrorMessage="請選擇「上架區域」" Display="Dynamic"
                                         ClientValidationFunction="check_AreaCode" ValidationGroup="Add" CssClass="styleRed help-block"></asp:CustomValidator>
                                 </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="control-label col-sm-3 col-md-3 col-lg-2" for="MainContent_tb_Rpt_Folder">顯示未開賣</label>
-                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                <div class="col-sm-3 col-md-3 col-lg-4">
                                     <asp:CheckBoxList ID="cbl_NoSellArea" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow"></asp:CheckBoxList>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="control-label col-xs-12 col-sm-3 col-md-3 col-lg-2">品號 <em>*</em></label>
                                 <div class="col-xs-7 col-sm-6 col-md-6 col-lg-8">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <div class="help-block">
-                                        (若結束時間空白,系統將自動填入開始時間 +5 年)
+                                        (若結束時間空白,自動填入開始時間 +5 年)
                                     </div>
                                     <div>
                                         <asp:RequiredFieldValidator ID="rfv_sDate" runat="server" ErrorMessage="請選擇「開始時間」" ControlToValidate="tb_StartDate" Display="Dynamic" ValidationGroup="Add" CssClass="styleRed help-block"></asp:RequiredFieldValidator>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3 col-md-3 col-lg-2" for="MainContent_ddl_Status">產品標記 <em>*</em></label>
-                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                <div class="col-sm-3 col-md-3 col-lg-4">
                                     <div class="form-inline">
                                         <div class="showRadioGrp">
                                             <asp:RadioButtonList ID="rbl_IsNew" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
@@ -119,69 +119,89 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="control-label col-sm-3 col-md-3 col-lg-2" for="MainContent_tb_Sort">自訂排序 <em>*</em></label>
-                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                <div class="col-sm-3 col-md-3 col-lg-4">
                                     <asp:TextBox ID="tb_Sort" runat="server" MaxLength="3" CssClass="form-control" placeholder="自訂排序" Width="70px" Style="text-align: center;">999</asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfv_tb_Sort" runat="server" ErrorMessage="請輸入「自訂排序」"
                                         Display="Dynamic" ControlToValidate="tb_Sort" ValidationGroup="Add" CssClass="styleRed help-block"></asp:RequiredFieldValidator>
                                     <asp:RangeValidator ID="rv_tb_Sort" runat="server" ErrorMessage="請輸入1 ~ 999 的數字"
                                         Display="Dynamic" Type="Integer" MaximumValue="999" MinimumValue="1" ControlToValidate="tb_Sort"
                                         ValidationGroup="Add" CssClass="styleRed help-block"></asp:RangeValidator>
-                                    <div class="help-block">
-                                        (前台的自訂排序, 優先順序為 推薦 -> 新品 -> 自訂排序 -> 上架日期, 數字小的優先)
-                                    </div>
+                                </div>
+                                <div class="help-block">
+                                    (順序為：熱銷 -> 新品 -> 自訂排序 -> 上架日期, <code>數字小的優先</code>)
                                 </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label class="control-label col-sm-3 col-md-3 col-lg-2">目錄 / 頁次</label>
-                                <div class="control-label col-sm-9 col-md-9 col-lg-10">
-                                    <asp:Label ID="lb_Vol" runat="server"></asp:Label>&nbsp;/&nbsp;
-                                    <asp:Label ID="lb_Page" runat="server"></asp:Label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-sm-3 col-md-3 col-lg-2" for="MainContent_tb_Tag">
-                                    前台關鍵字查詢
-                                </label>
-                                <div class="col-sm-9 col-md-9 col-lg-10">
-                                    <div class="row">
-                                        <div class="col-xs-8">
-                                            <asp:TextBox ID="tb_Tag" runat="server" CssClass="form-control" placeholder="輸入關鍵字"></asp:TextBox>
-                                            <input type="hidden" id="tb_TagName" />
-                                            <input type="hidden" id="tb_TagID" />
-                                            <span class="help-block">
-                                                1.加入已存在的關鍵字：輸入關鍵字, 選擇項目後按下存檔.<br />
-                                                2.新的關鍵字：填完新的名稱後,按下「新增關鍵字」
-                                            </span>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <a href="javascript:;" class="btn btn-warning" id="newTag"><span class="glyphicon glyphicon-tags"></span>&nbsp;新增關鍵字</a>
-                                            <asp:TextBox ID="tb_All_itemID" runat="server" ToolTip="欄位值集合" Style="display: none;">
-                                            </asp:TextBox>
-                                            <asp:TextBox ID="tb_All_itemName" runat="server" ToolTip="欄位值集合" Style="display: none;">
-                                            </asp:TextBox>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <ul class="list-inline" id="myTags">
-                                                <asp:Literal ID="lt_myItems" runat="server"></asp:Literal>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <label class="control-label col-sm-3 col-md-3 col-lg-2">認證符號</label>
                                 <div class="col-sm-9 col-md-9 col-lg-10 table-responsive">
                                     <asp:CheckBoxList ID="cbl_CertIcon" runat="server" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="5" CssClass="table"></asp:CheckBoxList>
                                 </div>
                             </div>
+                            <asp:PlaceHolder ID="ph_TagInfo" runat="server">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3 col-md-3 col-lg-2">
+                                        Tag設定
+                                    </label>
+                                    <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <div class="alert alert-danger">
+                                            資料存檔後才能設定Tag
+                                        </div>
+                                    </div>
+                                </div>
+                            </asp:PlaceHolder>
+                            <!-- 新增後才帶出 -->
+                            <asp:PlaceHolder ID="ph_TagsList" runat="server" Visible="false">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3 col-md-3 col-lg-2">
+                                        Tag設定
+                                    </label>
+                                    <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <div class="well well-sm">
+                                            1. <b>如何建立新的Tag</b>：填完新的名稱後, 按下「Create New」<br />
+                                            2. <b>如何加入已存在的Tag</b>：輸入關鍵字, 選擇下拉清單的項目, 資料會直接更新, 不需按存檔。
+                                        </div>
+                                        <div class="bq-callout grey">
+                                            <h4 class="form-inline">建立新Tag&nbsp;
+                                             <input id="newTag" class="form-control" placeholder="填寫Tag名稱" />
+                                                <a href="javascript:;" class="btn btn-warning" id="btn_newTag"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Create New</a>
+                                            </h4>
+                                            <div id="block_newTag" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <strong>建立完成!</strong> 現在可以開始取用.
+                                            </div>
+                                        </div>
+                                        <div class="bq-callout blue">
+                                            <h4 class="form-inline">繁中&nbsp;<input class="form-control taglist" placeholder="輸入關鍵字後選取項目" data-lang="zh-tw" data-ctrl="twTags" /></h4>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <ul class="list-inline" id="twTags">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bq-callout green">
+                                            <h4 class="form-inline">英文&nbsp;<input class="form-control taglist" placeholder="輸入關鍵字後選取項目" data-lang="en-us" data-ctrl="enTags" /></h4>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <ul class="list-inline" id="enTags">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bq-callout red">
+                                            <h4 class="form-inline">簡中&nbsp;<input class="form-control taglist" placeholder="輸入關鍵字後選取項目" data-lang="zh-cn" data-ctrl="cnTags" /></h4>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <ul class="list-inline" id="cnTags">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </asp:PlaceHolder>
+
                             <div class="form-group">
                                 <div class="col-sm-12 text-right">
                                     <asp:Literal ID="lt_CreateInfo" runat="server"><p class="form-control-static help-block">資料新增中...</p></asp:Literal>
@@ -217,7 +237,7 @@
                         </div>
                     </asp:PlaceHolder>
                     <asp:PlaceHolder ID="ph_Delete" runat="server" Visible="false">
-                       <%-- <div class="metro-nav-block nav-block-red">
+                        <%-- <div class="metro-nav-block nav-block-red">
                             <asp:LinkButton ID="lbtn_Delete" runat="server" CssClass="text-center" CausesValidation="false" OnClientClick="return confirm('是否確定刪除?')" OnClick="lbtn_Delete_Click">
                             <i class="glyphicon glyphicon-trash"></i>
                             <div class="status">刪除資料</div>
@@ -252,18 +272,7 @@
     <%: Scripts.Render("~/bundles/group-base") %>
     <%: Scripts.Render("~/bundles/DTpicker-script") %>
     <%: Scripts.Render("~/bundles/group-datepicker") %>
-    <script>
-        $(function () {
-            /* 偵測Tag enter */
-            $("#MainContent_tb_Tag").keypress(function (e) {
-                code = (e.keyCode ? e.keyCode : e.which);
-                if (code == 13) {
-                    $("#newTag").trigger("click");
-                    return false;
-                }
-            });
-        });
-    </script>
+
     <%-- Autocompelete 品號 Start --%>
     <script>
         $("#MainContent_tb_Model_No").catcomplete({
@@ -302,124 +311,188 @@
 
     </script>
     <%-- Autocompelete 品號 End --%>
-    <%-- Autocompelete Tag Start --%>
-    <script>
-        $("#MainContent_tb_Tag").autocomplete({
-            minLength: 1,  //至少要輸入 n 個字元
-            source: function (request, response) {
-                $.ajax({
-                    url: "<%=Application["WebUrl"]%>Ajax_Data/AC_ProdTags.aspx",
-                    data: {
-                        q: request.term
-                    },
-                    type: "POST",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data != null) {
-                            response($.map(data, function (item) {
-                                return {
-                                    label: item.label,
-                                    value: item.label,
-                                    id: item.id
-                                }
-                            }));
-                        }
+
+    <%-- Tag 維護 --%>
+    <asp:PlaceHolder ID="ph_TagsScript" runat="server" Visible="false">
+
+        <script>
+            //public param
+            var valModel = $("#MainContent_hf_ModelNo").val();
+
+            /* Click事件 - New Tag */
+            $("#btn_newTag").click(function () {
+                var _nameEle = $("#newTag");
+
+                CreateTag(_nameEle.val());
+
+                _nameEle.val('');
+            });
+
+            $("#newTag").keypress(function (e) {
+                code = (e.keyCode ? e.keyCode : e.which);
+                if (code == 13) {
+                    $("#btn_newTag").trigger("click");
+                }
+            });
+
+            $(function () {
+                //init
+                GetTagList("zh-TW", "twTags");
+                GetTagList("en-US", "enTags");
+                GetTagList("zh-CN", "cnTags");
+
+            });
+
+            //取得Tag List
+            function GetTagList(_lang, _ele) {
+                //[Ajax return], 取得資料
+                var _data = fn_TagData(valModel, "", _lang, "READ");
+
+                //[Ajax done]
+                _data.done(function (callback) {
+                    $("#" + _ele).empty().append(callback);
+                });
+
+                //[Ajax fail]
+                _data.fail(function (jqXHR, textStatus) {
+                    event.preventDefault();
+                    alert('取資料時發生錯誤 (GetTag)');
+                });
+            }
+
+
+            function CreateTag(_name) {
+                //check null
+                if (_name == '') {
+                    event.preventDefault();
+                    alert('不可輸入空值!');
+                    return false;
+                }
+                var _data = fn_TagData("", _name, "", "CREATE");
+
+                //[Ajax done]
+                _data.done(function (callback) {
+                    if (callback == "success") {
+                        $("#block_newTag").fadeIn(100).fadeOut(5000);
+                    } else {
+                        alert('建立失敗');
+                        console.log(callback);
                     }
                 });
-            },
-            select: function (event, ui) {
-                $("#tb_TagName").val(ui.item.value);
-                $("#tb_TagID").val(ui.item.id);
 
-                //觸發事件, 新增項目
-                Add_Item();;
-
-                //清除輸入欄
-                $(this).val("");
-                event.preventDefault();
+                //[Ajax fail]
+                _data.fail(function (jqXHR, textStatus) {
+                    event.preventDefault();
+                    alert('取資料時發生錯誤 (CreateTag)');
+                });
             }
-        });
 
-        /* Click事件 - 自訂Tag */
-        $("#newTag").click(function () {
-            //重置欄位值
-            $("#tb_TagID").val('0');
-            $("#tb_TagName").val($("#MainContent_tb_Tag").val());
 
-            //新增項目
-            Add_Item();
-        });
-    </script>
-    <%-- Autocompelete Tag End --%>
-    <script>
-        //----- 動態欄位 Start -----
-        /* 新增項目 */
-        function Add_Item() {
-            var ObjId = new Date().Format("yyyy_MM_dd_hh_mm_ss_S");
-            var ObjVal = $("#tb_TagName").val();
-            var ObjValID = $("#tb_TagID").val();
-            if (ObjVal == "") {
-                alert('欄位空白!');
-                return;
+            function UpdateTag(_id, _lang, _ele) {
+                //[Ajax return]
+                var _data = fn_TagData(_id, "", _lang, "UPDATE");
+
+                //[Ajax done]
+                _data.done(function (callback) {
+                    if (callback == "success") {
+                        GetTagList(_lang, _ele);
+                    } else {
+                        alert('更新失敗');
+                        console.log(callback);
+                    }
+                });
+
+                //[Ajax fail]
+                _data.fail(function (jqXHR, textStatus) {
+                    event.preventDefault();
+                    alert('取資料時發生錯誤 (UpdateTag)');
+                });
             }
-            var NewItem = '<li id="li_' + ObjId + '" style="padding-top:5px;">';
-            NewItem += '<input type="hidden" class="item_ID" value="' + ObjValID + '" />';
-            NewItem += '<input type="hidden" class="item_Name" value="' + ObjVal + '" />';
-            NewItem += '<a href="javascript:Delete_Item(\'' + ObjId + '\');" class="btn btn-success">' + ObjVal + '&nbsp;<span class="glyphicon glyphicon-trash"></span></a>';
-            NewItem += '</li>';
 
-            //將項目append到指定控制項
-            $("#myTags").append(NewItem);
-        }
+            function DelTag(_id, _lang, _ele) {
+                //[Ajax return]
+                var _data = fn_TagData(_id, "", _lang, "DELETE");
 
-        /* 刪除項目 */
-        function Delete_Item(TarObj) {
-            $("#li_" + TarObj).remove();
-        }
-
-        function Delete_AllItem() {
-            $("#myTags li").each(
-               function (i, elm) {
-                   $(elm).remove();
-               });
-        }
-
-        /* 取得各項目欄位值
-        分隔符號 : ||
-        */
-        function Get_Item() {
-            //取得控制項, ServerSide
-            var fld_itemID = $("#MainContent_tb_All_itemID");
-            var fld_itemName = $("#MainContent_tb_All_itemName");
-
-            //清空欄位值
-            fld_itemID.val('');
-            fld_itemName.val('');
-
-            //巡覽項目, 填入值
-            $("#myTags li .item_ID").each(
-                function (i, elm) {
-                    var OldCont = fld_itemID.val();
-                    if (OldCont == '') {
-                        fld_itemID.val($(elm).val());
+                //[Ajax done]
+                _data.done(function (callback) {
+                    if (callback == "success") {
+                        GetTagList(_lang, _ele);
                     } else {
-                        fld_itemID.val(OldCont + '||' + $(elm).val());
+                        alert('更新失敗');
+                        console.log(callback);
                     }
-                }
-            );
+                });
 
-            $("#myTags li .item_Name").each(
-                function (i, elm) {
-                    var OldCont = fld_itemName.val();
-                    if (OldCont == '') {
-                        fld_itemName.val($(elm).val());
-                    } else {
-                        fld_itemName.val(OldCont + '||' + $(elm).val());
-                    }
+                //[Ajax fail]
+                _data.fail(function (jqXHR, textStatus) {
+                    event.preventDefault();
+                    alert('取資料時發生錯誤 (DelTag)');
+                });
+            }
+
+            //[Function] Ajax 主體
+            // id = tagID
+            // name = tagName
+            // lang = Language
+            // type = READ, CREATE, UPDATE, DELETE
+            function fn_TagData(_id, _name, _lang, _type) {
+                var request = $.ajax({
+                    url: '<%=fn_Param.Web_Url%>' + "myProd/Ashx_TagsAction.ashx",
+                    method: "POST",
+                    data: {
+                        model: valModel, //public param
+                        id: _id,
+                        name: _name,
+                        lang: _lang,
+                        type: _type
+                    },
+                    dataType: "html"
+                });
+
+                return request;
+            }
+        </script>
+        <%-- Autocompelete Tag Start --%>
+        <script>
+            $(".taglist").autocomplete({
+                minLength: 1,  //至少要輸入 n 個字元
+                source: function (request, response) {
+                    $.ajax({
+                        url: "<%=Application["WebUrl"]%>Ajax_Data/AC_ProdTags.aspx",
+                        data: {
+                            q: request.term
+                        },
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data != null) {
+                                response($.map(data, function (item) {
+                                    return {
+                                        label: item.label,
+                                        value: item.label,
+                                        id: item.id
+                                    }
+                                }));
+                            }
+                        }
+                    });
+                },
+                select: function (event, ui) {
+                    var lang = $(this).attr("data-lang");
+                    var _ele = $(this).attr("data-ctrl");
+                    var id = ui.item.id;
+                    //call update
+                    UpdateTag(id, lang, _ele);
+
+                    //清除輸入欄
+                    $(this).val("");
+                    event.preventDefault();
                 }
-            );
-        }
-        //----- 動態欄位 End -----
-    </script>
+            });
+
+        </script>
+        <%-- Autocompelete Tag End --%>
+    </asp:PlaceHolder>
+
 </asp:Content>
 
