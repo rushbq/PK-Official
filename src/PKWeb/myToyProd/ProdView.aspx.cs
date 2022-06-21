@@ -229,27 +229,28 @@ public partial class myProd_ProdView : System.Web.UI.Page
 
                     }
 
-                    //應用(#3)
-                    string InfoApp = DT.Rows[0]["InfoApp"].ToString();
-                    if (!string.IsNullOrEmpty(InfoApp))
-                    {
-                        this.lt_Application.Text = InfoApp;
+                    //remove at 20220621
+                    ////應用(#3)
+                    //string InfoApp = DT.Rows[0]["InfoApp"].ToString();
+                    //if (!string.IsNullOrEmpty(InfoApp))
+                    //{
+                    //    this.lt_Application.Text = InfoApp;
 
-                        this.tab_info3.Visible = true;
-                        this.data_info3.Visible = true;
+                    //    this.tab_info3.Visible = true;
+                    //    this.data_info3.Visible = true;
 
-                    }
+                    //}
 
-                    //產品規格(#4)
-                    string InfoSpec = DT.Rows[0]["InfoSpec"].ToString();
-                    if (!string.IsNullOrEmpty(InfoSpec))
-                    {
-                        this.lt_SpecInfo.Text = InfoSpec;
+                    ////產品規格(#4)
+                    //string InfoSpec = DT.Rows[0]["InfoSpec"].ToString();
+                    //if (!string.IsNullOrEmpty(InfoSpec))
+                    //{
+                    //    this.lt_SpecInfo.Text = InfoSpec;
 
-                        this.tab_info4.Visible = true;
-                        this.data_info4.Visible = true;
+                    //    this.tab_info4.Visible = true;
+                    //    this.data_info4.Visible = true;
 
-                    }
+                    //}
 
                     //產品其他資訊(#5)
                     string InfoOther = DT.Rows[0]["InfoOther"].ToString();
