@@ -61,8 +61,7 @@ public partial class myProd_ProdView : System.Web.UI.Page
                 //產品基本資料
                 SBSql.AppendLine(" SELECT TOP 1 Rel.Class_ID, RTRIM(myData.Model_No) AS ModelNo, RTRIM(myData.Model_Name_{0}) AS ModelName".FormatThis(fn_Language.Param_Lang));
                 //產品客製資訊
-                SBSql.AppendLine(" , myInfo.Info1 AS InfoFullDesc, myInfo.Info2 AS InfoFeature, myInfo.Info3 AS InfoApp");
-                SBSql.AppendLine(" , myInfo.Info4 AS InfoSpec, myInfo.Info5 AS InfoDesc, myInfo.Info9 AS InfoDescSeo");
+                SBSql.AppendLine(" , myInfo.Info1 AS InfoFullDesc, myInfo.Info2 AS InfoFeature, myInfo.Info5 AS InfoDesc");
                 SBSql.AppendLine(" , myInfo.Info7 AS TitleSeo, myInfo.Info10 AS InfoOther");
 
                 //是否為新品
@@ -134,18 +133,19 @@ public partial class myProd_ProdView : System.Web.UI.Page
                     string ModelName = DT.Rows[0]["ModelName"].ToString();
                     string PhotoGroup = DT.Rows[0]["PhotoGroup"].ToString();
                     string TitleSeo = DT.Rows[0]["TitleSeo"].ToString();
+                    string InfoDesc = DT.Rows[0]["InfoDesc"].ToString();
 
                     //-- Meta資訊 --
                     //重設標題
                     string metaTitle = string.IsNullOrWhiteSpace(TitleSeo) ? "Pro'sKit " + Model_Name : TitleSeo;
                     meta_Title = "{0} | {1}".FormatThis(metaTitle, Resources.resPublic.title_All);
-                    meta_Desc = DT.Rows[0]["InfoDesc"].ToString().Left(100);
+                    meta_Desc = InfoDesc.Left(100);
                     meta_Url = "{0}RobotKit/{1}/".FormatThis(
                         Application["WebUrl"].ToString()
                         , Model_No
                         );
                     meta_Image = GetData_MainPic(PhotoGroup, Model_No);
-                    meta_DescSeo = DT.Rows[0]["InfoDescSeo"].ToString();
+                    meta_DescSeo = InfoDesc;
 
                     //關鍵字Meta
                     IEnumerable<string> GetTags = GetData_Tags(Model_No);
@@ -153,15 +153,19 @@ public partial class myProd_ProdView : System.Web.UI.Page
                     meta_Keyword = tagString;
 
                     //關鍵字Label
-                    string labelHtml = "";
-                    string labelUrl = Application["WebUrl"].ToString() + "Search/Tool/?k=";
-                    foreach (string tag in GetTags)
+                    if (GetTags.Any())
                     {
-                        labelHtml += string.Format("<a class=\"label label-success\" href=\"{1}\">{0}</a>&nbsp;"
-                            , tag
-                            , labelUrl + Server.UrlEncode(tag));
+                        string labelHtml = "<br /><ul class=\"taglist\">";
+                        string labelUrl = Application["WebUrl"].ToString() + "Search/RobotKits/?k=";
+                        foreach (string tag in GetTags)
+                        {
+                            labelHtml += string.Format("<li><a href=\"{1}\">#{0}</a>&nbsp;&nbsp;</li>"
+                                , tag
+                                , labelUrl + Server.UrlEncode(tag));
+                        }
+                        labelHtml += "</ul>";
+                        lt_TagLabel.Text = labelHtml;
                     }
-                    lt_TagLabel.Text = labelHtml;
 
                     //Navi代入類別名稱
                     lt_navbar.Text = "<li><a href=\"{1}RobotKits/{2}\">{0}</a></li><li>{3}</li>".FormatThis(
@@ -173,7 +177,7 @@ public partial class myProd_ProdView : System.Web.UI.Page
 
                     this.lt_ModelNo.Text = Model_No; //品號
                     this.lt_ModelName.Text = ModelName; //品名
-                    this.lt_ProdInfo.Text = DT.Rows[0]["InfoDesc"].ToString().Replace("\n", "<br/>"); //產品簡述
+                    this.lt_ProdInfo.Text = InfoDesc.Replace("\n", "<br/>"); //產品簡述
 
                     //區域判斷
                     AreaGlobal = Convert.ToInt16(DT.Rows[0]["AreaGlobal"]);

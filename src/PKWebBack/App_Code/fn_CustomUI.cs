@@ -355,6 +355,201 @@ namespace ExtensionUI
 
 
         /// <summary>
+        /// 取得所有產品分類(工具/科玩)
+        /// </summary>
+        /// <param name="setMenu"></param>
+        /// <param name="inputValue"></param>
+        /// <param name="showRoot"></param>
+        /// <param name="ErrMsg"></param>
+        /// <returns></returns>
+        public static bool Get_ProdAllClass(DropDownListGP setMenu, string inputValue, bool showRoot, out string ErrMsg)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    string sql = @"
+                        SELECT ProdAllClass.*
+                        FROM (
+	                        --Tool class
+	                        SELECT RTRIM(Cls.Class_ID) AS ID, Cls.Class_Name_zh_TW AS Label, '工具' AS GroupLabel, Cls.Sort
+	                        FROM [ProductCenter].dbo.Prod_Class Cls WITH (NOLOCK)
+	                        WHERE (LEFT(RTRIM(Cls.Class_ID),1) = '2') AND (Cls.Display = 'Y') AND (Cls.Display_PKWeb = 'Y')
+	                        UNION ALL
+	                        --Toy class
+	                        SELECT RTRIM(Cls.Class_ID) AS ID, Cls.Class_Name_zh_TW AS Label, '玩具' AS GroupLabel, 1000 + Cls.Sort
+	                        FROM [ProductCenter].dbo.ProdToy_Class Cls WITH (NOLOCK)
+	                        WHERE (Cls.Display = 'Y') AND (Cls.Display_PKWeb = 'Y')
+                        ) AS ProdAllClass
+                        ORDER BY ProdAllClass.Sort, ProdAllClass.ID";
+
+                    cmd.CommandText = sql;
+
+                    //取得&整理原始資料
+                    var _rawData = dbConn.LookupDT(cmd, dbConn.DBS.Product, out ErrMsg);
+                    var data = _rawData.AsEnumerable()
+                        .Select(fld => new
+                        {
+                            ID = fld.Field<string>("ID"),
+                            Label = fld.Field<string>("Label"),
+                            GroupLabel = fld.Field<string>("GroupLabel")
+                        });
+
+                    //使用ToLookup將資料群組化
+                    var lookupData = data.ToLookup(c => c.GroupLabel);
+                    foreach (var g in lookupData)
+                    {
+                        //Group Label
+                        setMenu.AddItemGroup(g.Key);
+
+                        foreach (var item in g)
+                        {
+                            //Insert items
+                            setMenu.Items.Add(new ListItem(
+                                item.ID + " - " + item.Label
+                                , item.ID));
+
+                        }
+                    }
+
+                    //判斷是否有已選取的項目
+                    if (!string.IsNullOrEmpty(inputValue))
+                    {
+                        setMenu.SelectedIndex = setMenu.Items.IndexOf(setMenu.Items.FindByValue(inputValue.Trim()));
+                    }
+                    //判斷是否要顯示索引文字
+                    if (showRoot)
+                    {
+                        setMenu.Items.Insert(0, new ListItem("-- 選擇分類 --", ""));
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ErrMsg = ex.Message.ToString();
+                return false;
+            }
+        }
+
+        public static bool Get_ProdArea(DropDownList setMenu, string inputValue, bool showRoot, out string ErrMsg)
+        {
+            //清除參數
+            ErrMsg = "";
+
+            try
+            {
+                var queryList = Get_宣傳參數("A", out ErrMsg).AsEnumerable()
+                    .Select(fld => new
+                    {
+                        ID = fld.Field<string>("ID"),
+                        Label = fld.Field<string>("Label")
+                    }
+                    );
+                //新增選單項目
+                foreach (var item in queryList)
+                {
+                    setMenu.Items.Add(new ListItem(item.Label, item.ID));
+                }
+
+                //判斷是否有已選取的項目
+                if (false == string.IsNullOrEmpty(inputValue))
+                {
+                    setMenu.SelectedIndex = setMenu.Items.IndexOf(setMenu.Items.FindByValue(inputValue.ToString().Trim()));
+                }
+                //判斷是否要顯示索引文字
+                if (showRoot)
+                {
+                    setMenu.Items.Insert(0, new ListItem("-- 選擇區塊 --", ""));
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ErrMsg = ex.Message.ToString();
+                return false;
+            }
+        }
+        public static bool Get_ProdType(DropDownList setMenu, string inputValue, bool showRoot, out string ErrMsg)
+        {
+            //清除參數
+            ErrMsg = "";
+
+            try
+            {
+                var queryList = Get_宣傳參數("B", out ErrMsg).AsEnumerable()
+                    .Select(fld => new
+                    {
+                        ID = fld.Field<string>("ID"),
+                        Label = fld.Field<string>("Label")
+                    }
+                    );
+                //新增選單項目
+                foreach (var item in queryList)
+                {
+                    setMenu.Items.Add(new ListItem(item.Label, item.ID));
+                }
+
+                //判斷是否有已選取的項目
+                if (false == string.IsNullOrEmpty(inputValue))
+                {
+                    setMenu.SelectedIndex = setMenu.Items.IndexOf(setMenu.Items.FindByValue(inputValue.ToString().Trim()));
+                }
+                //判斷是否要顯示索引文字
+                if (showRoot)
+                {
+                    setMenu.Items.Insert(0, new ListItem("-- 選擇類型 --", ""));
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ErrMsg = ex.Message.ToString();
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 取得產品宣傳參數
+        /// </summary>
+        /// <param name="type">A=功能區塊, B=產品類型</param>
+        /// <param name="ErrMsg"></param>
+        /// <returns></returns>
+        public static DataTable Get_宣傳參數(string type, out string ErrMsg)
+        {
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                ErrMsg = "Type is null";
+                return null;
+            }
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    string sql =
+                        @"SELECT Class_MenuID AS ID, Class_Name AS Label
+                    FROM [產品宣傳參數]
+                    WHERE (Class_Type = @type) AND (Display = 'Y')
+                    ORDER BY Sort";
+                    cmd.CommandText = sql;
+                    cmd.Parameters.AddWithValue("@type", type);
+
+                    return dbConn.LookupDT(cmd, out ErrMsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrMsg = ex.Message.ToString();
+                return null;
+            }
+
+        }
+
+        /// <summary>
         /// 取得PK分區 (for CheckBoxList)
         /// </summary>
         /// <param name="setMenu">控制項</param>

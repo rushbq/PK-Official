@@ -151,6 +151,13 @@
         routes.MapPageRoute("Tag_Search", "Config/Tags/{PageID}", "~/mySetting/Tags_Search.aspx", false,
         new RouteValueDictionary {
                     { "PageID", "1" }});
+        
+        routes.MapPageRoute("Prod_BannerSearch", "Prod/BannerSearch/{PageID}", "~/myProd/Banner_Search.aspx", false,
+            new RouteValueDictionary {
+                    { "PageID", "1" }});
+        routes.MapPageRoute("Prod_BannerEdit", "Prod/BannerEdit/{DataID}", "~/myProd/Banner_Edit.aspx", false,
+            new RouteValueDictionary {
+                    { "DataID", "" }});
 
         // [會員]
         routes.MapPageRoute("Member_Search", "Member/Search/{PageID}", "~/myMember/Search.aspx", false,

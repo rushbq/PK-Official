@@ -32,7 +32,11 @@ public partial class myToyProd_ProdList : System.Web.UI.Page
                 tb_VerifyCode.Attributes.Add("placeholder", this.GetLocalResourceObject("txt_Verify").ToString());
 
                 //[取得/檢查參數] - 產品類別(TOY)
-                if (fn_CustomUI.Get_ProdToyClass(this.ddl_ProdClass, Req_ClassID, fn_Language.Param_Lang, true, this.GetLocalResourceObject("tip_所有類別").ToString(), out ErrMsg) == false)
+                if (!fn_CustomUI.Get_ProdToyClass(this.ddl_ProdClass, Req_ClassID
+                    , fn_Language.Param_Lang
+                    , true
+                    , this.GetLocalResourceObject("tip_所有類別").ToString()
+                    , out ErrMsg))
                 {
                     this.ddl_ProdClass.Items.Insert(0, new ListItem("empty item", ""));
                 }
@@ -46,7 +50,11 @@ public partial class myToyProd_ProdList : System.Web.UI.Page
                 //取得資料
                 LookupDataList(Req_PageIdx);
 
-
+                //宣傳區
+                lt_HeaderContent1.Text = ProdExtension.Get_宣傳Html(
+                    ProdExtension.lst功能區塊.新品.ToDescription()
+                    , ProdExtension.lst產品類型.玩具.ToDescription()
+                    , "0");
             }
 
         }

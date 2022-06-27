@@ -8,6 +8,7 @@ using System.Web;
 /// </summary>
 public class fn_Param
 {
+    public readonly static string UserGuid = HttpContext.Current.Session["Login_GUID"].ToString();
 
     /// <summary>
     /// DesKey

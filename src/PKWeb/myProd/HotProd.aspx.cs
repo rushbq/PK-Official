@@ -46,6 +46,11 @@ public partial class myProd_HotProd : System.Web.UI.Page
                 //取得資料
                 LookupDataList(Req_PageIdx);
 
+                //宣傳區
+                lt_HeaderContent1.Text = ProdExtension.Get_宣傳Html(
+                    ProdExtension.lst功能區塊.熱銷.ToDescription()
+                    , ProdExtension.lst產品類型.工具.ToDescription()
+                    , "0");
 
             }
 
@@ -56,7 +61,6 @@ public partial class myProd_HotProd : System.Web.UI.Page
             throw;
         }
     }
-
 
     #region -- 資料顯示 --
     /// <summary>

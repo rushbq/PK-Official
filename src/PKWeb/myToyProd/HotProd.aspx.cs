@@ -46,7 +46,11 @@ public partial class myToyProd_ProdList : System.Web.UI.Page
                 //取得資料
                 LookupDataList(Req_PageIdx);
 
-
+                //宣傳區
+                lt_HeaderContent1.Text = ProdExtension.Get_宣傳Html(
+                    ProdExtension.lst功能區塊.熱銷.ToDescription()
+                    , ProdExtension.lst產品類型.玩具.ToDescription()
+                    , "0");
             }
 
         }

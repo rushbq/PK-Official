@@ -7,6 +7,9 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container df-container-margin">
+        <asp:PlaceHolder ID="ph_宣傳區" runat="server">
+            <asp:Literal ID="lt_HeaderContent1" runat="server"></asp:Literal>
+        </asp:PlaceHolder>
         <div class="page-header">
             <h3><%=Resources.resPublic.title_HotProd_Tool %>
                 &nbsp;<small><%=ClassName %></small>

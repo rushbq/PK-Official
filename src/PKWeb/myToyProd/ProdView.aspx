@@ -81,9 +81,6 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="description">
                     <h4><%=this.GetLocalResourceObject("txt_產品敘述").ToString()%></h4>
-                    <div style="padding-bottom: 5px;">
-                        <asp:Literal ID="lt_TagLabel" runat="server"></asp:Literal>
-                    </div>
                     <!-- 認證符號 -->
                     <div class="icons">
                         <ul class="list-inline">
@@ -93,6 +90,9 @@
                     <!-- 產品簡述 -->
                     <div class="cbm-data">
                         <asp:Literal ID="lt_ProdInfo" runat="server"></asp:Literal>
+                    </div>
+                    <div>
+                        <asp:Literal ID="lt_TagLabel" runat="server"></asp:Literal>
                     </div>
                     <!-- FAQ, 相關下載, 圖片下載, 立即購買,聯絡我們 按鈕 -->
                     <div class="row btn-wrap">

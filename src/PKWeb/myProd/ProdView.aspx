@@ -17,6 +17,12 @@
     <meta property="og:image:width" content="600" />
     <meta property="og:locale" content="zh_TW" />
     <meta property="fb:app_id" content="<%=fn_Param.FB_AppID %>" />
+
+    <style>
+        ul.taglist li {
+            display: inline-block !important;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container df-container-margin">
@@ -81,9 +87,6 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="description">
                     <h4><%=this.GetLocalResourceObject("txt_產品敘述").ToString()%></h4>
-                    <div style="padding-bottom: 5px;">
-                        <asp:Literal ID="lt_TagLabel" runat="server"></asp:Literal>
-                    </div>
                     <!-- 認證符號 -->
                     <div class="icons">
                         <ul class="list-inline">
@@ -94,6 +97,10 @@
                     <div class="cbm-data">
                         <asp:Literal ID="lt_ProdInfo" runat="server"></asp:Literal>
                     </div>
+                    <div>
+                        <asp:Literal ID="lt_TagLabel" runat="server"></asp:Literal>
+                    </div>
+
                     <!-- FAQ, 相關下載, 圖片下載, 立即購買,聯絡我們 按鈕 -->
                     <div class="row btn-wrap">
                         <asp:Literal ID="lt_BuyUrl" runat="server"></asp:Literal>
@@ -228,7 +235,7 @@
                     </div>
                 </div>
             </asp:PlaceHolder>
-            
+
             <!-- 產品其他資訊-->
             <asp:PlaceHolder ID="data_info5" runat="server">
 
