@@ -125,15 +125,10 @@ public partial class myProd_ProdList : System.Web.UI.Page
             SBSql.AppendLine("      INNER JOIN [ProductCenter].dbo.Prod_Item myData WITH (NOLOCK) ON GP.Model_No = myData.Model_No ");
             SBSql.AppendLine(" WHERE (GP.Display = 'Y') ");
             SBSql.AppendLine("   AND (GETDATE() >= GP.StartTime) AND (GETDATE() <= GP.EndTime)");
+            //排除科玩類別
+            SBSql.AppendLine("   AND (myData.Class_ID <> '2600')");
 
             #region "..查詢條件.."
-
-            //排除Toy關聯
-            SBSql.AppendLine(" AND (myData.Model_No NOT IN (");
-            SBSql.AppendLine("  SELECT Rel.Model_No");
-            SBSql.AppendLine("  FROM [ProductCenter].dbo.ProdToy_Class_Rel_ModelNo Rel");
-            SBSql.AppendLine(" ))");
-
 
             //[查詢條件] - 產品類別
             if (!string.IsNullOrEmpty(Req_ClassID) && (!Req_ClassID.ToUpper().Equals("ALL")))

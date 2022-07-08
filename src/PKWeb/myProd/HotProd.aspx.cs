@@ -128,6 +128,8 @@ public partial class myProd_HotProd : System.Web.UI.Page
             //filter:熱銷推薦
             SBSql.AppendLine(" WHERE (GP.Display = 'Y') AND (GP.IsNew = 'Z')");
             SBSql.AppendLine("   AND (GETDATE() >= GP.StartTime) AND (GETDATE() <= GP.EndTime)");
+            //排除科玩類別
+            SBSql.AppendLine("   AND (myData.Class_ID <> '2600')");
 
             #region "..查詢條件.."
 
