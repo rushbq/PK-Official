@@ -28,7 +28,7 @@
         <meta property="og:url" content="<%=webUrl %>" />
         <meta property="og:title" content="<%=resPublic.meta_Title %>" />
         <meta property="og:description" content="<%=resPublic.meta_Desc %>" />
-        <meta property="og:image" content="<%=cdnUrl %>images/ScienceKits/logo-1200.png" />
+        <meta property="og:image" content="<%=cdnUrl %>images/ScienceKits/logo-1200.jpg?v=220708" />
         <meta property="og:locale" content="zh_TW" />
     </asp:PlaceHolder>
 
