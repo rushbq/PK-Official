@@ -155,12 +155,11 @@ public partial class myProd_ProdView : System.Web.UI.Page
                     if (GetTags.Any())
                     {
                         string labelHtml = "<br /><ul class=\"taglist\">";
-                        string labelUrl = Application["WebUrl"].ToString() + "Search/Tool/?k=";
                         foreach (string tag in GetTags)
                         {
                             labelHtml += string.Format("<li><a href=\"{1}\">#{0}</a>&nbsp;&nbsp;</li>"
                                 , tag
-                                , labelUrl + Server.UrlEncode(tag));
+                                , fn_Param.Get_TagUrl(tag));
                         }
                         labelHtml += "</ul>";
                         lt_TagLabel.Text = labelHtml;

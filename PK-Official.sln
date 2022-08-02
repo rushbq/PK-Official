@@ -27,7 +27,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PKScience", "http://localhost/PKScience", "{EF99409F-0F2F-4C71-906B-DFA957C3617C}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/PKScience"
 		Debug.AspNetCompiler.PhysicalPath = "src\PKScience\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\PKScience\"
@@ -48,7 +48,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PKWebback", "http://localhost/PKWebback", "{A1DA304A-38E9-4542-8A5E-536ABCA20A82}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/PKWebback"
 		Debug.AspNetCompiler.PhysicalPath = "src\PKWebBack\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\PKWebback\"

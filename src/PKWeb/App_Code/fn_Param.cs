@@ -14,6 +14,19 @@ using Newtonsoft.Json.Linq;
 /// </summary>
 public class fn_Param
 {
+    public static string WebUrl
+    {
+        get
+        {
+            return System.Web.Configuration.WebConfigurationManager.AppSettings["WebUrl"];
+        }
+        private set
+        {
+            _WebUrl = value;
+        }
+    }
+    private static string _WebUrl;
+
     public static string CDNUrl
     {
         get
@@ -40,6 +53,11 @@ public class fn_Param
     }
     private static string _RefUrl;
 
+
+    public static string Get_TagUrl(string tagName)
+    {
+        return "{0}Tags/{1}/".FormatThis(WebUrl, HttpUtility.UrlEncode(tagName));
+    }
 
     /// <summary>
     /// 本站資料庫名(目前為線上下單使用)

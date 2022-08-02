@@ -63,11 +63,7 @@
                                         </asp:RadioButtonList>
                                     </div>
                                     <asp:RequiredFieldValidator ID="rfv_rbl_Adv_Position" runat="server" ErrorMessage="請選擇「廣告位置」" ControlToValidate="rbl_Adv_Position" Display="Dynamic" ValidationGroup="Add" CssClass="styleRed help-block"></asp:RequiredFieldValidator>
-                                    <div class="help-block">
-                                        (廣告位置示意圖：
-                                        <a href="<%=Application["WebUrl"] %>Data_File/DemoImg/adv-1.png" class="zoomPic" title="橫幅廣告">橫幅廣告</a>、
-                                        <a href="<%=Application["WebUrl"] %>Data_File/DemoImg/adv-2.png" class="zoomPic" title="四格廣告">四格廣告</a>)
-                                    </div>
+                             
                                 </div>
                             </div>
                             <div class="form-group">

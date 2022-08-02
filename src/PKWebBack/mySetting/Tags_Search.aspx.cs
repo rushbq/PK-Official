@@ -1,10 +1,12 @@
-﻿using ExtensionMethods;
+﻿using ExtensionIO;
+using ExtensionMethods;
 using ExtensionUI;
 using System;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -30,7 +32,7 @@ public partial class Tags_Search : SecurityCheck
                 {
                     throw new Exception("目前的Masterpage 沒有實作 IProgID,無法傳值");
                 }
-                
+
                 //[取得/檢查參數] - Keyword
                 if (!string.IsNullOrEmpty(Req_Keyword))
                 {
@@ -84,7 +86,7 @@ public partial class Tags_Search : SecurityCheck
             SBSql.AppendLine(" SELECT TBL.* ");
             SBSql.AppendLine(" FROM ( ");
             SBSql.AppendLine("    SELECT ");
-            SBSql.AppendLine("      Base.Tag_ID, Base.Tag_Name");
+            SBSql.AppendLine("      Base.Tag_ID, Base.Tag_Name, Base.Tag_Pic");
             SBSql.AppendLine("      , (SELECT COUNT(*) FROM Prod_Rel_Tags Rel WHERE (Base.Tag_ID = Rel.Tag_ID)) AS ItemCnt");
             SBSql.AppendLine("      , ROW_NUMBER() OVER (ORDER BY Base.Tag_Name) AS RowRank ");
             SBSql.AppendLine("    FROM Prod_Tags Base ");
@@ -202,18 +204,53 @@ public partial class Tags_Search : SecurityCheck
         {
             if (e.Item.ItemType == ListViewItemType.DataItem)
             {
-                //宣告
+                //Params
                 StringBuilder SBSql = new StringBuilder();
-                TextBox tb_Keyword = ((TextBox)e.Item.FindControl("tb_Keyword"));
+                string Get_DataID = ((HiddenField)e.Item.FindControl("hf_DataID")).Value;
+                string Get_Oldpic = ((HiddenField)e.Item.FindControl("hf_OldFile")).Value;
+                TextBox tb_Keyword = (TextBox)e.Item.FindControl("tb_Keyword");
+                FileUpload fu_Banner = (FileUpload)e.Item.FindControl("fu_Banner");
+                string GetNewFileName = "";
 
                 //判斷命令名稱
                 switch (e.CommandName.ToLower())
                 {
                     case "edit":
-                        SBSql.Append("UPDATE Prod_Tags SET Tag_Name = @Tag_Name");
-                        SBSql.Append(" WHERE (Tag_ID = @Data_ID)");
+                        //post file
+                        HttpPostedFile GetFile = fu_Banner.PostedFile;
+                        if (GetFile.ContentLength > 0)
+                        {
+                            //[IO] - 取得檔案名稱
+                            IOManage.GetFileName(GetFile);
+                            GetNewFileName = IOManage.FileNewName;
+
+                            //判斷副檔名，未符合規格的檔案不上傳
+                            if (!fn_Extensions.CheckStrWord(IOManage.FileExtend, FileExtLimit, "|", 1))
+                            {
+                                fn_Extensions.JsAlert("檔案格式不正確，請使用 " + FileExtLimit, "");
+                                return;
+                            }
+
+                            //Upload File
+                            IOManage.Save(GetFile, Param_FileFolder, GetNewFileName);
+
+                            if (!IOManage.Message.Equals("OK"))
+                            {
+                                fn_Extensions.JsAlert("圖片上傳失敗", "");
+                                return;
+                            }
+                        }
+
+                        SBSql.Append("UPDATE Prod_Tags SET Tag_Name = @Tag_Name, Tag_Pic = @Tag_Pic WHERE (Tag_ID = @Data_ID)");
 
                         break;
+
+                    case "delpic":
+                        IOManage.DelFile(Param_FileFolder, Get_Oldpic);
+                        SBSql.Append("UPDATE Prod_Tags SET Tag_Pic = NULL WHERE (Tag_ID = @Data_ID)");
+
+                        break;
+
 
                     case "del":
                         SBSql.Append("DELETE FROM Prod_Tags WHERE (Tag_ID = @Data_ID)");
@@ -225,14 +262,13 @@ public partial class Tags_Search : SecurityCheck
                 //執行SQL
                 if (!string.IsNullOrEmpty(SBSql.ToString()))
                 {
-                    //取得Key值
-                    string Get_DataID = ((HiddenField)e.Item.FindControl("hf_DataID")).Value;
 
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.CommandText = SBSql.ToString();
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("Tag_Name", tb_Keyword.Text);
+                        cmd.Parameters.AddWithValue("Tag_Pic", string.IsNullOrWhiteSpace(GetNewFileName) ? Get_Oldpic : GetNewFileName);
                         cmd.Parameters.AddWithValue("Data_ID", Get_DataID);
                         if (dbConn.ExecuteSql(cmd, out ErrMsg) == false)
                         {
@@ -265,9 +301,13 @@ public partial class Tags_Search : SecurityCheck
 
                 //判斷是否已被使用, 未被使用才能刪除
                 int Get_ItemCnt = Convert.ToInt32(DataBinder.Eval(dataItem.DataItem, "ItemCnt"));
-
                 LinkButton lbtn_Del = (LinkButton)e.Item.FindControl("lbtn_Del");
                 lbtn_Del.Visible = Get_ItemCnt.Equals(0);
+
+                //Tag Pic
+                string Tag_Pic = DataBinder.Eval(dataItem.DataItem, "Tag_Pic").ToString();
+                ((PlaceHolder)e.Item.FindControl("ph_NewUpload")).Visible = string.IsNullOrWhiteSpace(Tag_Pic);
+                ((PlaceHolder)e.Item.FindControl("ph_ViewUpload")).Visible = !string.IsNullOrWhiteSpace(Tag_Pic);
 
             }
         }
@@ -278,6 +318,10 @@ public partial class Tags_Search : SecurityCheck
         }
     }
 
+    protected void lvDataList_ItemEditing(object sender, ListViewEditEventArgs e)
+    {
+
+    }
     #endregion
 
     #region -- 按鈕事件 --
@@ -347,4 +391,149 @@ public partial class Tags_Search : SecurityCheck
 
 
     #endregion
+
+
+    #region -- 上傳參數 --
+    /// <summary>
+    /// [參數] - 檔案資料夾路徑
+    /// </summary>
+    private string _Param_FileFolder;
+    public string Param_FileFolder
+    {
+        get
+        {
+            return this._Param_FileFolder != null
+                ? this._Param_FileFolder
+                : @"{0}Tag\".FormatThis(Application["File_DiskUrl"]);
+        }
+        set
+        {
+            this._Param_FileFolder = value;
+        }
+    }
+
+    /// <summary>
+    /// [參數] - 檔案Web資料夾路徑
+    /// </summary>
+    private string _Param_WebFolder;
+    public string Param_WebFolder
+    {
+        get
+        {
+            return this._Param_WebFolder != null
+                ? this._Param_WebFolder
+                : @"{0}Tag/".FormatThis(Application["File_WebUrl"]);
+        }
+        set
+        {
+            this._Param_WebFolder = value;
+        }
+    }
+
+    /// <summary>
+    /// 限制上傳的副檔名
+    /// </summary>
+    private string _FileExtLimit;
+    public string FileExtLimit
+    {
+        get
+        {
+            return "jpg|png";
+        }
+        set
+        {
+            this._FileExtLimit = value;
+        }
+    }
+
+    /// <summary>
+    /// 圖片設定寬度
+    /// </summary>
+    private int _Param_Width;
+    public int Param_Width
+    {
+        get
+        {
+            return 1280;
+        }
+        set
+        {
+            this._Param_Width = value;
+        }
+    }
+    /// <summary>
+    /// 圖片設定高度
+    /// </summary>
+    private int _Param_Height;
+    public int Param_Height
+    {
+        get
+        {
+            return 1024;
+        }
+        set
+        {
+            this._Param_Height = value;
+        }
+    }
+
+
+    /// <summary>
+    /// 暫存參數
+    /// </summary>
+    public class TempParam
+    {
+        /// <summary>
+        /// [參數] - 圖片檔名
+        /// </summary>
+        private string _Param_Pic;
+        public string Param_Pic
+        {
+            get { return this._Param_Pic; }
+            set { this._Param_Pic = value; }
+        }
+
+        /// <summary>
+        /// [參數] - 圖片原始名稱
+        /// </summary>
+        private string _Param_OrgPic;
+        public string Param_OrgPic
+        {
+            get { return this._Param_OrgPic; }
+            set { this._Param_OrgPic = value; }
+        }
+
+        /// <summary>
+        /// [參數] - 圖片類別
+        /// </summary>
+        private string _Param_FileKind;
+        public string Param_FileKind
+        {
+            get { return this._Param_FileKind; }
+            set { this._Param_FileKind = value; }
+        }
+
+        private HttpPostedFile _Param_hpf;
+        public HttpPostedFile Param_hpf
+        {
+            get { return this._Param_hpf; }
+            set { this._Param_hpf = value; }
+        }
+
+        /// <summary>
+        /// 設定參數值
+        /// </summary>
+        /// <param name="Param_Pic">系統檔名</param>
+        /// <param name="Param_OrgPic">原始檔名</param>
+        /// <param name="Param_hpf">上傳檔案</param>
+        public TempParam(string Param_Pic, string Param_OrgPic, HttpPostedFile Param_hpf)
+        {
+            this._Param_Pic = Param_Pic;
+            this._Param_OrgPic = Param_OrgPic;
+            this._Param_hpf = Param_hpf;
+        }
+
+    }
+    #endregion
+
 }

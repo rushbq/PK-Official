@@ -377,4 +377,7 @@ Mail ： sha@mail.prokits.com.tw</value>
   <data name="title_最新消息" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="title_Tag" xml:space="preserve">
+    <value>Tags</value>
+  </data>
 </root>

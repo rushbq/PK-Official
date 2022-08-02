@@ -51,7 +51,8 @@
                 </div>
                 <!-- Table Content Start -->
                 <div id="result" class="table-responsive">
-                    <asp:ListView ID="lvDataList" runat="server" ItemPlaceholderID="ph_Items" GroupPlaceholderID="ph_GroupItems" GroupItemCount="2" OnItemCommand="lvDataList_ItemCommand" OnItemDataBound="lvDataList_ItemDataBound">
+                    <asp:ListView ID="lvDataList" runat="server" ItemPlaceholderID="ph_Items" GroupPlaceholderID="ph_GroupItems" GroupItemCount="2"
+                        OnItemCommand="lvDataList_ItemCommand" OnItemDataBound="lvDataList_ItemDataBound" OnItemEditing="lvDataList_ItemEditing">
                         <LayoutTemplate>
                             <table class="table table-bordered table-advance table-striped">
                                 <thead>
@@ -86,13 +87,26 @@
                                     ControlToValidate="tb_Keyword" Display="Dynamic" CssClass="text-danger" ValidationGroup="List"></asp:RequiredFieldValidator>
                             </td>
                             <td>
+                                <asp:PlaceHolder ID="ph_NewUpload" runat="server">
+                                    <div style="margin-bottom: 2px;">
+                                        <asp:FileUpload ID="fu_Banner" runat="server" />
+                                    </div>
+                                </asp:PlaceHolder>
+                                <asp:PlaceHolder ID="ph_ViewUpload" runat="server">
+                                    <a href="<%:Param_WebFolder %><%#Eval("Tag_Pic") %>" target="_blank" class="btn btn-info" title="看圖"><i class="fa fa-image fa-lg"></i></a>
+                                    <asp:LinkButton ID="lbtn_DelPic" CommandName="DelPic" runat="server" CssClass="btn btn-default" OnClientClick="return confirm('圖片確定刪除？')">
+                                       刪圖
+                                    </asp:LinkButton>
+                                </asp:PlaceHolder>
+
                                 <asp:LinkButton ID="lbtn_Edit" CommandName="Edit" runat="server" CssClass="btn btn-primary myEdit" ToolTip="修改" OnClientClick="blockBox1('List', '資料更新中...');">
                                         <i class="fa fa-save fa-lg"></i>
                                 </asp:LinkButton>
-                                <asp:LinkButton ID="lbtn_Del" CommandName="Del" runat="server" CssClass="btn btn-danger" OnClientClick="return confirm('確定要刪除嗎？')">
+                                <asp:LinkButton ID="lbtn_Del" CommandName="Del" runat="server" CssClass="btn btn-danger" OnClientClick="return confirm('資料確定刪除？')">
                                         <i class="fa fa-trash-o fa-lg"></i>
                                 </asp:LinkButton>
                                 <asp:HiddenField ID="hf_DataID" runat="server" Value='<%#Eval("Tag_ID") %>' />
+                                <asp:HiddenField ID="hf_OldFile" runat="server" Value='<%#Eval("Tag_Pic") %>' />
                             </td>
                         </ItemTemplate>
                         <EmptyItemTemplate>
