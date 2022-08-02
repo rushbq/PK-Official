@@ -61,7 +61,7 @@ public partial class myProd_ProdView : System.Web.UI.Page
                 //產品基本資料
                 SBSql.AppendLine(" SELECT TOP 1 myData.Class_ID, RTRIM(myData.Model_No) AS ModelNo, RTRIM(myData.Model_Name_{0}) AS ModelName".FormatThis(fn_Language.Param_Lang));
                 //產品客製資訊
-                SBSql.AppendLine(" , myInfo.Info1 AS InfoFullDesc, myInfo.Info2 AS InfoFeature, myInfo.Info5 AS InfoDesc");
+                SBSql.AppendLine(" , myInfo.Info1 AS InfoFullDesc, myInfo.Info2 AS InfoFeature, myInfo.Info4 AS InfoSpec, myInfo.Info5 AS InfoDesc");
                 SBSql.AppendLine(" , myInfo.Info7 AS TitleSeo, myInfo.Info10 AS InfoOther");
 
                 //是否為新品
@@ -243,16 +243,16 @@ public partial class myProd_ProdView : System.Web.UI.Page
 
                     //}
 
-                    ////產品規格(#4)
-                    //string InfoSpec = DT.Rows[0]["InfoSpec"].ToString();
-                    //if (!string.IsNullOrEmpty(InfoSpec))
-                    //{
-                    //    this.lt_SpecInfo.Text = InfoSpec;
+                    //產品規格(#4)
+                    string InfoSpec = DT.Rows[0]["InfoSpec"].ToString();
+                    if (!string.IsNullOrEmpty(InfoSpec))
+                    {
+                        this.lt_SpecInfo.Text = InfoSpec;
 
-                    //    this.tab_info4.Visible = true;
-                    //    this.data_info4.Visible = true;
+                        this.tab_info4.Visible = true;
+                        this.data_info4.Visible = true;
 
-                    //}
+                    }
 
                     //產品其他資訊(#5)
                     string InfoOther = DT.Rows[0]["InfoOther"].ToString();

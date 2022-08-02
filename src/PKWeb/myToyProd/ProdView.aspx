@@ -153,12 +153,12 @@
                             <li>
                                 <a class="scroll-name" href="#section3"><%=this.GetLocalResourceObject("txt_產品應用").ToString()%></a>
                             </li>
-                        </asp:PlaceHolder>
+                        </asp:PlaceHolder>--%>
                         <asp:PlaceHolder ID="tab_info4" runat="server" Visible="false">
                             <li>
                                 <a class="scroll-name" href="#section4"><%=this.GetLocalResourceObject("txt_產品規格").ToString()%></a>
                             </li>
-                        </asp:PlaceHolder>--%>
+                        </asp:PlaceHolder>
                     </ul>
                 </div>
             </nav>
